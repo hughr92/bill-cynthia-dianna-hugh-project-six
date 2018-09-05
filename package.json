@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "connect-history-api-fallback": "^1.5.0",
+    "firebase": "^5.4.2",
     "install": "^0.12.1",
     "node-sass-chokidar": "^1.3.3",
     "npm": "^6.4.1",

@@ -3,7 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import LandingPage from './LandingPage';
 import Compiler from './Compiler';
-import { BrowserRouter as Router, Link, NavLink, Route } from 'react-router-dom'
+// import firebase from './firebase';
+import { BrowserRouter as Router, Link, NavLink, Route } from 'react-router-dom';
 
 class App extends Component {
   render() {
