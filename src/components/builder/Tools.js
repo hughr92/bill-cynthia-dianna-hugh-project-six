@@ -9,7 +9,33 @@ class Tools extends Component {
     constructor(){
         super();
         this.state = {
-            toolTab: 'background'
+            toolTab: 'background',
+            background:{
+                image: true,
+                color: ""
+            },
+            text: {
+                h2:{
+                    size: 33,
+                    fontFamily:"",
+                    color:"",
+                    alignment:"",
+
+                },
+                h1:{
+                    size: 48,
+                    fontFamily:"",
+                    color:"",
+                    alignment:"",
+
+                },
+            },
+            social: {
+                github:"",
+                twitter:"",
+                linkedin:"",
+                email:""
+            }
         }
     }
 
