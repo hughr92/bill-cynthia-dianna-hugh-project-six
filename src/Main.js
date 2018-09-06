@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Link, NavLink, Route } from 'react-router-dom'
 import Home from "./components/Home";
 import Templates from "./components/Templates"
 import Builder from "./components/Builder"
+import NavBar from './compiler/NavBar';
 
 class Main extends Component {
     // constructor() {
@@ -13,7 +14,8 @@ class Main extends Component {
     render() {
         return (
             <Router>
-                <main>                    
+                <main>   
+                    <NavBar />                 
                     <Route exact path="/home/" component={Home} />
                     <Route exact path="/home/builder" component={Builder} />
                     <Route exact path="/home/templates" component={Templates} />
