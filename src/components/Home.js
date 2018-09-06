@@ -53,6 +53,7 @@ class Home extends Component {
                 this.setState({
                     user:user
                 }, ()=> {
+<<<<<<< HEAD
                     this.dbRef = firebase.database().ref(this.state.user.uid)
 
                     this.dbRef.on('value', (snapshot) => {
@@ -67,6 +68,18 @@ class Home extends Component {
                         console.log(snapshot.val());
 
                     })
+=======
+                    this.dbRef = firebase.database().ref(this.state.user.displayName).push(userSelections);
+
+                    // this.dbRef.on('value', (snapshot)=>{
+                    //     if(snapshot.val()){
+                    //         this.setState({
+                    //             user: snapshot.val().user
+                    //             // assign the object - double check this
+                    //         })
+                    //     }
+                    // })
+>>>>>>> c45f9e9879d5eff898ce2f776b307bef16c530de
                 })
             } 
         })
