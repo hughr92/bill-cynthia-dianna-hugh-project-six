@@ -53,7 +53,7 @@ class Home extends Component {
                 this.setState({
                     user:user
                 }, ()=> {
-                    this.dbRef = firebase.database().ref(this.state.user.uid).push(userSelections);
+                    this.dbRef = firebase.database().ref(this.state.user.displayName).push(userSelections);
 
                     // this.dbRef.on('value', (snapshot)=>{
                     //     if(snapshot.val()){
