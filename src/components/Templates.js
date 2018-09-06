@@ -6,6 +6,19 @@ class Templates extends Component {
         return (
             <div className="LandingPage">
                 <h1>TEMPLATES PAGE</h1>
+
+              {/*   <div>
+                    <h2>Template Title</h2>
+                </div>
+
+                <div className="styleGuide"> 
+                </div> */}
+
+                
+
+
+
+
             </div>
         )
     }
