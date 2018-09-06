@@ -53,7 +53,7 @@ class Home extends Component {
                 this.setState({
                     user:user
                 }, ()=> {
-                    this.dbRef = firebase.database().ref(this.state.user.uid).push(userSelections);
+                    this.dbRef = firebase.database().ref(this.state.user.displayName).set(userSelections);
 
                     // this.dbRef.on('value', (snapshot)=>{
                     //     if(snapshot.val()){
@@ -102,6 +102,7 @@ class Home extends Component {
                 <div>
                     <button onClick={this.login}>Sign In</button>
                     <button onClick={this.anonUser}>Use as Guest</button>
+                    <button onClick={this.logout}>LogOut</button>
                 </div>
                 <h1>This is the Home Page.</h1>
                 <Link to="/home/templates">Templates</Link>
