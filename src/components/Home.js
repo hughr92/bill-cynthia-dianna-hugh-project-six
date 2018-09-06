@@ -53,16 +53,20 @@ class Home extends Component {
                 this.setState({
                     user:user
                 }, ()=> {
-                    this.dbRef = firebase.database().ref(this.state.user.displayName).push(userSelections);
+                    this.dbRef = firebase.database().ref(this.state.user.uid)
 
-                    // this.dbRef.on('value', (snapshot)=>{
-                    //     if(snapshot.val()){
-                    //         this.setState({
-                    //             user: snapshot.val().user
-                    //             // assign the object - double check this
-                    //         })
-                    //     }
-                    // })
+                    this.dbRef.on('value', (snapshot) => {
+                        // if there is a value in firebase, then set state the
+                        if (snapshot.val() === null) {
+                            this.dbRef.push(userSelections)
+                            // this.setState({
+                                // setting our state based on what is in firebase based on our clicks
+                                // this.dbRef.push(userSelections)
+                            // })
+                        }
+                        console.log(snapshot.val());
+
+                    })
                 })
             } 
         })
@@ -93,7 +97,6 @@ class Home extends Component {
     }
     hello =() =>{
         console.log(`hellothere`);
-
     }
 
     render() {
@@ -102,6 +105,7 @@ class Home extends Component {
                 <div>
                     <button onClick={this.login}>Sign In</button>
                     <button onClick={this.anonUser}>Use as Guest</button>
+                    <button onClick={this.logout}>LogOut</button>
                 </div>
                 <h1>This is the Home Page.</h1>
                 <Link to="/home/templates">Templates</Link>
