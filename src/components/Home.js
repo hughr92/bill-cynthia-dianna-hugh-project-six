@@ -53,16 +53,20 @@ class Home extends Component {
                 this.setState({
                     user:user
                 }, ()=> {
-                    this.dbRef = firebase.database().ref(this.state.user.displayName).set(userSelections);
+                    this.dbRef = firebase.database().ref(this.state.user.uid)
 
-                    // this.dbRef.on('value', (snapshot)=>{
-                    //     if(snapshot.val()){
-                    //         this.setState({
-                    //             user: snapshot.val().user
-                    //             // assign the object - double check this
-                    //         })
-                    //     }
-                    // })
+                    this.dbRef.on('value', (snapshot) => {
+                        // if there is a value in firebase, then set state the
+                        if (snapshot.val() === null) {
+                            this.dbRef.push(userSelections)
+                            // this.setState({
+                                // setting our state based on what is in firebase based on our clicks
+                                // this.dbRef.push(userSelections)
+                            // })
+                        }
+                        console.log(snapshot.val());
+
+                    })
                 })
             } 
         })
@@ -93,7 +97,6 @@ class Home extends Component {
     }
     hello =() =>{
         console.log(`hellothere`);
-
     }
 
     render() {
