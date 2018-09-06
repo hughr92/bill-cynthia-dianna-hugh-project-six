@@ -3,79 +3,84 @@ import { BrowserRouter as Router, Link, NavLink, Route } from 'react-router-dom'
 
 import firebase from '../firebase.js'
 
+const userSelections =  {
+    background: {
+        image: false,
+        color: ""
+                },
+    text: {
+        h2: {
+            size: null,
+            fontFamily: "",
+            color: "",
+            alignment: "",
 
+        },
+        h1: {
+            size: null,
+            fontFamily: "",
+            color: "",
+            alignment: "",
+
+        },
+    },
+    social: {
+        github: "",
+        twitter: "",
+        linkedin: "",
+        email: ""
+                }
+    }
 
 
 const provider = new firebase.auth.GoogleAuthProvider();
 const auth = firebase.auth();
 
+
 class Home extends Component {
     constructor(){
         super();
         this.state = {
-            user: {
-                background: {
-                    image: false,
-                    color: ""
-                },
-                text: {
-                    h2: {
-                        size: null,
-                        fontFamily: "",
-                        color: "",
-                        alignment: "",
-
-                    },
-                    h1: {
-                        size: null,
-                        fontFamily: "",
-                        color: "",
-                        alignment: "",
-
-                    },
-                },
-                social: {
-                    github: "",
-                    twitter: "",
-                    linkedin: "",
-                    email: ""
-                }
-            }
+            user: null
         }
     }
 
     componentDidMount(){
         auth.onAuthStateChanged((user)=>{
             if (user){
+                console.log(`componentdidmount`, user);
+                
                 this.setState({
                     user:user
                 }, ()=> {
-                    this.dbRef = firebase.database().ref(this.state.user.uid);
+                    this.dbRef = firebase.database().ref(this.state.user.uid).push(userSelections);
 
-                    this.dbRef.on('value', (snapshot)=>{
-                        if(snapshot.val()){
-                            this.setState({
-                                user: snapshot.val().user
-                                // assign the object - double check this
-                            })
-                        }
-                    })
+                    // this.dbRef.on('value', (snapshot)=>{
+                    //     if(snapshot.val()){
+                    //         this.setState({
+                    //             user: snapshot.val().user
+                    //             // assign the object - double check this
+                    //         })
+                    //     }
+                    // })
                 })
-            }
+            } 
         })
+
     }
 
     login = ()=> {
-        auth.signInWithPopup(provider).then((res)=>{
-            console.log(res.user);
-            
+        auth.signInWithPopup(provider).then((res)=>{       
+            console.log('login', res);
+                
             this.setState({
                 user: res.user
-                // check this again
             })
         })
     }
-
+    anonUser = () => {
+        firebase.auth().signInAnonymously()
+    }
     logout = ()=> {
         auth.signOut().then(()=>{
             this.setState({
@@ -86,11 +91,18 @@ class Home extends Component {
             this.dbRef.off();
         })
     }
+    hello =() =>{
+        console.log(`hellothere`);
 
+    }
 
     render() {
         return (
             <div>
+                <div>
+                    <button onClick={this.login}>Sign In</button>
+                    <button onClick={this.anonUser}>Use as Guest</button>
+                </div>
                 <h1>This is the Home Page.</h1>
                 <Link to="/home/templates">Templates</Link>
                 <Link to="/home/builder">Builder</Link>
