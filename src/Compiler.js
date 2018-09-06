@@ -9,7 +9,7 @@ class Compiler extends Component {
     render() {
         return (
             <div>
-                <NavBar />
+                {/* <NavBar /> */}
                 <Main />
                 {/* <Footer /> */}
             </div>
