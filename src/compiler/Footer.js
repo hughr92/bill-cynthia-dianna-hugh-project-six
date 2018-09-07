@@ -74,16 +74,7 @@ class Footer extends Component {
                           Home
                         </a>
                       </li>
-                      <li class="footerNavList__item">
-                        <a href="#" class="navList__link">
-                          Templates
-                        </a>
-                      </li>
-                      <li class="footerNavList__item">
-                        <a href="#" class="navList__link">
-                          Builder
-                        </a>
-                      </li>
+                      
                       <li class="footerNavList__item">
                         <a href="#" class="navList__link">
                           Enquiries & Comments
