@@ -246,6 +246,67 @@ a {
   border: 1px solid black;
   text-align: left;
   padding: 40px;
+  height: 400px;
+  overflow: scroll; }
+  .view__title {
+    width: 100%;
+    text-align: center; }
+    .view__title--html {
+      color: white; }
+  .view__html {
+    background-color: #262721; }
+    .view__html p {
+      color: white; }
+      .view__html p::before {
+        content: "<";
+        margin-right: 5px; }
+      .view__html p::after {
+        content: ">";
+        margin-left: 5px; }
+    .view__html__head--property {
+      color: #a9d038; }
+    .view__html__head--attribute {
+      color: #e5dd74; }
+      .view__html__head--attribute::before {
+        content: "''";
+        margin: 0 2px; }
+      .view__html__head--attribute::after {
+        content: "''";
+        margin: 0 2px; }
+    .view__html__head--element {
+      color: #ee2874; }
+      .view__html__head--element--start::before {
+        color: white;
+        content: "<";
+        margin-right: 5px; }
+      .view__html__head--element--start::after {
+        color: white;
+        content: ">";
+        margin-left: 5px; }
+      .view__html__head--element--end::before {
+        color: white;
+        content: " /";
+        margin-right: 5px;
+        margin-left: -5px; }
+      .view__html__head--element--inline {
+        color: #ee2874; }
+        .view__html__head--element--inline--start::after {
+          content: ">";
+          margin-left: 5px;
+          color: white; }
+        .view__html__head--element--inline--end::before {
+          content: "< /";
+          margin-right: 5px;
+          color: white; }
+
+.indent-1 {
+  margin-left: 40px; }
+
+.view {
+  width: 100%;
+  border: 1px solid black;
+  text-align: left;
+  padding: 40px;
   height: 400px; }
   .view__container {
     width: calc(100% / 4);
