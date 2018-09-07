@@ -334,3 +334,13 @@ a {
       color: #70cee7; }
     .view__css--end {
       color: white; }
+
+.tools__container__label {
+  position: absolute;
+  color: red; }
+
+.tools__container__wrapper {
+  position: relative; }
+
+.tools__container__input {
+  background: blue; }
