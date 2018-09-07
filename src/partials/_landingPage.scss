@@ -1,0 +1,46 @@
+.landingPage {
+    background-image: url("../src/assets/edu-lauton-71055-unsplash.jpg");
+    background-size: cover;
+    height: 100vh;
+    &--button {
+        background: $accentColor;
+        padding: 10px 20px;
+        margin-top: 20px;
+        display: inline-block;
+        border-radius: 15px;
+        font-family: "Poppins";
+        transition: all 200ms;
+        &:hover {
+            background: white;
+            color: $accentColor;
+        }
+        & a {
+            color: white;
+            &:hover {
+                color: $accentColor;
+            }
+        }
+    }
+}
+
+.landingPage h1 {
+    color: $accentColor;
+    text-shadow: 4px 4px $lightGrey;
+}
+
+.landingPage h2 {
+    color: $lightGrey;
+    text-shadow: 2px 2px 2px $accentColor;
+}
+
+.landingPage .wrapper {
+    height: 100vh;
+    vertical-align: middle;
+}
+
+.float {
+    width: 50%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}

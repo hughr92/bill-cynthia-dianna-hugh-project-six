@@ -1,0 +1,33 @@
+.navBar {
+    background: $accentColor;
+    height: 50px;
+}
+
+.navBar h3 {
+    float: left;
+    position: relative;
+    top: 50%;
+    transform: translateY(50%);
+}
+
+.navBar nav ul {
+    list-style: none;
+    float: right;
+    position: relative;
+    top: 50%;
+    transform: translateY(50%);
+}
+
+.navBar nav ul li {
+    display: inline-block;
+    font-family: "Poppins";
+    padding: 0 15px;
+}
+
+.navBar nav ul li a {
+    color: white;
+    transition: all 200ms;
+    &:hover {
+        color: gold; 
+    }
+}

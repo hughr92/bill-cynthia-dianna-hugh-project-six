@@ -1,0 +1,14 @@
+
+.homeContent {
+    width: 50%;
+    float: left;
+}
+
+.homePage {
+    &--h1 {
+        line-height: 6rem;
+    }
+    &--h2 {
+        line-height: 3.4rem;
+    }
+}
