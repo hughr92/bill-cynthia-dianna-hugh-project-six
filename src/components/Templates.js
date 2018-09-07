@@ -7,12 +7,12 @@ class Templates extends Component {
             <div className="LandingPage">
                 <h1>TEMPLATES PAGE</h1>
 
-              {/*   <div>
+                <div>
                     <h2>Template Title</h2>
                 </div>
 
                 <div className="styleGuide"> 
-                </div> */}
+                </div>
 
                 
 
