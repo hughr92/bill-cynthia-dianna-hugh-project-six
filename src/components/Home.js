@@ -62,13 +62,12 @@ class Home extends Component {
                     this.dbRef.on('value', (snapshot) => {
                         // if there is a value in firebase, then set state the
                         if (snapshot.val() === null) {
-                            this.dbRef.push(userSelections)
+                            this.dbRef.set(userSelections)
                             // this.setState({
                                 // setting our state based on what is in firebase based on our clicks
                                 // this.dbRef.push(userSelections)
                             // })
                         }
-                        console.log(snapshot.val());
 
                     })
                 })
@@ -79,7 +78,7 @@ class Home extends Component {
 
     login = ()=> {
         auth.signInWithPopup(provider).then((res)=>{       
-            console.log('login', res);
+            console.log('login', res.user);
                 
             this.setState({
                 user: res.user,
@@ -125,8 +124,7 @@ class Home extends Component {
                             <Link to="/home/templates">Templates</Link>
                         </div>
                         <div>
-                            <Link to={{pathname: `/home/builder`, query:{user:this.state.userUID}}}>Builder</Link>
-                            {/* <Link to={{pathname: `/home/builder${this.state.userUID}`, query:{user:this.state.userUID}}}>Builder</Link> */}
+                            <Link to={{pathname: `/home/builder`, query:this.state.userUID}}>Builder</Link>
                         </div>
                         
                     </div>

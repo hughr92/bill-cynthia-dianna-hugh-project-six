@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import firebase from '../../firebase';
 
 
-// const  dbRef = firebase.database().ref(this.state.user.uid)
-// const dbRef = firebase.database().ref(this.props.user.user.uid);
-
-
 class ToolsSocial extends Component {
     constructor () {
         super();
@@ -13,44 +9,50 @@ class ToolsSocial extends Component {
                 github: "",
                 twitter: "",
                 linkedin: "",
-                email: ""
+                email: "",
+                user:""
 
         }
     }
-    setUser = () => {
-        console.log(`firebase`, this.props);
-        const dbRef = firebase.database().ref(this.props.user.user)
+    componentDidMount = () => {
+        const userID = this.props.user
+
+        this.setState({
+            user: userID
+        }) 
     }
 
-    handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(`submit`, e.target.id);
-        this.setUser();
-    }
-    // addToDB = (email) => {
-    //     console.log(`addToDB`, this.state.uid);
-        
-    //     this.dbRef.push(this.state.uid.email)
-    // }    
+    // handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     console.log(`submit`, e.target.id);
+    // }
+
     handleChange =(e)=> {
         console.log(`change`, e.target.value);
         console.log(`change`, e.target.id);
         // console.log(`propsintoolssocial`, this.props.user);
         
-
         this.setState ({
             [e.target.id] : e.target.value
+        }, ()=> {
+            console.log('social state',this.state);
+            const dbRef = firebase.database().ref(this.state.user)
+            dbRef.on('value', snapshot => {
+                // dbRef.update(this.state.social);
+                dbRef.update(this.state);
+                console.log(``);
+                
+            })
         })
 
     }
 
     render() {
 
-        
         return  <div className="tools__container--social__selection">
                 <h1>ToolsSocial</h1>
 
-                    <form onSubmit={this.handleSubmit}>
+                    <form>
                         <input type="checkbox" name="social" value="email" id="socialEmail"/>
                         <label for="socialEmail">Email</label>
                         <input onChange={this.handleChange} type="email" name="social" placeholder="Enter email" id="email" value={this.state.email}/>
