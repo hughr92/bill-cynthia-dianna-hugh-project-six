@@ -30,10 +30,3 @@
     }
 }
 
-.tools__container__wrapper__input:focus ~ .tools__container__label,
-.tools__container__wrapper__input:valid ~ .tools__container__label
- {
-    top: -20px;
-    font-weight: 600;
-    color: green;
-}
