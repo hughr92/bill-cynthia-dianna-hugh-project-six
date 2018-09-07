@@ -15,13 +15,15 @@ class Tools extends Component {
     }
 
     handleChange = (e) => {
-        console.log(e.target.id);
+        // console.log(e.target.id);
         this.setState({
             toolTab: e.target.id
         })
     }
 
     render() {
+        // console.log(`propsinTools`, this.props);
+        
         return (
             <div>
 
@@ -33,18 +35,18 @@ class Tools extends Component {
     
                 {
                 this.state.toolTab === 'background' && (
-                    <ToolsBackground />
+                    <ToolsBackground user={this.props.user}/>
                 )
                 }
     
                 {
                 this.state.toolTab === 'text' && (
-                    <ToolsText />
+                        <ToolsText user={this.props.user}/>
                 )
                 }
                 {
                 this.state.toolTab === 'social' && (
-                    <ToolsSocial />
+                        <ToolsSocial user={this.props.user}/>
                 )
                 }
             </div>

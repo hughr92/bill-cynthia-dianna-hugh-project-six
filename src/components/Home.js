@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, NavLink, Route } from 'react-router-dom';
 
 import firebase from '../firebase.js'
-
+ 
 const userSelections =  {
     background: {
         image: false,
@@ -41,7 +41,8 @@ class Home extends Component {
     constructor(){
         super();
         this.state = {
-            user: null
+            user: null,
+            userUID: null
         }
     }
 
@@ -51,20 +52,22 @@ class Home extends Component {
                 console.log(`componentdidmount`, user);
                 
                 this.setState({
-                    user:user
+                    user:user,
+                    userUID: user.uid
                 }, ()=> {
                     this.dbRef = firebase.database().ref(this.state.user.uid)
+                    console.log(`uid`, this.state.user.uid);
+                    
 
                     this.dbRef.on('value', (snapshot) => {
                         // if there is a value in firebase, then set state the
                         if (snapshot.val() === null) {
-                            this.dbRef.push(userSelections)
+                            this.dbRef.set(userSelections)
                             // this.setState({
                                 // setting our state based on what is in firebase based on our clicks
                                 // this.dbRef.push(userSelections)
                             // })
                         }
-                        console.log(snapshot.val());
 
                     })
                 })
@@ -75,10 +78,11 @@ class Home extends Component {
 
     login = ()=> {
         auth.signInWithPopup(provider).then((res)=>{       
-            console.log('login', res);
+            console.log('login', res.user);
                 
             this.setState({
-                user: res.user
+                user: res.user,
+                userUID: res.user.uid
             })
         })
     }
@@ -120,7 +124,7 @@ class Home extends Component {
                             <Link to="/home/templates">Templates</Link>
                         </div>
                         <div>
-                            <Link to="/home/builder">Builder</Link>
+                            <Link to={{pathname: `/home/builder`, query:this.state.userUID}}>Builder</Link>
                         </div>
                         
                     </div>

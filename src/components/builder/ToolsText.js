@@ -8,48 +8,64 @@ class ToolsText extends Component {
             <form>
               <div className="tools__container--text__h1">
                 <h3 className="tools__container--text__header" id="headerh1">
-                  h1
+                  Main header
                 </h3>
-                <label for="h1Text">Enter primary text</label>
-                <input type="text" placeholder="Enter primary header text" maxLength="5" id="h1Text" />
+                <div className="tools__container__wrapper">
+                  <input required type="text" className="tools__container__input" maxLength="25" id="h1Text" />
+                  <label for="h1Text" className="tools__container__label">Enter text</label>
+                </div>
 
-                <label for="h1FontSize">
-                  Select primary text font size
-                </label>
-                <input type="number" placeholder="Size" id="h1FontSize" />
+              <div className="tools__container__wrapper">
+                <input required type="number" className="tools__container__input"  id="h1FontSize" />
+                <label for="h1FontSize" className="tools__container__label">
+                    Font size
+                  </label>
+              </div>
 
-                <label for="h1FontFamily">
-                  Select primary text font family
-                </label>
-                <input type="number" placeholder="Font family" id="h1FontFamily" />
+              <div className="tools__container__wrapper">
+                <input required type="text" className="tools__container__input" id="h1FontFamily" />
+                <label for="h1FontFamily" className="tools__container__label">
+                    Font family
+                  </label>
+              </div>
 
-                <label for="h1TextAlign">
-                  Select primary text alignment{" "}
-                </label>
-                <input type="number" placeholder="Alignment" id="h1TextAlign" />
+              <div className="tools__container__wrapper">
+                <input required type="text" className="tools__container__input"id="h1TextAlign" />
+                <label for="h1TextAlign" className="tools__container__label">
+                    Text alignment{" "}
+                  </label>
+              </div>
               </div>
               
 
               <div className="tools__container--text__h2">
-                <h3 className="tools__container--text__header">h2</h3>
+                <h3 className="tools__container--text__header">Subheader</h3>
 
-                <label for="h2Text">Enter sub text</label>
-                <input type="text" placeholder="Enter sub text" maxLength="5" id="h2Text" />
+              <div className="tools__container__wrapper">
+                <input required type="text" className="tools__container__input" maxLength="25" id="h2Text" />
+                <label for="h2Text" className="tools__container__label">Enter text</label>
+              </div>
 
-                <label for="h2FontSize">
-                  Select sub text font size
-                </label>
-                <input type="number" placeholder="Size" id="h2FontSize" />
+              <div className="tools__container__wrapper">
+                <input required type="number" className="tools__container__input" id="h2FontSize" />
+                <label for="h2FontSize" className="tools__container__label">
+                    Font size
+                  </label>
+              </div>
 
-                <label for="h2FontFamily">
-                  Select sub text font family
-                </label>
-                <input type="number" placeholder="Font family" id="h2FontFamily" />
+              <div className="tools__container__wrapper">
+                <input required type="text" className="tools__container__input" id="h2FontFamily" />
+                <label for="h2FontFamily" className="tools__container__label">
+                    Font family
+                  </label>
+              </div>
 
-                <label for="h2TextAlign">
-                  Select sub text alignment
-                </label>
-                <input type="number" placeholder="Alignment" id="h2TextAlign" />
+              <div className="tools__container__wrapper">
+                <input required type="text" className="tools__container__input" id="h2TextAlign" />
+                <label for="h2TextAlign" className="tools__container__label">
+                    Text alignment
+                  </label>
+              </div>
               </div>
             </form>
           </div>;

@@ -241,6 +241,10 @@ a {
 .homePage--h2 {
   line-height: 3.4rem; }
 
+footer {
+  clear: both;
+  background: #30b8b2; }
+
 .view {
   width: 100%;
   border: 1px solid black;
@@ -334,3 +338,32 @@ a {
       color: #70cee7; }
     .view__css--end {
       color: white; }
+
+.tools__container__wrapper {
+  position: relative;
+  margin: 20px 0; }
+
+.tools__container__label {
+  color: #838383;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  transition: 0.5s; }
+
+.tools__container__input {
+  padding: 10px 10px;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #30b8b2;
+  background-color: none; }
+  .tools__container__input:focus + .tools__container__label {
+    top: -10px;
+    font-weight: 600;
+    color: #30b8b2;
+    font-size: 12px; }
+  .tools__container__input:valid + .tools__container__label {
+    top: -10px;
+    font-weight: 600;
+    color: #30b8b2;
+    font-size: 12px; }

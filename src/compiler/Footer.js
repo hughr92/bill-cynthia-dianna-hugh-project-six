@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Link, NavLink, Route } from 'react-router-dom'
 
 class Footer extends Component {
     render() {
+
         return <div>
             <footer className="footer">Footer</footer>
             <div className="wrapper">
@@ -103,6 +104,7 @@ class Footer extends Component {
               </div>
             </div>
           </div>;
+
     }
 }
 

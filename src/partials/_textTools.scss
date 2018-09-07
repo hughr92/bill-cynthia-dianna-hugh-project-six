@@ -1,0 +1,34 @@
+.tools__container {
+    &__wrapper {
+        position: relative;
+        margin: 20px 0;
+    }
+    &__label {
+        color: $darkGrey;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        transition: 0.5s;
+    }
+    &__input {
+        padding: 10px 10px;
+        box-shadow: none;
+        outline: none;
+        border: none;
+        border-bottom: 2px solid $accentColor;
+        background-color: none;
+        &:focus + .tools__container__label {
+            top: -10px;
+            font-weight: 600;
+            color: $accentColor;
+            font-size: 12px;
+        }
+        &:valid + .tools__container__label {
+            top: -10px;
+            font-weight: 600;
+            color: $accentColor;
+            font-size: 12px;
+        }
+    }
+}
+
