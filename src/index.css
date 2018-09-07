@@ -335,12 +335,35 @@ a {
     .view__css--end {
       color: white; }
 
-.tools__container__label {
-  position: absolute;
-  color: red; }
-
 .tools__container__wrapper {
-  position: relative; }
+  position: relative;
+  margin: 10px 0; }
+
+.tools__container__label {
+  color: red;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  transition: 0.5s; }
 
 .tools__container__input {
-  background: blue; }
+  padding: 10px 10px;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: none; }
+  .tools__container__input:focus + .tools__container__label {
+    top: -20px;
+    font-weight: 600;
+    color: green; }
+  .tools__container__input:valid + .tools__container__label {
+    top: -20px;
+    font-weight: 600;
+    color: green; }
+
+.tools__container__wrapper__input:focus ~ .tools__container__label,
+.tools__container__wrapper__input:valid ~ .tools__container__label {
+  top: -20px;
+  font-weight: 600;
+  color: green; }
