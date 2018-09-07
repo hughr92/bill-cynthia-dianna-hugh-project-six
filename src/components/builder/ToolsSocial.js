@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import firebase from '../../firebase';
 
 
-// const dbRef = firebase.database().ref(this.state.user.uid)
+// const  dbRef = firebase.database().ref(this.state.user.uid)
 
 
 class ToolsSocial extends Component {
@@ -34,7 +34,7 @@ class ToolsSocial extends Component {
     handleChange =(e)=> {
         console.log(`change`, e.target.value);
         console.log(`change`, e.target.id);
-        console.log(`propsintoolssocial`, this.props.user.user);
+        console.log(`propsintoolssocial`, this.props.user);
         
 
         this.setState ({
