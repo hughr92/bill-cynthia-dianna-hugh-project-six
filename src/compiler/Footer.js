@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Link, NavLink, Route } from 'react-router-dom'
 class Footer extends Component {
     render() {
         return (
-            <div>
-                <h1>Footer</h1>
-            </div>
+            <footer>
+                <h2>Footer</h2>
+            </footer>
         )
     }
 }

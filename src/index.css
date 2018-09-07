@@ -241,6 +241,10 @@ a {
 .homePage--h2 {
   line-height: 3.4rem; }
 
+footer {
+  clear: both;
+  background: #30b8b2; }
+
 .view {
   width: 100%;
   border: 1px solid black;

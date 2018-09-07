@@ -41,7 +41,8 @@ class Home extends Component {
     constructor(){
         super();
         this.state = {
-            user: null
+            user: null,
+            userUID: null
         }
     }
 
@@ -54,6 +55,8 @@ class Home extends Component {
                     user:user
                 }, ()=> {
                     this.dbRef = firebase.database().ref(this.state.user.uid)
+                    console.log(`uid`, this.state.user);
+                    
 
                     this.dbRef.on('value', (snapshot) => {
                         // if there is a value in firebase, then set state the
@@ -78,7 +81,8 @@ class Home extends Component {
             console.log('login', res);
                 
             this.setState({
-                user: res.user
+                user: res.user,
+                userUID: res.user.uid
             })
         })
     }
@@ -120,7 +124,7 @@ class Home extends Component {
                             <Link to="/home/templates">Templates</Link>
                         </div>
                         <div>
-                            <Link to="/home/builder">Builder</Link>
+                            <Link to={{pathname: "/home/builder", query:{user:this.state.userUID}}}>Builder</Link>
                         </div>
                         
                     </div>
