@@ -1,13 +1,13 @@
 .tools__container {
     &__wrapper {
         position: relative;
-        margin: 10px 0;
+        margin: 20px 0;
     }
     &__label {
-        color: red;
+        color: $darkGrey;
         position: absolute;
         top: 10px;
-        left: 5px;
+        left: 10px;
         transition: 0.5s;
     }
     &__input {
@@ -15,17 +15,19 @@
         box-shadow: none;
         outline: none;
         border: none;
-        border-bottom: 2px solid black;
+        border-bottom: 2px solid $accentColor;
         background-color: none;
         &:focus + .tools__container__label {
-            top: -20px;
+            top: -10px;
             font-weight: 600;
-            color: green;
+            color: $accentColor;
+            font-size: 12px;
         }
         &:valid + .tools__container__label {
-            top: -20px;
+            top: -10px;
             font-weight: 600;
-            color: green;
+            color: $accentColor;
+            font-size: 12px;
         }
     }
 }
