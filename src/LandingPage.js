@@ -45,9 +45,16 @@ class LandingPage extends Component {
     // }
     render() {
         return (
-            <div className="LandingPage">
-                <Link to="/home" >Home</Link>
-                <h1>This is the landing page</h1>
+            <div className="landingPage">
+                <div className="wrapper">
+                    <div className="float">
+                        <h1>the landing pad</h1>
+                        <h2>Landing Pages made easy</h2>
+                        <div className="landingPage--button">
+                            <Link to="/home" >Get Started</Link>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }

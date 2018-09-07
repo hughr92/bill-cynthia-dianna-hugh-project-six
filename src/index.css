@@ -131,6 +131,116 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+html {
+  font-size: 62.5%; }
+
+body {
+  font-size: 1.6rem; }
+
+img {
+  width: 100%; }
+
+ul, li {
+  margin: 0;
+  padding: 0; }
+
+h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+  font-weight: 700; }
+
+h1 {
+  font-size: 6rem;
+  text-transform: uppercase; }
+
+h2 {
+  font-size: 3.2rem; }
+
+.wrapper {
+  max-width: 1280px;
+  width: 90%;
+  margin: 0 auto; }
+
+a {
+  text-decoration: none; }
+
+.landingPage {
+  background-image: url("../src/assets/edu-lauton-71055-unsplash.jpg");
+  background-size: cover;
+  height: 100vh; }
+  .landingPage--button {
+    background: #30b8b2;
+    padding: 10px 20px;
+    margin-top: 20px;
+    display: inline-block;
+    border-radius: 15px;
+    font-family: "Poppins";
+    transition: all 200ms; }
+    .landingPage--button:hover {
+      background: white;
+      color: #30b8b2; }
+    .landingPage--button a {
+      color: white; }
+      .landingPage--button a:hover {
+        color: #30b8b2; }
+
+.landingPage h1 {
+  color: #30b8b2;
+  text-shadow: 4px 4px #e0e2e2; }
+
+.landingPage h2 {
+  color: #e0e2e2;
+  text-shadow: 2px 2px 2px #30b8b2; }
+
+.landingPage .wrapper {
+  height: 100vh;
+  vertical-align: middle; }
+
+.float {
+  width: 50%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); }
+
+.navBar {
+  background: #30b8b2;
+  height: 50px; }
+
+.navBar h3 {
+  float: left;
+  position: relative;
+  top: 50%;
+  transform: translateY(50%); }
+
+.navBar nav ul {
+  list-style: none;
+  float: right;
+  position: relative;
+  top: 50%;
+  transform: translateY(50%); }
+
+.navBar nav ul li {
+  display: inline-block;
+  font-family: "Poppins";
+  padding: 0 15px; }
+
+.navBar nav ul li a {
+  color: white;
+  transition: all 200ms; }
+  .navBar nav ul li a:hover {
+    color: gold; }
+
+.homeContent {
+  width: 50%;
+  float: left; }
+
+.homePage--h1 {
+  line-height: 6rem; }
+
+.homePage--h2 {
+  line-height: 3.4rem; }
+
 .view {
   width: 100%;
   border: 1px solid black;
