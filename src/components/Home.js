@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, NavLink, Route } from 'react-router-dom';
 
 import firebase from '../firebase.js'
-
+ 
 const userSelections =  {
     background: {
         image: false,
@@ -52,10 +52,11 @@ class Home extends Component {
                 console.log(`componentdidmount`, user);
                 
                 this.setState({
-                    user:user
+                    user:user,
+                    userUID: user.uid
                 }, ()=> {
                     this.dbRef = firebase.database().ref(this.state.user.uid)
-                    console.log(`uid`, this.state.user);
+                    console.log(`uid`, this.state.user.uid);
                     
 
                     this.dbRef.on('value', (snapshot) => {
@@ -124,7 +125,8 @@ class Home extends Component {
                             <Link to="/home/templates">Templates</Link>
                         </div>
                         <div>
-                            <Link to={{pathname: "/home/builder", query:{user:this.state.userUID}}}>Builder</Link>
+                            <Link to={{pathname: `/home/builder`, query:{user:this.state.userUID}}}>Builder</Link>
+                            {/* <Link to={{pathname: `/home/builder${this.state.userUID}`, query:{user:this.state.userUID}}}>Builder</Link> */}
                         </div>
                         
                     </div>
