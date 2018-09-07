@@ -4,27 +4,13 @@ import Window from './window/Window'
 import Tools from './builder/Tools'
 
 class Builder extends Component {
-    
-    
-    componentDidUpdate(){
-        if(this.props.location.query != null){
-            console.log('true');
-            this.fetchData(this.props.location.query);
-            
-        } else {
-            console.log('false');
-            
-        }
-    };
-    
     render() {
         console.log(`user`, this.props.location.query);
-
         
         return (
             <div>
                 <h1>This is the builder</h1>
-                <Window />
+                <Window user={this.props.location.query}/>
                 <Tools user={this.props.location.query}/>
             </div>
         )
