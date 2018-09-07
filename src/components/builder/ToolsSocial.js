@@ -3,6 +3,7 @@ import firebase from '../../firebase';
 
 
 // const  dbRef = firebase.database().ref(this.state.user.uid)
+// const dbRef = firebase.database().ref(this.props.user.user.uid);
 
 
 class ToolsSocial extends Component {
@@ -34,12 +35,13 @@ class ToolsSocial extends Component {
     handleChange =(e)=> {
         console.log(`change`, e.target.value);
         console.log(`change`, e.target.id);
-        console.log(`propsintoolssocial`, this.props.user);
+        // console.log(`propsintoolssocial`, this.props.user);
         
 
         this.setState ({
             [e.target.id] : e.target.value
         })
+
     }
 
     render() {
