@@ -1,0 +1,12 @@
+.tools__container {
+    &__label {
+        position: absolute; 
+        color: red;
+    }
+    &__wrapper {
+        position: relative;
+    }
+    &__input {
+        background: blue;
+    }
+}
