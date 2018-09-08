@@ -1,11 +1,12 @@
 .view {
+    color: white;
     width: 100%;
     // height: 200px;
     border: 1px solid black;
     text-align: left;
     padding: 40px;
     height: 400px;
-    overflow: scroll;
+    overflow-y: scroll;
     &__title {
         width: 100%;
         text-align: center;
@@ -14,75 +15,30 @@
         }
     }
     &__html {
-        background-color: #262721;
-        & p {
+        &__start {
             color: white;
-            &::before {
-                content: "<";
-                margin-right: 5px;
-            }
-            &::after {
-                content: ">";
-                margin-left: 5px;
-            }
+            margin-right: 5px;
         }
+        &__end {
+            color: white;
+            margin-left: 5px;
+            letter-spacing: 2px;
+            
+        }
+        background-color: #262721;
         &__head--property{
             color: #a9d038;
+            margin: 0 2.5px;
         }
         &__head--attribute{
             color: #e5dd74;
-            &::before {
-                content: "''";
-                margin: 0 2px;
-            }
-            &::after {
-                content: "''";
-                margin: 0 2px;
-            }
+            margin: 0 2.5px;
         }
         &__head--element {
             color: #ee2874;
-            &--start {
-                &::before {
-                color: white;
-                content: "<";
-                margin-right: 5px;
-                }
-                &::after {
-                    color: white;
-                    content: ">";
-                    margin-left: 5px;
-                }
-            }
-            &--end {
-                &::before {
-                color: white;
-                content: " /";
-                margin-right: 5px;
-                margin-left: -5px;
-                }
-                // &::after {
-                //     color: white;
-                //     content: "";
-                //     margin-left: 5px;
-                // }
-            }
             &--inline {
                 color: #ee2874;
-                &--start{
-                    &::after {
-                        content: ">";
-                        margin-left: 5px;
-                        color: white;
-                    }
-                }
-                &--end{
-                    &::before {
-                        content: "< /";
-                        margin-right: 5px;
-                        color: white;
-                    }
-                }
+                
             }
         }
     }
