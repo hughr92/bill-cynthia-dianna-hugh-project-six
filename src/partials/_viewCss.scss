@@ -22,16 +22,14 @@
         background-color: #262721;
         &--element{
             color: #ee2874;
-            &::after {
-                content: "{";
+            &--start {
                 margin-left: 25px;
                 color: white;
             }
         }
         &--class{
             color: #a9d038;
-            &::after {
-                content: "{";
+            &--start {
                 margin-left: 25px;
                 color: white;
             }
