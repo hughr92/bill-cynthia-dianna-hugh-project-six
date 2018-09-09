@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FontPicker from 'font-picker-react';
 
 class LiveView extends Component {
     render(){

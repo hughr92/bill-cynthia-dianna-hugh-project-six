@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ImageUploader from 'react-images-upload';
 import ColorPicker from './ColorPicker';
+import firebase from '../../firebase';
 
 class ToolsBackground extends Component {
     constructor(props) {
@@ -13,6 +14,9 @@ class ToolsBackground extends Component {
     }
 
     onDrop(picture) {
+        const userID = this.props.user
+        console.log(`userID bkgd`, userID);
+        
         this.setState({
             pictures: this.state.pictures.concat(picture),
         });
@@ -21,9 +25,9 @@ class ToolsBackground extends Component {
 
     render() {
         return (
-            <div>
+            <div className="tools tools_background">
                 <h1>Background Update</h1>
-                <div>
+                <div className="background background1">
                     <ImageUploader
                         withIcon={true}
                         buttonText='Choose images'
@@ -34,7 +38,7 @@ class ToolsBackground extends Component {
                         singleImage={true}
                     />
                 </div>
-                <div>
+                <div className="background background2">
                     <ColorPicker />
                 </div>
             </div>
