@@ -5,7 +5,8 @@ import firebase from '../firebase.js'
  
 const userSelections =  {
     background: {
-        image: [],
+
+        picture: "",
         backgroundColor: ""
                 },
     text: {
