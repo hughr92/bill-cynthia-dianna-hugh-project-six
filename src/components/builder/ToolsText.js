@@ -1,28 +1,53 @@
 import React, { Component } from 'react';
+import firebase from '../../firebase'
 
 
 class ToolsText extends Component {
   constructor (){
     super();
     this.state = {
-      h1FontSize: 60,
-      h1IsInvalid: false,
+      
+        h2: {
+            size: null,
+            fontFamily: "",
+            color: "",
+            alignment: "",
+            isInvalid: false
+
+        },
+        h1: {
+            size: 60,
+            fontFamily: "",
+            color: "",
+            alignment: "",
+            h1FontSizeIsInvalid: false
+        
+      }
     }
   }
+
   
   handleChange = (e) => {
-    // console.log('handle change fired')
     // if font-size < 15 || font-size > 60, setState to display error
     // else change bottom border to accent color
+    const userID = this.props.user;
+    console.log(userID);
+    
     this.setState({
       [e.target.id] : e.target.value
+    }, () => {
+      const dbRef = firebase.database().ref(`${userID}/text`);
+      dbRef.on('value', snapshot => {
+        // dbRef.update(this.state)
+      })
     })
     if (e.target.value < 15 || e.target.value > 60) {
-      console.log('error')
       this.setState({
         h1FontSizeIsInvalid: true
       })
     }
+    // add the else
+
   }
     render() {
         return (
@@ -40,7 +65,7 @@ class ToolsText extends Component {
                 </div>
 
                 <div className="tools__container__wrapper">
-                  <input onChange={this.handleChange} required type="number" value={this.state.h1FontSize} className="tools__container__input"  id="h1FontSize" />
+                  <input onChange={this.handleChange} required type="number" value={this.state.h1.size} className="tools__container__input"  id="text.h1.size" />
                   <label for="h1FontSize" className="tools__container__label">
                       Font size
                     </label>
@@ -48,7 +73,6 @@ class ToolsText extends Component {
                 </div>
 
                 <div className="tools__container__wrapper">
-                  {/* <input required type="text" className="tools__container__input" id="h1FontFamily" /> */}
                   <label for="h1FontFamily" >
                       Font family
                   </label>
@@ -59,7 +83,6 @@ class ToolsText extends Component {
                 </div>
 
                 <div className="tools__container__wrapper">
-                  {/* <input required type="text" className="tools__container__input"id="h1TextAlign" value="left" /> */}
                   <label for="h1TextAlign" >
                       Text alignment
                   </label>
@@ -85,7 +108,7 @@ class ToolsText extends Component {
                 <input required type="number" min="15" max="60" className="tools__container__input" id="h2FontSize" />
                 <label for="h2FontSize" className="tools__container__label">
                     Font size
-                  </label>
+                </label>
               </div>
 
               <div className="tools__container__wrapper">

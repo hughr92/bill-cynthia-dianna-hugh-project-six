@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ImageUploader from 'react-images-upload';
+import FileUploader from 'react-firebase-file-uploader';
 import ColorPicker from './ColorPicker';
 import firebase from '../../firebase';
 
@@ -7,11 +7,13 @@ class ToolsBackground extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            pictures: [],
+            picture: "",
             backgroundColor: '#fff',
-            user: ""
+            user: "",
+            isUploading: false,
+            progress: 0,
+            avatarURL: ''
         };
-        this.onDrop = this.onDrop.bind(this);
     }
     componentDidMount = () => {
         const userID = this.props.user
@@ -37,33 +39,43 @@ class ToolsBackground extends Component {
             backgroundColor: color.hex
         });
     };
-    onDrop(picture) {
-        // const userID = this.props.user
-        // console.log(`userID bkgd`, userID);
-        console.log(`picutre`, picture);
-        
-        this.setState({
-            pictures: this.state.pictures.concat(picture)
-            
-        });
-        console.log(`picture`, this.state.pictures[0]);
+    // handleChangeUsername = (event) => this.setState({ username: event.target.value });
+    handleUploadStart = () => this.setState({ isUploading: true, progress: 0 });
+    handleProgress = (progress) => this.setState({ progress });
+    handleUploadError = (error) => {
+        this.setState({ isUploading: false });
+        console.error(error);
     }
+    handleUploadSuccess = (filename) => {
+        console.log(`success`);
+        
+        this.setState({ progress: 100, isUploading: false });
+        firebase.storage().ref('images').child(filename).getDownloadURL().then(url => this.setState({ 
+            avatarURL: url
+            }, ()=> {
+                const dbRef = firebase.database().ref(this.state.user);
 
+                dbRef.on('value', snapshot => {
+                    dbRef.child('background').child('picture').set('this.state.picture')
+                })
+            })
+        );
+    };
     render() {
         return (
             <div className="tools tools_background">
                 <h1>Background Update</h1>
-                <div className="background background1">
-                    <ImageUploader
-                        withIcon={true}
-                        buttonText='Choose images'
-                        onChange={this.onDrop}
-                        imgExtension={[`.jpg`, `.gif`, `.png`, `.gif`]}
-                        maxFileSize={5242880}
-                        withPreview={true}
-                        singleImage={true}
+                <form className="background background1">
+                    <FileUploader
+                        accept="image/*"
+                        name="avatar"
+                        storageRef={firebase.storage().ref('images')}
+                        onUploadStart={this.handleUploadStart}
+                        onUploadError={this.handleUploadError}
+                        onUploadSuccess={this.handleUploadSuccess}
+                        onProgress={this.handleProgress}
                     />
-                </div>
+                </form>
                 <div className="background background2">
                     <ColorPicker color={this.state.backgroundColor} onChangeComplete={this.handleChangeComplete} getColor = {this.getColor}/>
                 </div>
