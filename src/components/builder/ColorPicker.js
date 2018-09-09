@@ -1,10 +1,19 @@
 import React from 'react'
-import { ChromePicker } from 'react-color'
+import { GithubPicker } from 'react-color'
 
 class ColorPicker extends React.Component {
-
+    state = {
+        backgroundColor: "fff"
+    }
+    handleChangeComplete = (color) => {
+        console.log(`colorpicker`, color);
+        this.props.getColor(color);
+        this.setState ({
+            backgroundColor: color.hex
+        });
+    }
     render() {
-        return <ChromePicker />
+        return <GithubPicker onChangeComplete={ this.handleChangeComplete } />
     }
 }
 
