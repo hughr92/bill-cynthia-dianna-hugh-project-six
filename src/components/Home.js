@@ -10,7 +10,7 @@ const userSelections =  {
                 },
     text: {
         h2: {
-            textContent: ""
+            textContent: "",
             size: null,
             fontFamily: "",
             color: "",
@@ -19,8 +19,8 @@ const userSelections =  {
 
         },
         h1: {
-            textContent: ""
-            size: null,
+            textContent: "",
+            size: "60",
             fontFamily: "",
             color: "",
             alignment: "",
