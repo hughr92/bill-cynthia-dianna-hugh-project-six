@@ -5,24 +5,26 @@ import firebase from '../firebase.js'
  
 const userSelections =  {
     background: {
-        pictures: [],
+        image: [],
         backgroundColor: ""
                 },
     text: {
         h2: {
+            textContent: ""
             size: null,
             fontFamily: "",
             color: "",
             alignment: "",
-            textContent: ""
+            
 
         },
         h1: {
+            textContent: ""
             size: null,
             fontFamily: "",
             color: "",
             alignment: "",
-            textContent: ""
+            
 
         },
     },
