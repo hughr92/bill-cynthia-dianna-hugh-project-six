@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, NavLink, Route } from 'react-router-dom';
+import Template from './Templates_array'
 
 import firebase from '../firebase.js'
  
@@ -138,6 +139,7 @@ class Home extends Component {
                     </div>
 
                 </div>
+                < Template />
             </div>
         )
     }
