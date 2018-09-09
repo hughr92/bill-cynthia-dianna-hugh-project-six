@@ -279,7 +279,16 @@ footer {
         color: #ee2874; }
 
 .indent-1 {
-  margin-left: 40px; }
+  margin-left: 25px; }
+
+.indent-2 {
+  margin-left: 50px; }
+
+.indent-3 {
+  margin-left: 75px; }
+
+.indent-4 {
+  margin-left: 100px; }
 
 .view {
   width: 100%;

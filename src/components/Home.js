@@ -10,17 +10,21 @@ const userSelections =  {
                 },
     text: {
         h2: {
+            textContent: ""
             size: null,
             fontFamily: "",
             color: "",
             alignment: "",
+            
 
         },
         h1: {
+            textContent: ""
             size: null,
             fontFamily: "",
             color: "",
             alignment: "",
+            
 
         },
     },
