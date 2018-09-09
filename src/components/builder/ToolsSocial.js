@@ -22,11 +22,6 @@ class ToolsSocial extends Component {
         }) 
     }
 
-    // handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     console.log(`submit`, e.target.id);
-    // }
-
     handleChange =(e)=> {
         console.log(`change`, e.target.value);
         console.log(`change`, e.target.id);
@@ -37,9 +32,11 @@ class ToolsSocial extends Component {
         }, ()=> {
             console.log('social state',this.state);
             const dbRef = firebase.database().ref(this.state.user)
+            console.log(`toolsocial`, dbRef);
+            
             dbRef.on('value', snapshot => {
                 // dbRef.update(this.state.social);
-                dbRef.update(this.state);                
+                dbRef.child("social").update(this.state);                
             })
         })
     }

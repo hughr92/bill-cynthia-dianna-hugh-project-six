@@ -17,18 +17,22 @@ class ToolsBackground extends Component {
         const userID = this.props.user
         this.setState({
             user: userID
-        }, () => {
-            const dbRef = firebase.database().ref(this.state.user)
-            console.log(`toolsbkgd did mount`, dbRef );
-            
         })
     }
     getColor = (color) => {
         this.setState ({
             backgroundColor: color.hex
+        }, () => {
+            const dbRef = firebase.database().ref(this.state.user)
+            console.log(`get color`, dbRef);
+            dbRef.on('value', snapshot => {
+                dbRef.child("background").update(this.state)
+            })        
         })
     }
     handleChangeComplete = (color) => {
+        console.log(`handlechange`);
+        
         this.setState({
             backgroundColor: color.hex
         });
@@ -36,18 +40,13 @@ class ToolsBackground extends Component {
     onDrop(picture) {
         // const userID = this.props.user
         // console.log(`userID bkgd`, userID);
+        console.log(`picutre`, picture);
         
         this.setState({
-            pictures: this.state.pictures.concat(picture),
-        }, () => {
-            const dbRef = firebase.database().ref(this.state.user)
-            dbRef.on('value', snapshot => {
-                // dbRef.update(this.state.social);
-                dbRef.update(this.state.backgroundColor);
-
-            })
+            pictures: this.state.pictures.concat(picture)
+            
         });
-        // Need to push this information to firebase if we are going to store user profiles
+        console.log(`picture`, this.state.pictures[0]);
     }
 
     render() {
