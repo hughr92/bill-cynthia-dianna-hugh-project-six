@@ -1,12 +1,13 @@
 import firebase from 'firebase';
 
+// Initialize Firebase
 var config = {
-    apiKey: "AIzaSyBzlmXFNYIEM_w1WTjg5Af0bt24XAiyr5Q",
-    authDomain: "project-six-c0a75.firebaseapp.com",
-    databaseURL: "https://project-six-c0a75.firebaseio.com",
-    projectId: "project-six-c0a75",
-    storageBucket: "project-six-c0a75.appspot.com",
-    messagingSenderId: "457486684292"
+    apiKey: "AIzaSyBvdKpVqFO-pzow-iq70yi3GQdLJQsaz78",
+    authDomain: "project-six-37c93.firebaseapp.com",
+    databaseURL: "https://project-six-37c93.firebaseio.com",
+    projectId: "project-six-37c93",
+    storageBucket: "project-six-37c93.appspot.com",
+    messagingSenderId: "1038059484959"
 };
 firebase.initializeApp(config);
 

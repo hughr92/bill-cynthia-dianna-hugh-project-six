@@ -8,17 +8,44 @@ class ToolsBackground extends Component {
         super(props);
         this.state = { 
             pictures: [],
-            color: "" 
+            backgroundColor: '#fff',
+            user: ""
         };
         this.onDrop = this.onDrop.bind(this);
     }
-
-    onDrop(picture) {
+    componentDidMount = () => {
         const userID = this.props.user
-        console.log(`userID bkgd`, userID);
+        this.setState({
+            user: userID
+        }, () => {
+            const dbRef = firebase.database().ref(this.state.user)
+            console.log(`toolsbkgd did mount`, dbRef );
+            
+        })
+    }
+    getColor = (color) => {
+        this.setState ({
+            backgroundColor: color.hex
+        })
+    }
+    handleChangeComplete = (color) => {
+        this.setState({
+            backgroundColor: color.hex
+        });
+    };
+    onDrop(picture) {
+        // const userID = this.props.user
+        // console.log(`userID bkgd`, userID);
         
         this.setState({
             pictures: this.state.pictures.concat(picture),
+        }, () => {
+            const dbRef = firebase.database().ref(this.state.user)
+            dbRef.on('value', snapshot => {
+                // dbRef.update(this.state.social);
+                dbRef.update(this.state.backgroundColor);
+
+            })
         });
         // Need to push this information to firebase if we are going to store user profiles
     }
@@ -39,7 +66,7 @@ class ToolsBackground extends Component {
                     />
                 </div>
                 <div className="background background2">
-                    <ColorPicker />
+                    <ColorPicker color={this.state.backgroundColor} onChangeComplete={this.handleChangeComplete} getColor = {this.getColor}/>
                 </div>
             </div>
         );

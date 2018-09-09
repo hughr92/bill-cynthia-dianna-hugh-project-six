@@ -39,12 +39,9 @@ class ToolsSocial extends Component {
             const dbRef = firebase.database().ref(this.state.user)
             dbRef.on('value', snapshot => {
                 // dbRef.update(this.state.social);
-                dbRef.update(this.state);
-                console.log(``);
-                
+                dbRef.update(this.state);                
             })
         })
-
     }
 
     render() {
