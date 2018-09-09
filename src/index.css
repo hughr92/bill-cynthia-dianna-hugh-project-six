@@ -335,6 +335,10 @@ a {
     .view__css--end {
       color: white; }
 
+.tools__container--text__h1, .tools__container--text__h2 {
+  float: left;
+  width: 50%; }
+
 .tools__container__wrapper {
   position: relative;
   margin: 20px 0; }
@@ -346,12 +350,15 @@ a {
   left: 10px;
   transition: 0.5s; }
 
+.tools__container__label--error {
+  display: none; }
+
 .tools__container__input {
   padding: 10px 10px;
   box-shadow: none;
   outline: none;
   border: none;
-  border-bottom: 2px solid #30b8b2;
+  border-bottom: 2px solid #838383;
   background-color: none; }
   .tools__container__input:focus + .tools__container__label {
     top: -10px;
@@ -363,3 +370,5 @@ a {
     font-weight: 600;
     color: #30b8b2;
     font-size: 12px; }
+  .tools__container__input:valid {
+    border-bottom: 2px solid #30b8b2; }
