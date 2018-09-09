@@ -71,9 +71,9 @@ class LiveView extends Component {
                 <div>
                     <div className="social">
                         <ul>
-                            <li><a href={`https://ca.linkedin.com/in/${this.state.userSelections.social.twitter}`}><i class="fab fa-linkedin-in"></i></a></li>
-                            <li><a href={`https://github.com/${this.state.userSelections.social.twitter}`}><i class="fab fa-github"></i></a></li>
-                            <li><a href={`mailto:${this.state.userSelections.social.twitter}`}><i class="far fa-envelope"></i></a></li>
+                            <li><a href={`https://ca.linkedin.com/in/${this.state.userSelections.social.linkedin}`}><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href={`https://github.com/${this.state.userSelections.social.github}`}><i class="fab fa-github"></i></a></li>
+                            <li><a href={`mailto:${this.state.userSelections.social.email}`}><i class="far fa-envelope"></i></a></li>
                             <li><a href={`https://twitter.com/${this.state.userSelections.social.twitter}`}><i class="fab fa-twitter"></i></a></li>
                         </ul>
                     </div>
