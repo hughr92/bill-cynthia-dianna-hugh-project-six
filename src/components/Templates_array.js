@@ -15,6 +15,7 @@ const templates = {
                 alignment: ""
             },
             h1: {
+                content:"",
                 size: null,
                 fontFamily: "",
                 color: "",
@@ -22,6 +23,7 @@ const templates = {
             }
         }
     },
+    
     //two
     coolTwo: {
         background: {
@@ -29,25 +31,25 @@ const templates = {
         color: ""
         },
         text: {
-        h2: {
-            size: null,
-            fontFamily: "",
-            color: "",
-            alignment: ""
-        },
-        h1: {
-            size: null,
-            fontFamily: "",
-            color: "",
-            alignment: ""
-        },
-        //three
-        coolThree: {
-            background: {
-            image: false,
-            color: ""
+            h2: {
+                size: null,
+                fontFamily: "",
+                color: "",
+                alignment: ""
             },
-            text: {
+            h1: {
+                size: null,
+                fontFamily: "",
+                color: "",
+                alignment: ""
+            },
+    //three
+    coolThree: {
+        background: {
+        image: false,
+        color: ""
+        },
+        text: {
             h2: {
                 size: null,
                 fontFamily: "",
@@ -60,7 +62,7 @@ const templates = {
                 color: "",
                 alignment: ""
             }
-        }
+    }
     }
     }
     }

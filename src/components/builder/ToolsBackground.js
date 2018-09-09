@@ -1,29 +1,59 @@
 import React, { Component } from 'react';
 import ImageUploader from 'react-images-upload';
 import ColorPicker from './ColorPicker';
+import firebase from '../../firebase';
 
 class ToolsBackground extends Component {
     constructor(props) {
         super(props);
         this.state = { 
             pictures: [],
-            color: "" 
+            backgroundColor: '#fff',
+            user: ""
         };
         this.onDrop = this.onDrop.bind(this);
     }
-
-    onDrop(picture) {
+    componentDidMount = () => {
+        const userID = this.props.user
         this.setState({
-            pictures: this.state.pictures.concat(picture),
+            user: userID
+        })
+    }
+    getColor = (color) => {
+        this.setState ({
+            backgroundColor: color.hex
+        }, () => {
+            const dbRef = firebase.database().ref(this.state.user)
+            console.log(`get color`, dbRef);
+            dbRef.on('value', snapshot => {
+                dbRef.child("background").update(this.state)
+            })        
+        })
+    }
+    handleChangeComplete = (color) => {
+        console.log(`handlechange`);
+        
+        this.setState({
+            backgroundColor: color.hex
         });
-        // Need to push this information to firebase if we are going to store user profiles
+    };
+    onDrop(picture) {
+        // const userID = this.props.user
+        // console.log(`userID bkgd`, userID);
+        console.log(`picutre`, picture);
+        
+        this.setState({
+            pictures: this.state.pictures.concat(picture)
+            
+        });
+        console.log(`picture`, this.state.pictures[0]);
     }
 
     render() {
         return (
-            <div>
+            <div className="tools tools_background">
                 <h1>Background Update</h1>
-                <div>
+                <div className="background background1">
                     <ImageUploader
                         withIcon={true}
                         buttonText='Choose images'
@@ -34,8 +64,8 @@ class ToolsBackground extends Component {
                         singleImage={true}
                     />
                 </div>
-                <div>
-                    <ColorPicker />
+                <div className="background background2">
+                    <ColorPicker color={this.state.backgroundColor} onChangeComplete={this.handleChangeComplete} getColor = {this.getColor}/>
                 </div>
             </div>
         );

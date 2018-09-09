@@ -42,13 +42,13 @@ class Window extends Component {
                     </ul>
                     
                     {this.state.view === 'live' && (
-                        <LiveView/>
+                        <LiveView user={this.props.user}/>
                     )}
                     {this.state.view === 'html' && (
-                        <HTMLView/>
+                        <HTMLView user={this.props.user}/>
                     )}
                     {this.state.view === 'css' && (
-                        <CSSView/>
+                        <CSSView user={this.props.user}/>
                     )}
                     {/* <Route exact path="/home/bui" component={LiveView} />
                     <Route exact path="/home/" component={HTMLview} />
