@@ -14,6 +14,7 @@ const userSelections =  {
             fontFamily: "",
             color: "",
             alignment: "",
+            textContent: ""
 
         },
         h1: {
@@ -21,6 +22,7 @@ const userSelections =  {
             fontFamily: "",
             color: "",
             alignment: "",
+            textContent: ""
 
         },
     },
