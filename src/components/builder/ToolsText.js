@@ -2,19 +2,17 @@ import React, { Component } from 'react';
 import firebase from '../../firebase'
 
 
-
-
 class ToolsText extends Component {
   constructor (){
     super();
     this.state = {
-      text: {
+      
         h2: {
             size: null,
             fontFamily: "",
             color: "",
             alignment: "",
-            h2IsInvalid: false
+            isInvalid: false
 
         },
         h1: {
@@ -23,9 +21,9 @@ class ToolsText extends Component {
             color: "",
             alignment: "",
             h1FontSizeIsInvalid: false
-        }
+        
+      }
     }
-   }
   }
 
   
@@ -33,20 +31,23 @@ class ToolsText extends Component {
     // if font-size < 15 || font-size > 60, setState to display error
     // else change bottom border to accent color
     const userID = this.props.user;
-    console.log(e.target);
+    console.log(userID);
     
     this.setState({
       [e.target.id] : e.target.value
     }, () => {
-      const dbRef = firebase.database().ref(userID);
-      console.log(dbRef)
+      const dbRef = firebase.database().ref(`${userID}/text`);
+      dbRef.on('value', snapshot => {
+        // dbRef.update(this.state)
+      })
     })
     if (e.target.value < 15 || e.target.value > 60) {
       this.setState({
         h1FontSizeIsInvalid: true
       })
     }
-    
+    // add the else
+
   }
     render() {
         return (
@@ -64,7 +65,7 @@ class ToolsText extends Component {
                 </div>
 
                 <div className="tools__container__wrapper">
-                  <input onChange={this.handleChange} required type="number" value={this.state.text.h1.size} className="tools__container__input"  id="text.h1.size" />
+                  <input onChange={this.handleChange} required type="number" value={this.state.h1.size} className="tools__container__input"  id="text.h1.size" />
                   <label for="h1FontSize" className="tools__container__label">
                       Font size
                     </label>

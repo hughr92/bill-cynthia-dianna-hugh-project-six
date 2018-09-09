@@ -17,7 +17,7 @@ const userSelections =  {
 
         },
         h1: {
-            size: null,
+            size: "60",
             fontFamily: "",
             color: "",
             alignment: "",
