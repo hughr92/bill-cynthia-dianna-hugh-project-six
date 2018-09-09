@@ -14,14 +14,14 @@ const templates = {
 
       text: {
         h2: {
-          content: "",
+          textContent: "h1 Spectral, h2 Karla",
           size: null,
           fontFamily: "Karla",
           color: "#332287",
           alignment: "center"
         },
         h1: {
-          content: "",
+          textContent: "",
           size: null,
           fontFamily: "Spectral",
           color: "#4E34D0",
@@ -39,12 +39,14 @@ const templates = {
 
       text: {
         h2: {
+          textContent: "h1 Frank Ruhl Libre, h2 Frank Ruhl Libre",
           size: null,
           fontFamily: "Frank Ruhl Libre",
           color: "#000",
           alignment: "center"
         },
         h1: {
+          textContent: "",
           size: null,
           fontFamily: "Frank Ruhl Libre",
           color: "#564BE6",
@@ -62,6 +64,7 @@ const templates = {
 
       text: {
         h2: {
+          textContent: "h1 Lora, h2 Karla",
           size: null,
           fontFamily: "Karla",
           color: "#000",
@@ -85,12 +88,14 @@ const templates = {
 
       text: {
         h2: {
+          textContent: "h1 Muli, h2 Muli",
           size: null,
           fontFamily: "Muli",
           color: "#000",
           alignment: "center"
         },
         h1: {
+          textContent: "",
           size: null,
           fontFamily: "Muli",
           color: "#F93E4D",
@@ -108,12 +113,14 @@ const templates = {
 
       text: {
         h2: {
+          textContent: "h1 Poppins, h2 PT Serif",
           size: null,
           fontFamily: "PT Serif",
           color: "#000",
           alignment: "center"
         },
         h1: {
+          textContent: "",
           size: null,
           fontFamily: "Poppins",
           color: "#3322D2",
@@ -131,12 +138,14 @@ const templates = {
 
       text: {
         h2: {
+          textContent: "h1 Space Mono, h2 Space Mono",
           size: null,
           fontFamily: "Space Mono",
           color: "#000",
           alignment: "center"
         },
         h1: {
+          textContent: "",
           size: null,
           fontFamily: "Space Mono",
           color: "#85B6DB",
@@ -157,14 +166,14 @@ const templates = {
 
       text: {
         h2: {
-          content: "",
+          textContent: "h1 Rubik, h2 Rubik",
           size: null,
           fontFamily: "Rubik",
           color: "#000",
           alignment: "center"
         },
         h1: {
-          content: "",
+          textContent: "",
           size: null,
           fontFamily: "Rubik",
           color: "#641926",
@@ -182,12 +191,14 @@ const templates = {
 
       text: {
         h2: {
+          textContent: "h1 Raleway, h2 Raleway",
           size: null,
           fontFamily: "Raleway",
           color: "#000",
           alignment: "center"
         },
         h1: {
+          textContent: "",
           size: null,
           fontFamily: "Raleway",
           color: "F58B23",
@@ -205,12 +216,14 @@ const templates = {
 
       text: {
         h2: {
+          textContent: "h1 Roboto, h2 Roboto",
           size: null,
           fontFamily: "Roboto",
           color: "#000",
           alignment: "center"
         },
         h1: {
+          textContent: "",
           size: null,
           fontFamily: "Roboto",
           color: "#FFC400",
@@ -228,12 +241,14 @@ const templates = {
 
       text: {
         h2: {
+          textContent: "h1 Playfair, h2 Karla",
           size: null,
           fontFamily: "Karla",
           color: "#000",
           alignment: "center"
         },
         h1: {
+          textContent: "",
           size: null,
           fontFamily: "Playfair",
           color: "#E1005A",
@@ -251,12 +266,14 @@ const templates = {
 
       text: {
         h2: {
+          textContent: "h1 Lora, h2 Roboto",
           size: null,
           fontFamily: "Roboto",
           color: "#000",
           alignment: "center"
         },
         h1: {
+          textContent: "",
           size: null,
           fontFamily: "Lora",
           color: "#6D778B",
@@ -274,12 +291,14 @@ const templates = {
 
       text: {
         h2: {
+          textContent: "h1 Spectral, h2 Spectral",
           size: null,
           fontFamily: "Spectral",
           color: "#000",
           alignment: "center"
         },
         h1: {
+          textContent: "",
           size: null,
           fontFamily: "Spectral",
           color: "#292F5E",
@@ -300,14 +319,14 @@ const templates = {
 
       text: {
         h2: {
-          content: "",
+          textContent: "h1 Archivo Black, h2 Roboto",
           size: null,
           fontFamily: "Roboto",
           color: "#000",
           alignment: "center"
         },
         h1: {
-          content: "",
+          textContent: "",
           size: null,
           fontFamily: "Archivo Black",
           color: "#FF30B2",
@@ -325,12 +344,14 @@ const templates = {
 
       text: {
         h2: {
+          textContent: "h1 Halant, h2 Nunito Sans",
           size: null,
           fontFamily: "Nunito Sans",
           color: "#000",
           alignment: "center"
         },
         h1: {
+          textContent: "",
           size: null,
           fontFamily: "Halant",
           color: "#3DA1FF",
@@ -348,12 +369,14 @@ const templates = {
 
       text: {
         h2: {
+          textContent: "h1 Alegreya, h2 Alegreya",
           size: null,
           fontFamily: "Alegreya",
           color: "#000",
           alignment: "center"
         },
         h1: {
+          textContent: "",
           size: null,
           fontFamily: "Alegreya",
           color: "#DFCF9F",
@@ -371,12 +394,14 @@ const templates = {
 
       text: {
         h2: {
+          textContent: "h1 Chivo, h2 Overpass",
           size: null,
           fontFamily: "Overpass",
           color: "#FFE842",
           alignment: "center"
         },
         h1: {
+          textContent: "",
           size: null,
           fontFamily: "Chivo",
           color: "#25C4FF",
@@ -394,12 +419,14 @@ const templates = {
 
       text: {
         h2: {
+          textContent: "h1 Domine, h2 Open Sans",
           size: null,
           fontFamily: "Open Sans",
           color: "#000",
           alignment: "center"
         },
         h1: {
+          textContent: "",
           size: null,
           fontFamily: "Domine",
           color: "#FF4E00",
@@ -417,12 +444,14 @@ const templates = {
 
       text: {
         h2: {
+          textContent: "h1 Dosis, h2 Dosis",
           size: null,
           fontFamily: "Dosis",
           color: "#000",
           alignment: "center"
         },
         h1: {
+          textContent: "",
           size: null,
           fontFamily: "Dosis",
           color: "#FF0000",
