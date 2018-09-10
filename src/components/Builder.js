@@ -4,6 +4,7 @@ import Window from './window/Window'
 import Tools from './builder/Tools'
 
 class Builder extends Component {
+
     render() {
         console.log(`user`, this.props.location.query);
         
