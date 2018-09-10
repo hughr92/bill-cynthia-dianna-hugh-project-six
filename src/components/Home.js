@@ -110,38 +110,55 @@ class Home extends Component {
     }
 
     render() {
-        return (
-            <div className="homePage">
-                    <div>
-                        <button onClick={this.login}>Sign In</button>
-                        <button onClick={this.anonUser}>Use as Guest</button>
-                        <button onClick={this.logout}>LogOut</button>
-                    </div>
-                <div className="wrapper">
-                    <div className="homeContent homeContent--left">
-                        <h1 className="homePage--h1">Welcome to the Landing Pad</h1>
-                        <h2 className="homePage--h2">Need a hero to save you from crappy landing pages?</h2>
-                        <p>Well, you've come to the right place.</p>
-                        <p>With all the projects, tests, and crying you're doing during bootcamp, we know you don't have time to work on your portfolio site.</p>
-                        <p>Use one of our templates or choose-your-own-font/color adventure, plop in some of your social media usernames, and boom, we will pump out some code for you to copy and paste right into your HTML/CSS pages.  It's that easy.</p>
-                        <p>Your site can look sexy AF even without a portfolio.</p>
-                        <p>Promise we won't hit you with a plagiarism suit.</p>
-                        <div>
-                            <Link to="/home/templates">Templates</Link>
-                        </div>
-                        <div>
-                            <Link to={{pathname: `/home/builder`, query:this.state.userUID}}>Builder</Link>
-                        </div>
-                        
-                    </div>
-                    <div className="homeContent homeContent--right">
-
-                    </div>
-
-                </div>
-                < Template />
+        return <div className="homePage">
+            
+            <div>
+              <button onClick={this.login}>Sign In</button>
+              <button onClick={this.anonUser}>Use as Guest</button>
+              <button onClick={this.logout}>LogOut</button>
             </div>
-        )
+            <div className="wrapper">
+              <div className="homeContent homeContent--left">
+                <h1 className="homePage--h1">
+                  Welcome to the Landing Pad
+                </h1>
+                <h2 className="homePage--h2">
+                  Need a hero to save you from crappy landing pages?
+                </h2>
+                <p>Well, you've come to the right place.</p>
+                <p>
+                  With all the projects, tests, and crying you're doing
+                  during bootcamp, we know you don't have time to work
+                  on your portfolio site.
+                </p>
+                <p>
+                  Use one of our templates or choose-your-own-font/color
+                  adventure, plop in some of your social media
+                  usernames, and boom, we will pump out some code for
+                  you to copy and paste right into your HTML/CSS pages.
+                  It's that easy.
+                </p>
+                <p>
+                  Your site can look sexy AF even without a portfolio.
+                </p>
+                <p>Promise we won't hit you with a plagiarism suit.</p>
+                <div>
+                  <Link to="/home/templates">Templates</Link>
+                </div>
+                <div>
+                  <Link
+                    to={{
+                      pathname: `/home/builder`,
+                      query: this.state.userUID
+                    }}
+                  >
+                    Builder
+                  </Link>
+                </div>
+              </div>
+              <div className="homeContent homeContent--right" />
+            </div>
+          </div>;
     }
 }
 

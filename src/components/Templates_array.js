@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import firebase from "../firebase";
 
 
-class Templates_array extends Component {
+class Template extends Component {
     constructor() {
         super();
         this.state = {
@@ -466,8 +466,11 @@ class Templates_array extends Component {
         }
     }
 
-    pushItBaby(){
-        firebase.database().ref('/templates').push(this.state)
+    componentDidMount = () => {
+        console.log('yay?');
+        // firebase.database().ref('/templates').push(this.state)
+        const dbRef = firebase.database().ref("/templates")
+        dbRef.push(this.state);
     }
 
 
@@ -482,7 +485,7 @@ class Templates_array extends Component {
 }
 
 
-export default Templates_array;
+export default Template;
 
 
 
