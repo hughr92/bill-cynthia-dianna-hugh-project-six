@@ -67,9 +67,15 @@ class HTMLView extends Component {
     }
 
     render() { 
+        // HEADER ONE TEXT INFO
+        const headerOneFont = this.state.userSelections.text.h1.fontFamily ? this.state.userSelections.text.h1.fontFamily : 'HeaderOneFont';
+        const headerOneText = this.state.userSelections.text.h1.textContent ? this.state.userSelections.text.h1.textContent : 'Header'; 
 
-        const headerOneFont = this.state.userSelections.text.h1.fontFamily ? true : 'HeaderOneFont';
-        const headerTwoFont = this.state.userSelections.text.h2.fontFamily ? true : 'HeaderTwoFont';
+        // HEADER TWO TEXT INFO
+        const headerTwoFont = this.state.userSelections.text.h2.fontFamily ? this.state.userSelections.text.h2.fontFamily : 'HeaderTwoFont';
+        const headerTwoText = this.state.userSelections.text.h2.textContent ? this.state.userSelections.text.h2.textContent : 'Subheader'; 
+
+    
             
         return (
             <div className="view view__html">
@@ -119,11 +125,21 @@ class HTMLView extends Component {
                     <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>body</span> <span className="view__html__head--property">class</span> = <span className="view__html__head--attribute">"background"</span><span className="view__html__end">{`>`}</span>
                 </p>
 
+                {/* headers */}
+
+                <p className="indent-1">
+                    <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>div</span> <span className="view__html__head--property">class</span> = <span className="view__html__head--attribute">"headerContainer"</span><span className="view__html__end">{`>`}</span>
+                </p>
 
 
-                <p className="indent-1"><span className="view__html__head--element--inline view__html__head--element--inline--start"><span className="view__html__start">{`<`}</span>h1<span className="view__html__end">{`>`}</span></span> {`TITLE VAR HERE`} <span className="view__html__head--element--inline view__html__head--element--inline--end"><span className="view__html__start">{`</`}</span>h1<span className="view__html__end">{`>`}</span></span></p>
+                <p className="indent-2"><span className="view__html__head--element--inline view__html__head--element--inline--start"><span className="view__html__start">{`<`}</span>h1<span className="view__html__end">{`>`}</span></span> {headerOneText} <span className="view__html__head--element--inline view__html__head--element--inline--end"><span className="view__html__start">{`</`}</span>h1<span className="view__html__end">{`>`}</span></span></p>
 
-                <p className="indent-1"><span className="view__html__head--element--inline view__html__head--element--inline--start"><span className="view__html__start">{`<`}</span>h2<span className="view__html__end">{`>`}</span></span> {`SUBTITLE VAR HERE`} <span className="view__html__head--element--inline view__html__head--element--inline--end"><span className="view__html__start">{`</`}</span>h2<span className="view__html__end">{`>`}</span></span></p>
+                <p className="indent-2"><span className="view__html__head--element--inline view__html__head--element--inline--start"><span className="view__html__start">{`<`}</span>h2<span className="view__html__end">{`>`}</span></span> {headerTwoText} <span className="view__html__head--element--inline view__html__head--element--inline--end"><span className="view__html__start">{`</`}</span>h2<span className="view__html__end">{`>`}</span></span></p>
+
+
+                <p className="indent-1">
+                    <span className="view__html__head--element view__html__head--element--end"><span className="view__html__start">{`</`}</span>div<span className="view__html__end">{`>`}</span></span>
+                </p>
 
 
                 {/* social */}

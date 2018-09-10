@@ -85,23 +85,57 @@ class LiveView extends Component {
             margin: '10px',
         }
 
+        
+
 
         // HEADER ONE
         const headerOneColor = this.state.userSelections.text.h1.color ? this.state.userSelections.text.h1.color : 'white';
         const headerOneAlign = this.state.userSelections.text.h1.alignment ? this.state.userSelections.text.h1.alignment : 'center';
+        const headerOneFont = this.state.userSelections.text.h1.fontFamily ? this.state.userSelections.text.h1.fontFamily : 'sans-serif';
+        const headerOneSize = this.state.userSelections.text.h1.size ? `${this.state.userSelections.text.h1.size}px` : '35px';
 
         const headerOneStyle = {
             color: headerOneColor,
             textAlign: headerOneAlign,
+            fontFamily: headerOneFont,
+            fontSize: headerOneSize
         }
         
         // HEADER TWO
         const headerTwoColor = this.state.userSelections.text.h2.color ? this.state.userSelections.text.h2.color : 'white';
         const headerTwoAlign = this.state.userSelections.text.h2.alignment ? this.state.userSelections.text.h2.alignment : 'center';
+        const headerTwoFont = this.state.userSelections.text.h2.fontFamily ? this.state.userSelections.text.h2.fontFamily : 'serif';
+        const headerTwoSize = this.state.userSelections.text.h2.size ? `${this.state.userSelections.text.h2.size}px` : '15px';
 
         const headerTwoStyle = {
             color: headerTwoColor,
             textAlign: headerTwoAlign,
+            fontFamily: headerTwoFont,
+            fontSize: headerTwoSize
+        }
+
+
+        // ICON ALLIGNMENT
+
+        let leftValue;
+        let iconTranslate;
+
+        if (headerOneAlign === 'left') {
+            iconTranslate = 'translateX(0%)'
+            leftValue = '0%';
+        }
+        if (headerOneAlign === 'center') {
+            iconTranslate = 'translate(-50%)'
+            leftValue = '50%';
+        }
+        if (headerOneAlign === 'right') {
+            iconTranslate = 'translateX(-100%)'
+            leftValue = '100%';
+        }
+
+        const socialContainer = {
+            transform: iconTranslate,
+            left: leftValue
         }
 
 
@@ -114,7 +148,7 @@ class LiveView extends Component {
                         <h2 className="liveView__header__two" style={headerTwoStyle}>{this.state.userSelections.text.h2.textContent ? this.state.userSelections.text.h2.textContent : 'subheader'}</h2>
                     </div>
                     <div className="social">
-                        <ul>
+                        <ul style={socialContainer}>
                             {this.state.userSelections.social.linkedin  && (
                                 <li className="liveView__icon"><a href={`https://ca.linkedin.com/in/${this.state.userSelections.social.linkedin}`}><i class="fab fa-linkedin-in" style={socialStyle}></i></a></li>
                             )}

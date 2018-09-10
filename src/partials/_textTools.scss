@@ -14,9 +14,6 @@
         left: 10px;
         transition: 0.5s;
     }
-    &__label--error {
-        display: none;
-    }
     &__input {
         padding: 10px 10px;
         box-shadow: none;
@@ -24,31 +21,21 @@
         border: none;
         border-bottom: 2px solid $darkGrey;
         background-color: none;
-        // &:placeholder-shown {
-        //     border-bottom: 2px solid $darkGrey;
-        // }
         &:focus + .tools__container__label {
             top: -10px;
             font-weight: 600;
             color: $accentColor;
             font-size: 12px;
-            
-            
         }
         &:valid + .tools__container__label {
             top: -10px;
             font-weight: 600;
             color: $accentColor;
             font-size: 12px;
-            
         }
         &:valid {
             border-bottom: 2px solid $accentColor;
         }
-
-        // &:invalid {
-        //     border-bottom: 2px solid tomato;
-        // }
         
     }
 }

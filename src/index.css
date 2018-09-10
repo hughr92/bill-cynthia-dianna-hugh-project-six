@@ -325,7 +325,6 @@ footer {
 .view {
   color: white;
   width: 100%;
-  border: 1px solid black;
   text-align: left;
   padding: 40px;
   height: 400px; }
@@ -371,22 +370,21 @@ footer {
 
 .view {
   width: 100%;
-  border: 1px solid black;
   text-align: left;
   padding: 40px;
   height: 400px; }
-  .view__container {
-    width: calc(100% / 4);
-    float: left; }
   .view__title {
     width: 100%;
     text-align: center; }
     .view__title--css {
       color: white; }
   .view__css {
+    overflow-y: scroll;
     background-color: #262721; }
     .view__css--element {
       color: #ee2874; }
+      .view__css--element span {
+        color: white; }
       .view__css--element--start {
         margin-left: 25px;
         color: white; }
@@ -396,7 +394,8 @@ footer {
         margin-left: 25px;
         color: white; }
     .view__css--property {
-      color: #70cee7; }
+      color: #70cee7;
+      margin-left: 25px; }
     .view__css--end {
       color: white; }
 
@@ -405,6 +404,7 @@ footer {
 
 .social {
   position: absolute;
+  left: 30px;
   right: 30px;
   bottom: 30px; }
   .social ul,
@@ -413,8 +413,11 @@ footer {
     padding: 0px;
     list-style: none;
     float: left; }
+  .social ul {
+    position: relative; }
 
 .liveView__header__container {
+  padding: 0 40px;
   position: absolute;
   top: 50%;
   left: 0;
@@ -435,9 +438,6 @@ footer {
   top: 10px;
   left: 10px;
   transition: 0.5s; }
-
-.tools__container__label--error {
-  display: none; }
 
 .tools__container__input {
   padding: 10px 10px;
