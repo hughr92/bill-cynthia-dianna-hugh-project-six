@@ -83,6 +83,26 @@ class CSSView extends Component {
         const headerTwoSize = this.state.userSelections.text.h2.size ? `${this.state.userSelections.text.h2.size}px` : '15px';
 
 
+        // ICON ALLIGNMENT
+
+        let leftValue;
+        let iconTranslate;
+
+        if (headerOneAlign === 'left') {
+            iconTranslate = 'translateX(0%)'
+            leftValue = '0%';
+        }
+        if (headerOneAlign === 'center') {
+            iconTranslate = 'translate(-50%)'
+            leftValue = '50%';
+        }
+        if (headerOneAlign === 'right') {
+            iconTranslate = 'translateX(-100%)'
+            leftValue = '100%';
+        }
+
+
+
         return (
             <div className="view view__css">
                 {/* headerContainer */}
@@ -115,9 +135,10 @@ class CSSView extends Component {
                     <p className="view__css--end">{`}`}</p>
                 </div>
                 {/* social */}
-                <div className="view__container">
+                <div className="view__container" >
                     <p className="view__css--class">{`.social`}<span className="view__css--element--start">{`{`}</span></p>
                     <p className="view__css--property">{`position : absolute`};</p>
+                    <p className="view__css--property">{`left : 30px`};</p>
                     <p className="view__css--property">{`right : 30px`};</p>
                     <p className="view__css--property">{`bottom : 30px`};</p>
                     <p className="view__css--end">{`}`}</p>
@@ -130,6 +151,15 @@ class CSSView extends Component {
                     <p className="view__css--property">{`padding : 0px`};</p>
                     <p className="view__css--property">{`list-style : none`};</p>
                     <p className="view__css--property">{`float : left`};</p>
+                    <p className="view__css--end">{`}`}</p>
+                </div>
+                {/* ul */}
+                <div className="view__container">
+
+                    <p className="view__css--element">{`ul`}<span className="view__css--element--start">{`{`}</span></p>
+                    <p className="view__css--property">{`position : relative`};</p>
+                    <p className="view__css--property">{`left : ${leftValue}`};</p>
+                    <p className="view__css--property">{`transform : ${iconTranslate}`};</p>
                     <p className="view__css--end">{`}`}</p>
                 </div>
                 {/* icons */}

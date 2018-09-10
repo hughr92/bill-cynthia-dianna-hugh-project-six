@@ -85,6 +85,8 @@ class LiveView extends Component {
             margin: '10px',
         }
 
+        
+
 
         // HEADER ONE
         const headerOneColor = this.state.userSelections.text.h1.color ? this.state.userSelections.text.h1.color : 'white';
@@ -113,6 +115,30 @@ class LiveView extends Component {
         }
 
 
+        // ICON ALLIGNMENT
+
+        let leftValue;
+        let iconTranslate;
+
+        if (headerOneAlign === 'left') {
+            iconTranslate = 'translateX(0%)'
+            leftValue = '0%';
+        }
+        if (headerOneAlign === 'center') {
+            iconTranslate = 'translate(-50%)'
+            leftValue = '50%';
+        }
+        if (headerOneAlign === 'right') {
+            iconTranslate = 'translateX(-100%)'
+            leftValue = '100%';
+        }
+
+        const socialContainer = {
+            transform: iconTranslate,
+            left: leftValue
+        }
+
+
 
         return(
             <div className="view view__live" style={backgroundStyle}>
@@ -122,7 +148,7 @@ class LiveView extends Component {
                         <h2 className="liveView__header__two" style={headerTwoStyle}>{this.state.userSelections.text.h2.textContent ? this.state.userSelections.text.h2.textContent : 'subheader'}</h2>
                     </div>
                     <div className="social">
-                        <ul>
+                        <ul style={socialContainer}>
                             {this.state.userSelections.social.linkedin  && (
                                 <li className="liveView__icon"><a href={`https://ca.linkedin.com/in/${this.state.userSelections.social.linkedin}`}><i class="fab fa-linkedin-in" style={socialStyle}></i></a></li>
                             )}

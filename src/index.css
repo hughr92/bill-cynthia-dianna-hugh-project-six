@@ -327,6 +327,7 @@ footer {
 
 .social {
   position: absolute;
+  left: 30px;
   right: 30px;
   bottom: 30px; }
   .social ul,
@@ -335,6 +336,8 @@ footer {
     padding: 0px;
     list-style: none;
     float: left; }
+  .social ul {
+    position: relative; }
 
 .liveView__header__container {
   padding: 0 40px;
