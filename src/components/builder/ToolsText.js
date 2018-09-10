@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import firebase from 'firebase';
 import axios from 'axios';
 
 class ToolsText extends Component {
@@ -70,7 +71,7 @@ class ToolsText extends Component {
   }
     render() {
         return (
-        <div className="tools__container tools__container--text">
+        <div className="tools tools__container tools__container--text">
             <h1>ToolsText</h1>
             {/* <h2>{this.props.text.h2.color}</h2> */}
             <form class="clearfix">
