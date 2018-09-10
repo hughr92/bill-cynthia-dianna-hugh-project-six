@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import firebase from '../../firebase'
-import axios from 'axios'
+import firebase from 'firebase';
+import axios from 'axios';
 
 class ToolsText extends Component {
   constructor (){
@@ -40,6 +40,7 @@ class ToolsText extends Component {
   }
   
   handleChange = (e) => {
+    // console.log('handle change fired')
     // if font-size < 15 || font-size > 60, setState to display error
     // else change bottom border to accent color
     const userID = this.props.user;
@@ -70,7 +71,7 @@ class ToolsText extends Component {
   }
     render() {
         return (
-        <div className="tools__container tools__container--text">
+        <div className="tools tools__container tools__container--text">
             <h1>ToolsText</h1>
             {/* <h2>{this.props.text.h2.color}</h2> */}
             <form class="clearfix">
@@ -129,7 +130,7 @@ class ToolsText extends Component {
                 <input required type="number" min="15" max="60" className="tools__container__input" id="h2FontSize" />
                 <label htmlFor="h2FontSize" className="tools__container__label">
                     Font size
-                </label>
+                  </label>
               </div>
 
               <div className="tools__container__wrapper">

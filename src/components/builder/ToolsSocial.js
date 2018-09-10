@@ -16,12 +16,17 @@ class ToolsSocial extends Component {
     }
     componentDidMount = () => {
         const userID = this.props.user
-
         this.setState({
             user: userID
-        }) 
-    }
+        }, ()=> {
+            const dbRef = firebase.database().ref(this.state.user)
 
+        }) 
+
+    }
+    handleSubmit = (e) => {
+        e.preventDefault();
+    }
     handleChange =(e)=> {
         console.log(`change`, e.target.value);
         console.log(`change`, e.target.id);
@@ -43,27 +48,27 @@ class ToolsSocial extends Component {
 
     render() {
 
-        return  <div className="tools__container--social__selection">
-                <h1>ToolsSocial</h1>
+        return  <div className="tools tools__container--social__selection">
+                <h3>Enter Your Social Media Info</h3>
 
-                    <form>
-                        <input type="checkbox" name="social" value="email" id="socialEmail"/>
+                    <form className="socialForm" onSubmit={this.handleSubmit}>
+                    <div className="socialForm--half">
                         <label for="socialEmail">Email</label>
-                        <input onChange={this.handleChange} type="email" name="social" placeholder="Enter email" id="email" value={this.state.email}/>
+                        <input className="socialForm--input" onChange={this.handleChange} type="email" name="social" placeholder="Enter email" id="email" value={this.state.email}/>
 
-                        <input type="checkbox" name="social" value="twitter" id="socialTwitter" /> 
                         <label for="socialTwitter">Twitter</label>
-                        <input onChange={this.handleChange} type="text" placeholder="Enter Twitter username" maxLength="20" id="twitter"/>
-
-                        <input type="checkbox" name="social" value="github" id="socialGithub" /> 
+                        <input className="socialForm--input" onChange={this.handleChange} type="text" placeholder="Enter Twitter username" maxLength="20" id="twitter"/>
+                    </div>
+                    <div className="socialForm--half">
                         <label for="socialGithub">Github</label>
-                        <input onChange={this.handleChange} type="text" placeholder="Enter Github username" maxLength="20" id="github"/>
+                        <input className="socialForm--input" onChange={this.handleChange} type="text" placeholder="Enter Github username" maxLength="20" id="github"/>
 
-                        <input type="checkbox" name="social" value="linkedin" id="socialLinkedin" /> 
                         <label for="socialLinkedin">Linkedin</label>
-                        <input onChange={this.handleChange} type="text" placeholder="Enter Linkedin username" id="linkedin" maxLength="20" />
+                        <input className="socialForm--input" onChange={this.handleChange} type="text" placeholder="Enter Linkedin username" id="linkedin" maxLength="20" />
+                    </div>
 
-                        <input type="submit" />
+
+                        <input type="submit" value="Save it!" />
                 
                     </form>
                 </div>
