@@ -18,10 +18,10 @@ class ToolsText extends Component {
         h1: {
             textContent: "",
             size: 60,
-            fontFamily: "",
-            color: "",
-            alignment: "",
-            h1FontSizeIsInvalid: false
+            fontFamily: "Roboto",
+            color: "#fff",
+            alignment: "center",
+            isInvalid: false
         
       }
     }
@@ -41,21 +41,23 @@ class ToolsText extends Component {
     const property=temp[1];
     
     newState[header][property] = e.target.value;
-    console.log(newState);
 
     this.setState(
       newState,() => {
       const dbRef = firebase.database().ref(`${userID}/text`);
       dbRef.on('value', snapshot => {
         dbRef.update(this.state)
-        // console.log(snapshot.val())
       })
     })
-    // if (e.target.value < 15 || e.target.value > 60) {
-    //   this.setState({
-    //     h1FontSizeIsInvalid: true
-    //   })
-    // }
+    console.log(e.target.value);
+    if (e.target.value < 15 || e.target.value > 60) {
+      newState[header].isInvalid = true;
+      this.setState(newState);
+    }
+    else {
+      newState[header].isInvalid = false;
+      this.setState(newState);
+    }
     // add the else
 
   }
@@ -79,7 +81,9 @@ class ToolsText extends Component {
                   <label htmlFor="h1FontSize" className="tools__container__label">
                       Font size
                     </label>
-                  <label className={this.state.h1FontSizeIsInvalid ? '' : 'tools__container__label--error' }>Input should be between 15 and 60</label>
+                  {this.state.h1.isInvalid && (
+                    <label>invalid</label>
+                  )}
                 </div>
 
                 <div className="tools__container__wrapper">
@@ -87,7 +91,8 @@ class ToolsText extends Component {
                       Font family
                   </label>
                   <select>
-                    <option value="" selected>Open Sans</option>
+                    <option value="" selected>Roboto</option>
+                    <option value="" >Open Sans</option>
                     <option value="">Lobster</option>
                   </select>
                 </div>
@@ -97,8 +102,8 @@ class ToolsText extends Component {
                       Text alignment
                   </label>
                   <select>
-                    <option value="" selected>left</option>
-                    <option value="">center</option>
+                    <option value="">left</option>
+                    <option value="" selected>center</option>
                     <option value="">right</option>
                     <option value="">justify</option>
                   </select>
