@@ -89,19 +89,27 @@ class LiveView extends Component {
         // HEADER ONE
         const headerOneColor = this.state.userSelections.text.h1.color ? this.state.userSelections.text.h1.color : 'white';
         const headerOneAlign = this.state.userSelections.text.h1.alignment ? this.state.userSelections.text.h1.alignment : 'center';
+        const headerOneFont = this.state.userSelections.text.h1.fontFamily ? this.state.userSelections.text.h1.fontFamily : 'sans-serif';
+        const headerOneSize = this.state.userSelections.text.h1.size ? this.state.userSelections.text.h1.size : '35px';
 
         const headerOneStyle = {
             color: headerOneColor,
             textAlign: headerOneAlign,
+            fontFamily: headerOneFont,
+            fontSize: headerOneSize
         }
         
         // HEADER TWO
         const headerTwoColor = this.state.userSelections.text.h2.color ? this.state.userSelections.text.h2.color : 'white';
         const headerTwoAlign = this.state.userSelections.text.h2.alignment ? this.state.userSelections.text.h2.alignment : 'center';
+        const headerTwoFont = this.state.userSelections.text.h2.fontFamily ? this.state.userSelections.text.h2.fontFamily : 'serif';
+        const headerTwoSize = this.state.userSelections.text.h2.size ? this.state.userSelections.text.h2.size : '15px';
 
         const headerTwoStyle = {
             color: headerTwoColor,
             textAlign: headerTwoAlign,
+            fontFamily: headerTwoFont,
+            fontSize: headerTwoSize
         }
 
 
