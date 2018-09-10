@@ -12,9 +12,12 @@
         text-align: center;
         &--html{
             color: white;
-        }
+        } 
     }
     &__html {
+        &--equals {
+            color: white;
+        }
         &__start {
             color: white;
             margin-right: 5px;
