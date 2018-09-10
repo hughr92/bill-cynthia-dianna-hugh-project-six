@@ -14,7 +14,7 @@ class Main extends Component {
     // }
     render() {
         return (
-            <Router>
+            
                 <main>   
                     <NavBar />                 
                     <Route exact path="/home/" component={Home} />
@@ -22,7 +22,7 @@ class Main extends Component {
                     <Route exact path="/home/templates" component={Templates} />
                     <Footer />
                 </main>
-            </Router>
+            
         )
     }
 }
