@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import firebase from '../../firebase'
-
+import axios from 'axios'
 
 class ToolsText extends Component {
   constructor (){
@@ -27,8 +27,17 @@ class ToolsText extends Component {
     }
   }
 
-  // if size, append px
-  // (`${variable}px`)
+  componentDidMount(){
+    axios.get('https://www.googleapis.com/webfonts/v1/webfonts', {
+      params: {
+        key: 'AIzaSyAPYBXi-tLQxlznV5T0IRJ0Pj_s_Ugb5FU',
+        sort: 'popularity'
+      }
+    })
+    .then((res) => {
+      console.log(res.data.items)
+    })
+  }
   
   handleChange = (e) => {
     // if font-size < 15 || font-size > 60, setState to display error
@@ -101,9 +110,8 @@ class ToolsText extends Component {
                   </label>
                   <select onChange={this.handleChange} id="h1.alignment">
                     <option value="left" >left</option>
-                    <option value="center" selected>center</option>
+                    <option value="center">center</option>
                     <option value="right">right</option>
-                    <option value="justify">justify</option>
                   </select>
                 </div>
               </div>
