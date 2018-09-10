@@ -360,9 +360,6 @@ footer {
   left: 10px;
   transition: 0.5s; }
 
-.tools__container__label--error {
-  display: none; }
-
 .tools__container__input {
   padding: 10px 10px;
   box-shadow: none;
