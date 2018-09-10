@@ -8,8 +8,8 @@
     // display: flex;
     // flex-wrap: wrap;
     &__container {
-        width: calc(100% / 4);
-        float: left;
+        // width: calc(100% / 4);
+        // float: left;
     }
     &__title {
         width: 100%;
@@ -19,9 +19,13 @@
         }
     }
     &__css{
+        overflow-y: scroll;
         background-color: #262721;
         &--element{
             color: #ee2874;
+            & span {
+                color: white;
+            }
             &--start {
                 margin-left: 25px;
                 color: white;
@@ -36,6 +40,7 @@
         }
         &--property{
             color: #70cee7;
+            margin-left: 25px;
         }
         &--end{
             color: white;
