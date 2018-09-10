@@ -67,9 +67,12 @@ class HTMLView extends Component {
     }
 
     render() { 
+
+        const headerOneFont = this.state.userSelections.text.h1.fontFamily ? true : 'HeaderOneFont';
+        const headerTwoFont = this.state.userSelections.text.h2.fontFamily ? true : 'HeaderTwoFont';
+            
         return (
             <div className="view view__html">
-                <h1 className="view__title view__title--html">HTML View</h1>
                 <div className="view__html__head">
                     <p className="view__html__head--doctype"><span className="view__html__start">{`<`}</span>!DOCTYPE<span className="view__html__end">{`>`}</span></p>
                     <p>
@@ -89,7 +92,7 @@ class HTMLView extends Component {
                     {/* google fonts */}
 
                     <p className="indent-1">
-                        <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>link</span> <span className="view__html__head--property">href</span>=<span className="view__html__head--attribute">"https://fonts.googleapis.com/css?family={`VARIABLE`}|{`VARIABLE`}"</span> <span className="view__html__head--property">rel</span>=<span className="view__html__head--attribute">"stylesheet"<span className="view__html__end">{`>`}</span></span>
+                        <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>link</span> <span className="view__html__head--property">href</span>=<span className="view__html__head--attribute">"https://fonts.googleapis.com/css?family={headerOneFont}|{headerTwoFont}"</span> <span className="view__html__head--property">rel</span>=<span className="view__html__head--attribute">"stylesheet"<span className="view__html__end">{`>`}</span></span>
                     </p>
 
 
@@ -102,7 +105,7 @@ class HTMLView extends Component {
 
 
 
-                    <p className="indent-1"><span className="view__html__head--element--inline view__html__head--element--inline--start"><span className="view__html__start">{`<`}</span>title<span className="view__html__end">{`>`}</span></span> title <span className="view__html__head--element--inline view__html__head--element--inline--end"><span className="view__html__start">{`</`}</span>title<span className="view__html__end">{`>`}</span></span></p>
+                    <p className="indent-1"><span className="view__html__head--element--inline view__html__head--element--inline--start"><span className="view__html__start">{`<`}</span>title<span className="view__html__end">{`>`}</span></span> {this.state.user} <span className="view__html__head--element--inline view__html__head--element--inline--end"><span className="view__html__start">{`</`}</span>title<span className="view__html__end">{`>`}</span></span></p>
                     
 
                     <p>
@@ -139,9 +142,9 @@ class HTMLView extends Component {
                 </p>
 
                 <p className="indent-4">
-                    <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>a<span className="view__html__head--property">href</span> = <span className="view__html__head--attribute">{`"https://ca.linkedin.com/in/${`${this.state.userSelections.social.linkedin}`}"`}</span></span><span className="view__html__end">{`>`}</span>
+                    <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>a<span className="view__html__head--property">href</span> <span className="view__html--equals">=</span> <span className="view__html__head--attribute">{`"https://ca.linkedin.com/in/${`${this.state.userSelections.social.linkedin}`}"`}</span></span><span className="view__html__end">{`>`}</span>
 
-                    <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>i<span className="view__html__head--property">href</span> = <span className="view__html__head--attribute">{`"fab fa-linked-in"`}</span></span><span className="view__html__end">{`>`}</span>
+                    <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>i<span className="view__html__head--property">href</span> <span className="view__html--equals">=</span> <span className="view__html__head--attribute">{`"fab fa-linked-in"`}</span></span><span className="view__html__end">{`>`}</span>
 
                     <span className="view__html__head--element"><span className="view__html__start">{`</`}</span>i</span><span className="view__html__end">{`>`}</span>
                     
@@ -162,32 +165,9 @@ class HTMLView extends Component {
                 </p>
 
                 <p className="indent-4">
-                    <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>a<span className="view__html__head--property">href</span> = <span className="view__html__head--attribute">{`"https://github.com/${`${this.state.userSelections.social.github}`}"`}</span></span><span className="view__html__end">{`>`}</span>
+                    <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>a<span className="view__html__head--property">href</span> <span className="view__html--equals">=</span> <span className="view__html__head--attribute">{`"https://github.com/${`${this.state.userSelections.social.github}`}"`}</span></span><span className="view__html__end">{`>`}</span>
 
-                    <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>i<span className="view__html__head--property">href</span> = <span className="view__html__head--attribute">{`"fab fa-github"`}</span></span><span className="view__html__end">{`>`}</span>
-
-                    <span className="view__html__head--element"><span className="view__html__start">{`</`}</span>i</span><span className="view__html__end">{`>`}</span>
-
-                    <span className="view__html__head--element"><span className="view__html__start">{`</`}</span>a</span><span className="view__html__end">{`>`}</span>
-                </p>
-
-
-
-                <p className="indent-3">
-
-                    <span className="view__html__head--element"><span className="view__html__start">{`</`}</span>li</span><span className="view__html__end">{`>`}</span>
-                </p>
-
-                {/* li */}
-                <p className="indent-3">
-                    <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>li</span><span className="view__html__end">{`>`}</span>
-
-                </p>
-
-                <p className="indent-4">
-                    <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>a<span className="view__html__head--property">href</span> = <span className="view__html__head--attribute">{`"mailto:${`${this.state.userSelections.social.email}`}"`}</span></span><span className="view__html__end">{`>`}</span>
-
-                    <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>i<span className="view__html__head--property">href</span> = <span className="view__html__head--attribute">{`"fab fa-envelope"`}</span></span><span className="view__html__end">{`>`}</span>
+                    <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>i<span className="view__html__head--property">href</span> <span className="view__html--equals">=</span> <span className="view__html__head--attribute">{`"fab fa-github"`}</span></span><span className="view__html__end">{`>`}</span>
 
                     <span className="view__html__head--element"><span className="view__html__start">{`</`}</span>i</span><span className="view__html__end">{`>`}</span>
 
@@ -208,9 +188,32 @@ class HTMLView extends Component {
                 </p>
 
                 <p className="indent-4">
-                    <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>a<span className="view__html__head--property">href</span> = <span className="view__html__head--attribute">{`"https://twitter.com/${`${this.state.userSelections.social.twitter}`}"`}</span></span><span className="view__html__end">{`>`}</span>
+                    <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>a<span className="view__html__head--property">href</span> <span className="view__html--equals">=</span> <span className="view__html__head--attribute">{`"mailto:${`${this.state.userSelections.social.email}`}"`}</span></span><span className="view__html__end">{`>`}</span>
 
-                    <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>i<span className="view__html__head--property">href</span> = <span className="view__html__head--attribute">{`"fab fa-twitter"`}</span></span><span className="view__html__end">{`>`}</span>
+                    <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>i<span className="view__html__head--property">href</span> <span className="view__html--equals">=</span> <span className="view__html__head--attribute">{`"fab fa-envelope"`}</span></span><span className="view__html__end">{`>`}</span>
+
+                    <span className="view__html__head--element"><span className="view__html__start">{`</`}</span>i</span><span className="view__html__end">{`>`}</span>
+
+                    <span className="view__html__head--element"><span className="view__html__start">{`</`}</span>a</span><span className="view__html__end">{`>`}</span>
+                </p>
+
+
+
+                <p className="indent-3">
+
+                    <span className="view__html__head--element"><span className="view__html__start">{`</`}</span>li</span><span className="view__html__end">{`>`}</span>
+                </p>
+
+                {/* li */}
+                <p className="indent-3">
+                    <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>li</span><span className="view__html__end">{`>`}</span>
+
+                </p>
+
+                <p className="indent-4">
+                    <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>a<span className="view__html__head--property">href</span> <span className="view__html--equals">=</span> <span className="view__html__head--attribute">{`"https://twitter.com/${`${this.state.userSelections.social.twitter}`}"`}</span></span><span className="view__html__end">{`>`}</span>
+
+                    <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>i<span className="view__html__head--property">href</span> <span className="view__html--equals">=</span> <span className="view__html__head--attribute">{`"fab fa-twitter"`}</span></span><span className="view__html__end">{`>`}</span>
 
                     <span className="view__html__head--element"><span className="view__html__start">{`</`}</span>i</span><span className="view__html__end">{`>`}</span>
 
@@ -230,7 +233,7 @@ class HTMLView extends Component {
                     <span className="view__html__head--element view__html__head--element--end"><span className="view__html__start">{`</`}</span>ul<span className="view__html__end">{`>`}</span></span>
                 </p>
 
-                <p>
+                <p className="indent-1">
                     <span className="view__html__head--element view__html__head--element--end"><span className="view__html__start">{`</`}</span>div<span className="view__html__end">{`>`}</span></span>
                 </p>
                 {/* end of body */}
