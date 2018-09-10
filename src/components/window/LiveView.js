@@ -47,11 +47,11 @@ class LiveView extends Component {
         },() => {
             const dbRef = firebase.database().ref(this.state.user);
             dbRef.on('value', snapshot => {
-                let dog = snapshot.val()
+                let user = snapshot.val()
                 console.log(`liveview`, snapshot.val());
                 // if(snapshot.val()) {
                     this.setState({
-                        userSelections: dog
+                        userSelections: user
                         // {
                         //     background: snapshot.val().background,
                         //     text: snapshot.val().text,
@@ -64,17 +64,73 @@ class LiveView extends Component {
             })
         })
     }
+
+    
+    
     render(){
+        // STYLING
+
+        // BACKGROUND
+        const backgroundColor = this.state.userSelections.background.backgroundColor ? this.state.userSelections.background.backgroundColor : '#30b8b2';
+
+        const backgroundStyle = {
+            background: backgroundColor
+        }
+
+        // SOCIAL
+        const socialColor = this.state.userSelections.text.h1.color ? this.state.userSelections.text.h1.color : 'white';
+
+        const socialStyle = {
+            color: socialColor,
+            margin: '10px',
+        }
+
+
+        // HEADER ONE
+        const headerOneColor = this.state.userSelections.text.h1.color ? this.state.userSelections.text.h1.color : 'white';
+        const headerOneAlign = this.state.userSelections.text.h1.alignment ? this.state.userSelections.text.h1.alignment : 'center';
+
+        const headerOneStyle = {
+            color: headerOneColor,
+            textAlign: headerOneAlign,
+        }
+        
+        // HEADER TWO
+        const headerTwoColor = this.state.userSelections.text.h2.color ? this.state.userSelections.text.h2.color : 'white';
+        const headerTwoAlign = this.state.userSelections.text.h2.alignment ? this.state.userSelections.text.h2.alignment : 'center';
+
+        const headerTwoStyle = {
+            color: headerTwoColor,
+            textAlign: headerTwoAlign,
+        }
+
+
+
         return(
-            <div>
-                <h1>LiveView</h1>
+            <div className="view view__live" style={backgroundStyle}>
                 <div>
+                    <div className="liveView__header__container">
+                        <h1 className="liveView__header__one" style={headerOneStyle}>{this.state.userSelections.text.h1.textContent ? this.state.userSelections.text.h1.textContent : 'header'}</h1>
+                        <h2 className="liveView__header__two" style={headerTwoStyle}>{this.state.userSelections.text.h2.textContent ? this.state.userSelections.text.h2.textContent : 'subheader'}</h2>
+                    </div>
                     <div className="social">
                         <ul>
-                            <li><a href={`https://ca.linkedin.com/in/${this.state.userSelections.social.linkedin}`}><i class="fab fa-linkedin-in"></i></a></li>
-                            <li><a href={`https://github.com/${this.state.userSelections.social.github}`}><i class="fab fa-github"></i></a></li>
-                            <li><a href={`mailto:${this.state.userSelections.social.email}`}><i class="far fa-envelope"></i></a></li>
-                            <li><a href={`https://twitter.com/${this.state.userSelections.social.twitter}`}><i class="fab fa-twitter"></i></a></li>
+                            {this.state.userSelections.social.linkedin  && (
+                                <li className="liveView__icon"><a href={`https://ca.linkedin.com/in/${this.state.userSelections.social.linkedin}`}><i class="fab fa-linkedin-in" style={socialStyle}></i></a></li>
+                            )}
+
+                            {this.state.userSelections.social.github  && (
+                                <li><a href={`https://github.com/${this.state.userSelections.social.github}`}><i class="fab fa-github" style={socialStyle}></i></a></li>
+                            )}
+
+                            {this.state.userSelections.social.email && (
+                                <li><a href={`mailto:${this.state.userSelections.social.email}`}><i class="far fa-envelope" style={socialStyle}></i></a></li>
+                            )}
+
+                            {this.state.userSelections.social.twitter && (
+                                <li><a href={`https://twitter.com/${this.state.userSelections.social.twitter}`}><i class="fab fa-twitter" style={socialStyle}></i></a></li>
+                            )}
+                            
                         </ul>
                     </div>
                 </div>
