@@ -260,6 +260,8 @@ footer {
       color: white; }
   .view__html {
     background-color: #262721; }
+    .view__html--equals {
+      color: white; }
     .view__html__start {
       color: white;
       margin-right: 5px; }
