@@ -6,8 +6,8 @@ class ToolsText extends Component {
   constructor (){
     super();
     this.state = {
-      
         h2: {
+            textContent: "",
             size: null,
             fontFamily: "",
             color: "",
@@ -16,6 +16,7 @@ class ToolsText extends Component {
 
         },
         h1: {
+            textContent: "",
             size: 60,
             fontFamily: "",
             color: "",
@@ -26,26 +27,35 @@ class ToolsText extends Component {
     }
   }
 
+  // if size, append px
+  // (`${variable}px`)
   
   handleChange = (e) => {
     // if font-size < 15 || font-size > 60, setState to display error
     // else change bottom border to accent color
     const userID = this.props.user;
-    console.log(userID);
     
-    this.setState({
-      [e.target.id] : e.target.value
-    }, () => {
+    const newState = JSON.parse(JSON.stringify(this.state));
+    const temp=e.target.id.split('.')
+    const header=temp[0];
+    const property=temp[1];
+    
+    newState[header][property] = e.target.value;
+    console.log(newState);
+
+    this.setState(
+      newState,() => {
       const dbRef = firebase.database().ref(`${userID}/text`);
       dbRef.on('value', snapshot => {
-        // dbRef.update(this.state)
+        dbRef.update(this.state)
+        // console.log(snapshot.val())
       })
     })
-    if (e.target.value < 15 || e.target.value > 60) {
-      this.setState({
-        h1FontSizeIsInvalid: true
-      })
-    }
+    // if (e.target.value < 15 || e.target.value > 60) {
+    //   this.setState({
+    //     h1FontSizeIsInvalid: true
+    //   })
+    // }
     // add the else
 
   }
@@ -60,20 +70,20 @@ class ToolsText extends Component {
                   Main header
                 </h3>
                 <div className="tools__container__wrapper">
-                  <input required type="text" placeholder= " " className="tools__container__input" maxLength="25" id="h1Text" />
-                  <label for="h1Text" className="tools__container__label">Enter text</label>
+                  <input onChange={this.handleChange} value={this.state.h1.textContent} id="h1.textContent" required type="text"  className="tools__container__input" maxLength="25" />
+                  <label htmlFor="h1Text" className="tools__container__label">Enter text</label>
                 </div>
 
                 <div className="tools__container__wrapper">
-                  <input onChange={this.handleChange} required type="number" value={this.state.h1.size} className="tools__container__input"  id="text.h1.size" />
-                  <label for="h1FontSize" className="tools__container__label">
+                  <input onChange={this.handleChange} value={this.state.h1.size} id='h1.size' required type="number" className="tools__container__input"   />
+                  <label htmlFor="h1FontSize" className="tools__container__label">
                       Font size
                     </label>
                   <label className={this.state.h1FontSizeIsInvalid ? '' : 'tools__container__label--error' }>Input should be between 15 and 60</label>
                 </div>
 
                 <div className="tools__container__wrapper">
-                  <label for="h1FontFamily" >
+                  <label htmlFor="h1FontFamily" >
                       Font family
                   </label>
                   <select>
@@ -83,7 +93,7 @@ class ToolsText extends Component {
                 </div>
 
                 <div className="tools__container__wrapper">
-                  <label for="h1TextAlign" >
+                  <label htmlFor="h1TextAlign" >
                       Text alignment
                   </label>
                   <select>
@@ -101,26 +111,26 @@ class ToolsText extends Component {
 
               <div className="tools__container__wrapper">
                 <input required type="text" className="tools__container__input" maxLength="25" id="h2Text" />
-                <label for="h2Text" className="tools__container__label">Enter text</label>
+                <label htmlFor="h2Text" className="tools__container__label">Enter text</label>
               </div>
 
               <div className="tools__container__wrapper">
                 <input required type="number" min="15" max="60" className="tools__container__input" id="h2FontSize" />
-                <label for="h2FontSize" className="tools__container__label">
+                <label htmlFor="h2FontSize" className="tools__container__label">
                     Font size
                 </label>
               </div>
 
               <div className="tools__container__wrapper">
                 <input required type="text" className="tools__container__input" id="h2FontFamily" />
-                <label for="h2FontFamily" className="tools__container__label">
+                <label htmlFor="h2FontFamily" className="tools__container__label">
                     Font family
                   </label>
               </div>
 
               <div className="tools__container__wrapper">
                 <input required type="text" className="tools__container__input" id="h2TextAlign" />
-                <label for="h2TextAlign" className="tools__container__label">
+                <label htmlFor="h2TextAlign" className="tools__container__label">
                     Text alignment
                   </label>
               </div>
