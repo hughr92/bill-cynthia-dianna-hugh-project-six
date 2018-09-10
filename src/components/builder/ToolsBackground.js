@@ -63,20 +63,24 @@ class ToolsBackground extends Component {
     };
     render() {
         return (
-            <div className="tools tools_background">
-                <h1>Background Update</h1>
-                <form className="background background1">
-                    <FileUploader
-                        accept="image/*"
-                        name="avatar"
-                        storageRef={firebase.storage().ref('images')}
-                        onUploadStart={this.handleUploadStart}
-                        onUploadError={this.handleUploadError}
-                        onUploadSuccess={this.handleUploadSuccess}
-                        onProgress={this.handleProgress}
-                    />
-                </form>
-                <div className="background background2">
+            <div className="tools tools_background clearfix">
+                <h3>Choose your background</h3>
+                <div className="backgroundHalf">
+                    <h3>Want an Image?</h3>
+                    <form className="backgroundOption background1">
+                        <FileUploader
+                            accept="image/*"
+                            name="avatar"
+                            storageRef={firebase.storage().ref('images')}
+                            onUploadStart={this.handleUploadStart}
+                            onUploadError={this.handleUploadError}
+                            onUploadSuccess={this.handleUploadSuccess}
+                            onProgress={this.handleProgress}
+                        />
+                    </form>
+                </div>
+                <div className="backgroundHalf background2">
+                    <h3>...or Choose a Color</h3>
                     <ColorPicker color={this.state.backgroundColor} onChangeComplete={this.handleChangeComplete} getColor = {this.getColor}/>
                 </div>
             </div>

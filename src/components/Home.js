@@ -152,10 +152,12 @@ class Home extends Component {
                 </div>
                 <div>
                     <Link
+                    to= {`/home/builder/${this.state.userUID}`}>Builder</Link>
+                    {/* <Link
                     to={{
                         pathname: `/home/builder`,
                         query: this.state.userUID
-                    }}>Builder</Link>
+                    }}>Builder</Link> */}
                 </div>
                 </div>
                 <div className="homeContent homeContent--right" />
