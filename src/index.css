@@ -248,7 +248,6 @@ footer {
 .view {
   color: white;
   width: 100%;
-  border: 1px solid black;
   text-align: left;
   padding: 40px;
   height: 400px; }
@@ -294,7 +293,6 @@ footer {
 
 .view {
   width: 100%;
-  border: 1px solid black;
   text-align: left;
   padding: 40px;
   height: 400px; }
@@ -339,6 +337,7 @@ footer {
     float: left; }
 
 .liveView__header__container {
+  padding: 0 40px;
   position: absolute;
   top: 50%;
   left: 0;
