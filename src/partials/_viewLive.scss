@@ -6,6 +6,7 @@
 
 .social {
     position: absolute;
+    left: 30px;
     right: 30px;
     bottom: 30px;
     & ul,
@@ -14,7 +15,11 @@
         padding: 0px;
         list-style: none;
         float: left;
-    }   
+    } 
+    & ul {
+        position: relative;
+    }
+
 }
 
 .liveView {
