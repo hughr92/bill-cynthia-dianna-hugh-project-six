@@ -287,14 +287,14 @@ footer {
   border: 1px solid black;
   text-align: left;
   padding: 40px;
-  height: 400px;
-  overflow-y: scroll; }
+  height: 400px; }
   .view__title {
     width: 100%;
     text-align: center; }
     .view__title--html {
       color: white; }
   .view__html {
+    overflow-y: scroll;
     background-color: #262721; }
     .view__html--equals {
       color: white; }
@@ -358,6 +358,27 @@ footer {
       color: #70cee7; }
     .view__css--end {
       color: white; }
+
+.view__live {
+  position: relative; }
+
+.social {
+  position: absolute;
+  right: 30px;
+  bottom: 30px; }
+  .social ul,
+  .social li {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    float: left; }
+
+.liveView__header__container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%); }
 
 .tools__container--text__h1, .tools__container--text__h2 {
   float: left;

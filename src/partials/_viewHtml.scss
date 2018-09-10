@@ -6,7 +6,7 @@
     text-align: left;
     padding: 40px;
     height: 400px;
-    overflow-y: scroll;
+    
     &__title {
         width: 100%;
         text-align: center;
@@ -15,6 +15,7 @@
         } 
     }
     &__html {
+        overflow-y: scroll;
         &--equals {
             color: white;
         }
