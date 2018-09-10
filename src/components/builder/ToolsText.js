@@ -39,7 +39,7 @@ class ToolsText extends Component {
     const temp=e.target.id.split('.')
     const header=temp[0];
     const property=temp[1];
-    
+    console.log(header,property);
     newState[header][property] = e.target.value;
 
     this.setState(
@@ -58,8 +58,6 @@ class ToolsText extends Component {
       newState[header].isInvalid = false;
       this.setState(newState);
     }
-    // add the else
-
   }
     render() {
         return (
@@ -101,11 +99,11 @@ class ToolsText extends Component {
                   <label htmlFor="h1TextAlign" >
                       Text alignment
                   </label>
-                  <select>
-                    <option value="">left</option>
-                    <option value="" selected>center</option>
-                    <option value="">right</option>
-                    <option value="">justify</option>
+                  <select onChange={this.handleChange} id="h1.alignment">
+                    <option value="left" >left</option>
+                    <option value="center" selected>center</option>
+                    <option value="right">right</option>
+                    <option value="justify">justify</option>
                   </select>
                 </div>
               </div>
