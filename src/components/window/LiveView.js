@@ -5,6 +5,7 @@ class LiveView extends Component {
     constructor () {
         super();
         this.state = {
+            hover: false,
             user: "",
             twitter: "diannakylee",
             userSelections: {
@@ -79,12 +80,20 @@ class LiveView extends Component {
 
         // SOCIAL
         const socialColor = this.state.userSelections.text.h1.color ? this.state.userSelections.text.h1.color : 'white';
+        
+        const socialColorHover = this.state.userSelections.text.h2.color ? this.state.userSelections.text.h2.color : 'black';
 
+        let buttonHover
+        
         const socialStyle = {
             color: socialColor,
             margin: '10px',
         }
 
+        const socialStyleHover = {
+            color: socialColorHover,
+            margin: '10px',
+        }
         
 
 
@@ -137,7 +146,8 @@ class LiveView extends Component {
             transform: iconTranslate,
             left: leftValue
         }
-
+        
+        
 
 
         return(
@@ -150,7 +160,7 @@ class LiveView extends Component {
                     <div className="social">
                         <ul style={socialContainer}>
                             {this.state.userSelections.social.linkedin  && (
-                                <li className="liveView__icon"><a href={`https://ca.linkedin.com/in/${this.state.userSelections.social.linkedin}`}><i class="fab fa-linkedin-in" style={socialStyle}></i></a></li>
+                                <li onMouseEnter={() => this.setState({ hover: true })} onMouseLeave={() => this.setState({ hover: false })} className="liveView__icon"><a href={`https://ca.linkedin.com/in/${this.state.userSelections.social.linkedin}`}><i class="fab fa-linkedin-in"  style={this.state.hover ? socialStyleHover : socialStyle}></i></a></li>
                             )}
 
                             {this.state.userSelections.social.github  && (
