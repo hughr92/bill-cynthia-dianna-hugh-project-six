@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import firebase from '../../firebase';
 
 class HTMLView extends Component {
@@ -68,11 +67,15 @@ class HTMLView extends Component {
 
     render() { 
         // HEADER ONE TEXT INFO
-        const headerOneFont = this.state.userSelections.text.h1.fontFamily ? this.state.userSelections.text.h1.fontFamily : 'HeaderOneFont';
+        const headerOneFontPre = this.state.userSelections.text.h1.fontFamily ? this.state.userSelections.text.h1.fontFamily : 'HeaderOneFont';
+        const headerOneFont = headerOneFontPre.split(' ').join('+');
+
         const headerOneText = this.state.userSelections.text.h1.textContent ? this.state.userSelections.text.h1.textContent : 'Header'; 
 
         // HEADER TWO TEXT INFO
-        const headerTwoFont = this.state.userSelections.text.h2.fontFamily ? this.state.userSelections.text.h2.fontFamily : 'HeaderTwoFont';
+        const headerTwoFontPre = this.state.userSelections.text.h2.fontFamily ? this.state.userSelections.text.h2.fontFamily : 'HeaderTwoFont';
+        const headerTwoFont = headerTwoFontPre.split(' ').join('+');
+
         const headerTwoText = this.state.userSelections.text.h2.textContent ? this.state.userSelections.text.h2.textContent : 'Subheader'; 
 
     

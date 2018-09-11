@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import Templates from '../Templates'
 
 import ToolsBackground from './ToolsBackground';
 import ToolsText from './ToolsText';
 import ToolsSocial from './ToolsSocial';
-import Templates from '../Templates';
+// import ToolsTemplate from './ToolsTemplate';
+// import Templates from '../Templates';
 
 const BUTTON_ARRAY = []
 
@@ -13,6 +15,7 @@ class Tools extends Component {
         super();
         this.state = {
             toolTab: 'background',
+            
         }
     }
 
@@ -28,7 +31,8 @@ class Tools extends Component {
         
         return (
             <div>
-                <ul className="tabs tabs__tools">
+
+                <ul>
                     <li><button onClick={this.handleChange} id="background" className="tools__tabs">Background</button></li>
                     <li><button onClick={this.handleChange} id="text" className="tools__tabs">Text</button></li>
                     <li><button onClick={this.handleChange} id="social" className="tools__tabs">Social</button></li>
@@ -51,10 +55,11 @@ class Tools extends Component {
                         <ToolsSocial user={this.props.user}/>
                 )
                 }
+
                 {
                 this.state.toolTab === 'templates' && (
-                        <Templates user={this.props.user} />
-                    )
+                       <Templates user={this.props.user} />
+                   )
                 }
             </div>
 
