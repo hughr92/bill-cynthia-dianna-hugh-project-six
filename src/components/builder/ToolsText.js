@@ -121,7 +121,6 @@ class ToolsText extends Component {
     
     const newState = JSON.parse(JSON.stringify(this.state));
     const temp=e.target.id.split('.')
-    console.log(temp)
     const header=temp[0];
     const property=temp[1];
 
