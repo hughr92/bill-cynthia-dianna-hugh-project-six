@@ -1,0 +1,30 @@
+.template {
+    border: 1px solid red;
+}
+
+.styleGuide {
+    margin: 3%;
+    border: 1px solid black;
+
+}
+
+h1.template__title {
+    font-size: 3.5rem;
+}
+
+.swatches {
+    &__triple {
+        
+    }
+
+    &__cell {
+        height:40px;
+        width:40px;
+        display:inline-block;
+        margin-right: 10px;
+    
+    }
+}
+
+
+

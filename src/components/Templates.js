@@ -18,6 +18,7 @@ class Templates extends Component {
     });
   };
 
+  
   sortTemplates = (templateObject) => {
     const templatesArray = Object.entries(templateObject).map((item) => {
       console.log(item);
@@ -37,53 +38,80 @@ class Templates extends Component {
         h2Color: item[1].text.h2.color,
         h2Align: item[1].text.h2.alignment
       });
+      
+
     });
     console.log("templates array", templatesArray);
     
-    const newTemplatesArray = templatesArray.slice(0,9)
+    const newTemplatesArray = templatesArray.slice(0,18)
 
     this.setState ({
       template: newTemplatesArray
     })
   }
 
-
-  render() {
-
-    const swatchBackground = {
-      backgroundColor :  'green',
-    }
-
-    const swatchH1 = {
-      backgroundColor : 'red'
-    }
+  handleChange = (e) => {
+    console.log('target',e.target);
+    const userID = this.props.user;
+    console.log("userID", userID);
     
-    const swatchH2 = {
-      backgroundColor : 'blue'
-    }
+    const backgroundDbRef = firebase.database().ref(`${userID}/background`);
+    backgroundDbRef.on("value", snapshot => {
+      snapshot.ref.update({backgroundColor:this.state.template[e.target.id].backgroundColor})
+  
+  //   this.sortTemplates(snapshot.val());
+  //   });
+    // })
+
+    // const dbRef = firebase.database().ref(`${userID}/text`);
+    // dbRef.on("value", snapshot => {
+    //   snapshot.ref.update({
+    //     backgroundColor: this.state.template[e.target.id].h1Align
+    //   });
+      /* console.log("template", snapshot.val()); */
+
+      //   this.sortTemplates(snapshot.val());
+      //   });
+    });
+
+
+  }
+  render() {
+    
+
+    
 
    /*  const { template } = this.state */
       return (
         <div>
           {
-            this.state.template.map( (templateStyle) => {
+            this.state.template.map( (templateStyle,i) => {
+              const swatchBackground = { backgroundColor: templateStyle.backgroundColor };
+
+              const swatchH1 = { backgroundColor: templateStyle.h1Color };
+
+              const swatchH2 = { backgroundColor: templateStyle.h2Color };
+
+              const titleColor = { color: templateStyle.backgroundColor };
               return <div className="template">
                   <h1 className="template__title">
-                    <span>{templateStyle.templateTitle}</span>
+                    <span style={titleColor}>
+                      {templateStyle.templateTitle}
+                    </span>
                   </h1>
 
                   <div className="styleGuide">
                     <h3 className="styleGuide__cell__heading">
                       <span>{templateStyle.h2TextContent}</span>
                     </h3>
-                    <h3 className="styleGuide__cell__heading">
+                    <h4 className="styleGuide__cell__heading">
                       h1 Color:
                       <span>{templateStyle.h1Color}</span>
-                    </h3>
-                    <h3 className="styleGuide__cell__heading">
+                    </h4>
+                    <h4 className="styleGuide__cell__heading">
                       h2 Color:
                       <span>{templateStyle.h2Color}</span>
-                    </h3>
+                    </h4>
                   </div>
 
                   <div className="swatches">
@@ -91,19 +119,18 @@ class Templates extends Component {
 
                     <ul className="swatches__triple">
                       <li style={swatchBackground} className="swatches__cell">
-                        {templateStyle.backgroundColor}
+                        {/* {templateStyle.backgroundColor} */}
                       </li>
                       <li style={swatchH1} className="swatches__cell">
-                        {templateStyle.h1Color}
+                        {/* {templateStyle.h1Color} */}
                       </li>
                       <li style={swatchH2} className="swatches__cell">
-                        {templateStyle.h2Color}
+                        {/* {templateStyle.h2Color} */}
                       </li>
                     </ul>
-
                   </div>
 
-                  <button>
+                  <button id={i} onClick={this.handleChange}>
                     <h3>Pick Template</h3>
                   </button>
                 </div>;
