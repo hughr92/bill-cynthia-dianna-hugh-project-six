@@ -125,13 +125,13 @@ class Home extends Component {
             <div className="wrapper">
                 <div className="homeContent">
                     <div className="homeContent--top">
-                        <h1 className="homePage--h1">
-                        Welcome to the Splash Pad
-                        </h1>
-                        <h2 className="homePage--h2">
-                        Need a hero to make a splash?
-                        </h2>
                     </div>
+                    <h1 className="homePage--h1">
+                    Welcome to the Splash Pad
+                    </h1>
+                    <h2 className="homePage--h2">
+                    Need a hero to make a splash?
+                    </h2>
                     <div className="walkThrough">
                         <div className="walkThrough__block">
                             <div className="walkThrough__block--image">
