@@ -6,17 +6,15 @@ class Footer extends Component {
         return (
 
             <footer className="footer">
-                  <div className="wrapper">
+                <div className="wrapper">
                     <p class="footer__copyright">
-                      &copy; 2018 HappyCampers (Created by: <a href="https://github.com/b-chuang"><i class="fab fa-github"></i> Bill</a>, <a href="https://github.com/cchiu01"><i class="fab fa-github"></i> Cynthia</a>, <a href="https://github.com/diannakylee"><i class="fab fa-github"></i> Dianna</a>, <a href="https://github.com/hughr92"><i class="fab fa-github"></i> Hugh</a>)
+                        &copy; 2018 <a href="https://github.com/happyCampers"><i class="fab fa-github"></i> HappyCampers</a> (Created by: <a href="https://github.com/b-chuang"><i class="fab fa-github"></i> Bill</a>, <a href="https://github.com/cchiu01"><i class="fab fa-github"></i> Cynthia</a>, <a href="https://github.com/diannakylee"><i class="fab fa-github"></i> Dianna</a>, <a href="https://github.com/hughr92"><i class="fab fa-github"></i> Hugh</a>)
                     </p>
-                  </div>
+                </div>
             
             </footer>
         )
-            
-         
-
+        
     }
 }
 
