@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import Templates from '../Templates'
 
 import ToolsBackground from './ToolsBackground';
 import ToolsText from './ToolsText';
 import ToolsSocial from './ToolsSocial';
+import ToolsTemplate from './ToolsTemplate';
 import Templates from '../Templates';
+
 
 class Tools extends Component {
 
@@ -49,6 +52,7 @@ class Tools extends Component {
                         <ToolsSocial user={this.props.user}/>
                 )
                 }
+
                 {
                 this.state.toolTab === 'templates' && (
                         <Templates user={this.props.user} />

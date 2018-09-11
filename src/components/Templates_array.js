@@ -470,7 +470,7 @@ class Template extends Component {
         console.log('yay?');
         // firebase.database().ref('/templates').push(this.state)
         const dbRef = firebase.database().ref("/templates")
-        dbRef.push(this.state);
+        dbRef.push(this.state.cool);
     }
 
 
