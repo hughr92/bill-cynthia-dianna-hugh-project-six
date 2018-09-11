@@ -30,6 +30,12 @@ class CSSView extends Component {
                         textContent: ""
 
                     },
+                    h1color: {
+                        hex: ""
+                    },
+                    h2color: {
+                        hex: ""
+                    }
                 },
                 social: {
                     email: "",
@@ -59,7 +65,7 @@ class CSSView extends Component {
                     //     social: snapshot.val().social
                     // }
                 }, () => {
-                    console.log(`setState`, this.state.userSelections.social.twitter);
+                    console.log(`setState`, this.state.userSelections);
 
                 })
             })
@@ -75,7 +81,7 @@ class CSSView extends Component {
         const setBackground = this.state.userSelections.background.background ? this.state.userSelections.background.background : '#30b8b2'
 
         // HEADER ONE
-        const headerOneColor = this.state.userSelections.text.h1.color ? this.state.userSelections.text.h1.color : 'white';
+        const headerOneColor = this.state.userSelections.text.h1color.hex ? this.state.userSelections.text.h1color.hex : 'white';
         const headerOneAlign = this.state.userSelections.text.h1.alignment ? this.state.userSelections.text.h1.alignment : 'center';
         const headerOneFontPre = this.state.userSelections.text.h1.fontFamily ? this.state.userSelections.text.h1.fontFamily : 'sans-serif';
         const headerOneFont = headerOneFontPre.split(' ').join('-');
@@ -85,7 +91,7 @@ class CSSView extends Component {
 
 
         // HEADER TWO
-        const headerTwoColor = this.state.userSelections.text.h2.color ? this.state.userSelections.text.h2.color : 'white';
+        const headerTwoColor = this.state.userSelections.text.h2color.hex ? this.state.userSelections.text.h2color.hex : 'white';
         const headerTwoAlign = this.state.userSelections.text.h2.alignment ? this.state.userSelections.text.h2.alignment : 'center';
         const headerTwoFontPre = this.state.userSelections.text.h2.fontFamily ? this.state.userSelections.text.h2.fontFamily : 'serif';
         const headerTwoFont = headerTwoFontPre.split(' ').join('-');

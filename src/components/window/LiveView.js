@@ -30,6 +30,12 @@ class LiveView extends Component {
                         textContent: ""
 
                     },
+                    h1color: {
+                        hex: ''
+                    },
+                    h2color: {
+                        hex: ''
+                    },
                 },
                 social: {
                     email: "",
@@ -89,9 +95,9 @@ class LiveView extends Component {
         
 
         // SOCIAL
-        const socialColor = this.state.userSelections.text.h1.color ? this.state.userSelections.text.h1.color : 'white';
+        const socialColor = this.state.userSelections.text.h1color.hex ? this.state.userSelections.text.h1color.hex : 'white';
         
-        const socialColorHover = this.state.userSelections.text.h2.color ? this.state.userSelections.text.h2.color : 'black';
+        const socialColorHover = this.state.userSelections.text.h2color.hex ? this.state.userSelections.text.h2color.hex : 'black';
 
         let buttonHover
         
@@ -108,7 +114,7 @@ class LiveView extends Component {
 
 
         // HEADER ONE
-        const headerOneColor = this.state.userSelections.text.h1.color ? this.state.userSelections.text.h1.color : 'white';
+        const headerOneColor = this.state.userSelections.text.h1color.hex ? this.state.userSelections.text.h1color.hex : 'white';
         const headerOneAlign = this.state.userSelections.text.h1.alignment ? this.state.userSelections.text.h1.alignment : 'center';
         const headerOneFont = this.state.userSelections.text.h1.fontFamily ? this.state.userSelections.text.h1.fontFamily : 'sans-serif';
         const headerOneSize = this.state.userSelections.text.h1.size ? `${this.state.userSelections.text.h1.size}px` : '35px';
@@ -121,7 +127,7 @@ class LiveView extends Component {
         }
         
         // HEADER TWO
-        const headerTwoColor = this.state.userSelections.text.h2.color ? this.state.userSelections.text.h2.color : 'white';
+        const headerTwoColor = this.state.userSelections.text.h2color.hex ? this.state.userSelections.text.h2color.hex : 'white';
         const headerTwoAlign = this.state.userSelections.text.h2.alignment ? this.state.userSelections.text.h2.alignment : 'center';
         const headerTwoFont = this.state.userSelections.text.h2.fontFamily ? this.state.userSelections.text.h2.fontFamily : 'serif';
         const headerTwoSize = this.state.userSelections.text.h2.size ? `${this.state.userSelections.text.h2.size}px` : '15px';
