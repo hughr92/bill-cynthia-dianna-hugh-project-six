@@ -8,33 +8,6 @@ class Footer extends Component {
             <footer className="footer">Footer</footer>
             <div className="wrapper">
               <div className="footerContent">
-                <div className="footerContent__cell">
-                  <h3 className="footerContent__cell__heading">
-                    Contact
-                  </h3>
-                  <ul className="contactInfo">
-                    <li className="contactInfo__item">
-                      <i className="contactInfo__icon far fa-envelope" />
-                      <a href="#" class="contactInfo__link">
-                        info@hackeryou.com
-                      </a>
-                    </li>
-                    <li className="contactInfo__item">
-                      <i className="contactInfo__icon fas fa-phone" />
-                      123-456-7890
-                    </li>
-                    <li className="contactInfo__item">
-                      <i className="contactInfo__icon fas fa-map-marker-alt" />
-                      Toronto, Ontario
-                    </li>
-                  </ul>
-                  <form action="POST" name="emailSubscribe" className="emailSubscribe">
-                    <input type="email" placeholder="your email" name="emailSubscribe__email" className="emailSubscribe__email" />
-                    <button className="emailSubscribe__submit">
-                      <i className="fas fa-paper-plane" />
-                    </button>
-                  </form>
-                </div>
                 <div class="footerContent__cell">
                   <h3 class="footerContent__cell__heading">About Us</h3>
                   <p class="footerContent__cell__body">
@@ -67,7 +40,7 @@ class Footer extends Component {
                   </div>
 
                   <nav class="footerNav">
-                    <h2 class="footerNav__heading">Templateful</h2>
+                    <h2 class="footerNav__heading">Splash Pad</h2>
                     <ul class="navList nav__wrapped">
                       <li class="footerNavList__item">
                         <a href="#" class="navList__link">

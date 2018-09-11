@@ -40,10 +40,13 @@ class Templates extends Component {
       });
     });
     console.log("templates array", templatesArray);
+    
+    const newTemplatesArray = templatesArray.slice(0,3)
+
 
     this.setState ({
-      template: templatesArray
-    });
+      template: newTemplatesArray
+    })
   }
 
 
@@ -93,61 +96,31 @@ class Templates extends Component {
   
 
   render() {
-    const { Template } = this.state
+   /*  const { template } = this.state */
       return (
         <div>
           {
-            this.state.templateArray.map(function (template) {
+            this.state.template.map( (templateStyle) => {
               return (
                 <div>
-                  <h1>{template.templateTitle}</h1>
+                  <h1>{templateStyle.templateTitle}</h1>
+              
+                    <div className="styleGuide">
+                      <div className="styleGuide__cell">
+                        <h3 className="styleGuide__cell__heading">
+                          Template Title
+                          {templateStyle.templateTitle}
+                        </h3>
+                      </div>
+                    </div>
                 </div>
-      
-              )
+                )
             })
-          }
+            } 
+        </div>
+      )
+    }
+}      
 
-      
-             <div className="styleGuide">
-              <div className="styleGuide__cell">
-                <h3 className="styleGuide__cell__heading">
-                  Template Title
-                  {this.state.template.templateTitle}
-                </h3>
-
-                <div className="styleGuide__cell__content">
-                  <h2 className="styleGuide__cell__content__fontfamily">
-                    font family
-                    {this.state.template.h1Font}
-                  </h2>
-                  <h2 className="styleGuide__cell__content__fontcolor">
-                    font color
-                    {this.state.h1Color}
-                  </h2>
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing
-                    elit. Amet quae sunt minima corporis sapiente
-                    excepturi dicta quibusdam atque veritatis cumque?
-                  </p>
-                </div>
-
-                <div className="styleGuide__cell__swatches" />
-
-                <div className="styleGuide__cell__templateImage" />
-              </div>
-            </div>
-          </div>
-      
-
-
-      //  {/*  <section>
-      //   {this.state.template.map((templateStyle) => {
-
-      //    }
-      //   }
-      //   </section> */}
-     
-      )}
-}
 
 export default Templates;
