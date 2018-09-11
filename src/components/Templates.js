@@ -43,14 +43,39 @@ class Templates extends Component {
     });
     console.log("templates array", templatesArray);
     
-    const newTemplatesArray = templatesArray.slice(0,9)
+    const newTemplatesArray = templatesArray.slice(0,18)
 
     this.setState ({
       template: newTemplatesArray
     })
   }
 
+  handleChange = (e) => {
+    console.log('target',e.target);
+    const userID = this.props.user;
+    console.log("userID", userID);
+    
+    const backgroundDbRef = firebase.database().ref(`${userID}/background`);
+    backgroundDbRef.on("value", snapshot => {
+      snapshot.ref.update({backgroundColor:this.state.template[e.target.id].backgroundColor})
   
+  //   this.sortTemplates(snapshot.val());
+  //   });
+    // })
+
+    // const dbRef = firebase.database().ref(`${userID}/text`);
+    // dbRef.on("value", snapshot => {
+    //   snapshot.ref.update({
+    //     backgroundColor: this.state.template[e.target.id].h1Align
+    //   });
+      /* console.log("template", snapshot.val()); */
+
+      //   this.sortTemplates(snapshot.val());
+      //   });
+    });
+
+
+  }
   render() {
     
 
@@ -60,7 +85,7 @@ class Templates extends Component {
       return (
         <div>
           {
-            this.state.template.map( (templateStyle) => {
+            this.state.template.map( (templateStyle,i) => {
               const swatchBackground = { backgroundColor: templateStyle.backgroundColor };
 
               const swatchH1 = { backgroundColor: templateStyle.h1Color };
@@ -94,18 +119,18 @@ class Templates extends Component {
 
                     <ul className="swatches__triple">
                       <li style={swatchBackground} className="swatches__cell">
-                        {templateStyle.backgroundColor}
+                        {/* {templateStyle.backgroundColor} */}
                       </li>
                       <li style={swatchH1} className="swatches__cell">
-                        {templateStyle.h1Color}
+                        {/* {templateStyle.h1Color} */}
                       </li>
                       <li style={swatchH2} className="swatches__cell">
-                        {templateStyle.h2Color}
+                        {/* {templateStyle.h2Color} */}
                       </li>
                     </ul>
                   </div>
 
-                  <button>
+                  <button id={i} onClick={this.handleChange}>
                     <h3>Pick Template</h3>
                   </button>
                 </div>;

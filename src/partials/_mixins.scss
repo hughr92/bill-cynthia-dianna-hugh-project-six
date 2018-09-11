@@ -7,21 +7,28 @@ $linkColor: yellow;
 
 %button {
     border: none;
-    border-top: 2px solid #30b8b2;
-    border-left: 2px solid #30b8b2;
+    border-top: 2px solid $accentColor;
+    border-left: 2px solid $accentColor;
+    border-bottom: 2px solid $darkGrey;
+    border-right: 2px solid $darkGrey;
     background: none;
     font-family: poppins;
     padding: 5px 10px;
     margin-right: 10px;
     color: #30b8b2;
+    transition: all 200ms;
     &:focus {
         background-color: #30b8b2;
         color: white;
         outline: none;
     }
     &:hover {
-        background-color: #30b8b2;
+        background-color: $accentColor;
         color: white;
+        border-bottom: 2px solid $darkGrey;
+        border-right: 2px solid $darkGrey;
+        border-top: 2px solid $lightGrey;
+        border-left: 2px solid $lightGrey;
     }
    
 }
