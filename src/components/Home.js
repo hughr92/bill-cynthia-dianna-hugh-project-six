@@ -106,17 +106,15 @@ class Home extends Component {
                 user: null,
                 // this is where we set a generic state with empty info
             });
-
             this.dbRef.off();
         })
     }
 
     render() {
-        return <div className="homePage">
+        return <div className="homePageFull">
             {!this.state.user && (
                 <div className="loginOverlay">
                     <div className="loginModal">
-
                         <div className="modalText">
                             <h1>The Splash Pad</h1>
                             <p>Wanna get started?  Login to save your heros or Use as a guest</p>
@@ -126,80 +124,57 @@ class Home extends Component {
                             <button className="modalButton" onClick={this.anonUser}>Use as Guest</button>
                         </div>
                     </div>
-                    </div>
+                </div>
             )}
-            <div className="wrapper">
-                <div className="homeContent">
-                    <div className="homeContent--top">
-                        <h1 className="homePage--h1">
+            <section className="homePage homePage--top">
+                <div className="wrapper clearfix">
+                    <h1 className="homePage--h1">
                         Welcome to the Splash Pad
-                        </h1>
-                        <h2 className="homePage--h2">
+                    </h1>
+                    <h2 className="homePage--h2">
                         Need a hero to make a splash?
-                        </h2>
+                    </h2>
+                </div>
+            </section>
+            <section className="homePage homePage--about">
+                <div className="wrapper clearfix">
+                    <h2>About Splash Pad</h2>
+                    <p>So you've got hosting and a domain, but you haven't got time to create your website yet.  Sounds like a problem every hackerYou bootcamper has.  We're here to help.</p> 
+                    <p>Using Splash Pad, you can create a beautiful splash page with your online contact so you never have to miss another opportunity.</p>
+                </div>
+            </section>
+            <section className="homePage homePage--howTo">
+                <div className="wrapper clearfix">
+                    <h2>How it works?</h2>
+                    <div className="task task1">
+                        <h1><i class="far fa-object-group"></i></h1>
+                        <p>Choose one of our colour templates</p>
                     </div>
-                    <div className="walkThrough">
-                        <div className="walkThrough__block">
-                            <div className="walkThrough__block--image">
-                                <h1><i class="far fa-smile-wink"></i></h1>
-                            </div>
-                            <div className="walkThrough__block--text">
-                                <p>Do you need a page to show your work? At Splash Pad, you</p>
-                            </div>  
-                        </div>
-                        <div className="walkThrough__block">
-                            <div className="walkThrough__block--text">
-                                <p>Or you can use one of our template styles.</p>
-                            </div>
-                            <div className="walkThrough__block--image">
-                                <h1><i class="far fa-object-group"></i></h1>
-                            </div>
-                        </div>
-                        <div className="walkThrough__block">
-                            <div className="walkThrough__block--image">
-                                <h1><i class="far fa-images"></i></h1>
-                            </div>
-                            <div className="walkThrough__block--text">
-                                <p>On our builder page, start off by choosing your background color or image.</p>
-                            </div>
-                        </div>
-                        <div className="walkThrough__block">
-                            <div className="walkThrough__block--text">
-                                <p>Put in your name and a tagline, and choose your font styles.</p>
-                            
-                            </div>
-                            <div className="walkThrough__block--image">
-                                <h1><i class="fas fa-align-left"></i></h1>
-                            </div>
-                        </div>
-                        <div className="walkThrough__block">
-                            <div className="walkThrough__block--image">
-                                <h1>
-                                    <i class="fab fa-internet-explorer"></i>
-                                </h1>
-                            </div>
-                            <div className="walkThrough__block--text">
-                            
-                                <p>Insert your points of contact. </p>
-                            </div>
-                        </div>
+                    <div className="task task2">
+                        <h1><i class="far fa-images"></i></h1>
+                        <p>Pick a Background Colour or Upload an Image</p>
                     </div>
-                    {/* <Link to="/home/templates">Templates</Link> */}
+                    <div className="task task3">
+                        <h1><i class="fas fa-align-left"></i></h1>
+                        <p>Select your Text Colour + Font Family + Size</p>
+                    </div>
+                    <div className="task task4">
+                        <h1><i class="far fa-envelope"></i></h1>
+                        <p>Add your Social Media Usernames and Contact</p>
+                    </div>
                 </div>
-                <div className="homePage--getStarted">
-                    <Link
-                    to= {`/home/builder/${this.state.userUID}`}>Ready to Get Started</Link>
-                    {/* <Link
-                    to={{
-                        pathname: `/home/builder`,
-                        query: this.state.userUID
-                    }}>Builder</Link> */}
+            </section>
+            <section className="homePage homePage--start">
+                <div className="wrapper clearfix">
+                    <h2>Ready to build a splash page?</h2>
+                    <p></p>
+                    <Link className="startLink"to={`/home/builder/${this.state.userUID}`}>Let's get started</Link>
                 </div>
-                </div>
-                <div className="homeContent homeContent--right" />
-            </div>
-        
+            </section>
+        </div>
+
     }
 }
 
 export default Home;
+

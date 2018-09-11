@@ -10,6 +10,22 @@
 
 
 .homePage {
+    text-align: center;
+    padding: 100px 0;
+    // height: 100vh;
+    &--top {
+        height: 100vh;
+        background-image: url('../src/assets/gaelle-marcel-357627-unsplash.jpg');
+        background-size: cover;
+
+    }
+
+    &--howTo {
+        background-color: $accentColor;
+        & h2 {
+            margin-bottom: 20px;
+        }
+    }
     &--h1 {
         line-height: 6rem;
         margin-bottom: 10px;
@@ -19,12 +35,23 @@
         color: $accentColor;
     }
     &--getStarted {
+
         & a {
             display: inline-block;
             @extend %button;
-
         }
     }
+}
+
+.startLink {
+    @extend %button;
+}
+
+.task {
+    color: white;
+    width: calc(100% / 4 - 20px);
+    margin: 0 10px;
+    float: left;
 }
 
 .loginOverlay {
@@ -42,7 +69,7 @@
     border-radius: 15px;
     display: block;
     width: 300px;
-    height: 400px;
+    padding: 20px 0;
     position: relative;
     left: 50%;
     top: 50%;
@@ -56,6 +83,10 @@
     & h1 {
         line-height: 5rem;
         text-shadow: 3px 3px $accentColor;
+    }
+    & p {
+        padding: 10px 15px 0 15px;
+        line-height: 2.5rem;
     }
 }
 
@@ -72,41 +103,4 @@
     @extend %button
 }
 
-.walkThrough {
-    width: 100%;
-    height: 100vh;
-    &__block {
-        clear: both;
-        height: 250px;
-        &--text {
-            width: calc(100% / 2);
-            float: left;
-            height: 100%;
-            padding: 0 30px;
-            text-align: center;
-            background-color: $lightGrey;
-            & p {
-                color: #505050;
-                font-size: 2.5rem;
-                line-height: 4rem;
-            }
-        }
-        &--image {
-            width: calc(100% / 2);
-            float: left;
-            // background-color: $accentColor;
-            height: 100%;
-            text-align: center;
-            position: relative;
-            & h1 {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                font-size: 10rem;
-                color: $accentColor;
-            }
-        }
-    }
-}
 

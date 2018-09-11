@@ -1,6 +1,7 @@
 .navBar {
     background: $accentColor;
     height: 50px;
+    z-index: 18;
 }
 
 .navBar h3 {
@@ -30,4 +31,8 @@
     &:hover {
         color: gold; 
     }
+}
+
+.navBarButton {
+    @extend %button;
 }
