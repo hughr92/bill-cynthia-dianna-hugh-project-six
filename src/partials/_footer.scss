@@ -1,9 +1,19 @@
-footer {
+.footer {
     clear: both;
+    padding: 20px;
     background: $accentColor;
+    text-align: center;
+    &__copyright {
+        color: white;
+        & a {
+            border-bottom: 2px solid transparent;
+            padding: 2px;
+            color: white;
+            transition: .6s;
+            &:hover {
+                color: $linkColor;
+            }
+        }
+    }
 }
 
-.footerContent__cell, .footerSocial {
-    border:1px red solid;
-    float:left;
-}
