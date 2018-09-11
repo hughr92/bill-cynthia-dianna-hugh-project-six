@@ -5,7 +5,7 @@ import ToolsText from './ToolsText';
 import ToolsSocial from './ToolsSocial';
 import Templates from '../Templates';
 
-const BUTTON_ARRAY = []
+// const BUTTON_ARRAY = []
 
 class Tools extends Component {
 
