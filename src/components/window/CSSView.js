@@ -68,9 +68,11 @@ class CSSView extends Component {
 
     render() { 
         //BACKGROUND
-        const backgroundColor = this.state.userSelections.background.backgroundColor ? this.state.userSelections.background.backgroundColor : 'blue'
+        // const backgroundColor = this.state.userSelections.background.backgroundColor ? this.state.userSelections.background.backgroundColor : 'blue'
         
-        const backgroundPicture = this.state.userSelections.background.picture ? this.state.userSelections.background.picture : null
+        // const backgroundPicture = this.state.userSelections.background.picture ? this.state.userSelections.background.picture : null
+
+        const setBackground = this.state.userSelections.background.background ? this.state.userSelections.background.background : '#30b8b2'
 
         // HEADER ONE
         const headerOneColor = this.state.userSelections.text.h1.color ? this.state.userSelections.text.h1.color : 'white';
@@ -117,12 +119,13 @@ class CSSView extends Component {
                 {/* background */}
                 <div className="view__container">
                     <p className="view__css--class">{`.background`}<span className="view__css--element--start">{`{`}</span></p>
-                    {this.state.userSelections.background.picture && (
+                    {/* {this.state.userSelections.background.picture && (
                         <p className="view__css--property">{`background : "${backgroundPicture}"`};</p>
                     )}
                     {!this.state.userSelections.background.picture && (   
                         <p className="view__css--property">{`background : ${backgroundColor}`};</p>
-                    )}
+                    )} */}
+                    <p className="view__css--property">{`background : ${setBackground}`}</p>
                     <p className="view__css--end">{`}`}</p>
                 </div>
                 {/* headerContainer */}
