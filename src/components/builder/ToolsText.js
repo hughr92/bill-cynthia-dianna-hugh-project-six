@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
-import axios from 'axios';
+// import axios from 'axios';
 
 class ToolsText extends Component {
   constructor (){
@@ -27,16 +27,44 @@ class ToolsText extends Component {
     }
   }
 
-  componentDidMount(){
-    axios.get('https://www.googleapis.com/webfonts/v1/webfonts', {
-      params: {
-        key: 'AIzaSyAPYBXi-tLQxlznV5T0IRJ0Pj_s_Ugb5FU',
-        sort: 'popularity'
-      }
-    })
-    .then((res) => {
-      console.log(res.data.items)
-    })
+  // componentDidMount(){
+  //   axios.get('https://www.googleapis.com/webfonts/v1/webfonts', {
+  //     params: {
+  //       key: 'AIzaSyAPYBXi-tLQxlznV5T0IRJ0Pj_s_Ugb5FU',
+  //       sort: 'popularity'
+  //     }
+  //   })
+  //   .then((res) => {
+  //     console.log(res.data.items)
+  //   })
+  // }
+
+  renderFonts = () => {
+    const fontsArray = ['Karla',
+      'Lora',
+      'Frank Ruhl Libre',
+      'Playfair Display',
+      'Archivo',
+      'Spectral',
+      'Rakkas',
+      'Concert One',
+      'Yatra One',
+      'Arvo',
+      'Lato',
+      'Abril FatFace',
+      'Ubuntu',
+      'PT Serif',
+      'Old Standard TT',
+      'Oswald',
+      'PT Sans',
+      'Poppins',
+      'Fira Sans',
+      'Open Sans'];
+      return fontsArray.map((font,i) => {
+        let dbFont = font.split(' ').join('+');
+        console.log(dbFont)
+        return (<option value={dbFont} key={i}>{font}</option>)
+      })
   }
   
   handleChange = (e) => {
@@ -85,7 +113,7 @@ class ToolsText extends Component {
                 </div>
 
                 <div className="tools__container__wrapper">
-                  <input onChange={this.handleChange} value={this.state.h1.size} id='h1.size' required type="number" className="tools__container__input"   />
+                  <input onChange={this.handleChange} value={this.state.h1.size} id='h1.size' required type="number" max="60" className="tools__container__input"   />
                   <label htmlFor="h1FontSize" className="tools__container__label">
                       Font size
                     </label>
@@ -99,9 +127,7 @@ class ToolsText extends Component {
                       Font family
                   </label>
                   <select>
-                    <option value="" selected>Roboto</option>
-                    <option value="" >Open Sans</option>
-                    <option value="">Lobster</option>
+                    {this.renderFonts()}
                   </select>
                 </div>
 
@@ -110,7 +136,7 @@ class ToolsText extends Component {
                       Text alignment
                   </label>
                   <select onChange={this.handleChange} id="h1.alignment">
-                    <option value="left" >left</option>
+                    <option value="left">left</option>
                     <option value="center">center</option>
                     <option value="right">right</option>
                   </select>
