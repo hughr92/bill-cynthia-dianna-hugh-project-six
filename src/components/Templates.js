@@ -55,11 +55,11 @@ class Templates extends Component {
     }
 
     const swatchH1 = {
-      backgroundColor : 'red'
+      backgroundColor : 'red',
     }
     
     const swatchH2 = {
-      backgroundColor : 'blue'
+      backgroundColor : 'blue',
     }
 
    /*  const { template } = this.state */
@@ -76,14 +76,14 @@ class Templates extends Component {
                     <h3 className="styleGuide__cell__heading">
                       <span>{templateStyle.h2TextContent}</span>
                     </h3>
-                    <h3 className="styleGuide__cell__heading">
+                    <h4 className="styleGuide__cell__heading">
                       h1 Color:
                       <span>{templateStyle.h1Color}</span>
-                    </h3>
-                    <h3 className="styleGuide__cell__heading">
+                    </h4>
+                    <h4 className="styleGuide__cell__heading">
                       h2 Color:
                       <span>{templateStyle.h2Color}</span>
-                    </h3>
+                    </h4>
                   </div>
 
                   <div className="swatches">
