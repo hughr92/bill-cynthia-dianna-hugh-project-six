@@ -25,7 +25,7 @@ class ToolsText extends Component {
       }
     }
   }
-
+ 
   renderFonts = () => {
     const fontsArray = ['Karla',
       'Lora',
@@ -48,7 +48,7 @@ class ToolsText extends Component {
       'Fira Sans',
       'Open Sans'];
       return fontsArray.map((font,i) => {
-        let dbFont = font.split(' ').join('+');
+        let dbFont = font;
         return (<option value={dbFont} key={i}>{font}</option>)
       })
   }
