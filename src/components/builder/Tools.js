@@ -4,8 +4,8 @@ import Templates from '../Templates'
 import ToolsBackground from './ToolsBackground';
 import ToolsText from './ToolsText';
 import ToolsSocial from './ToolsSocial';
-import ToolsTemplate from './ToolsTemplate';
-import Templates from '../Templates';
+// import ToolsTemplate from './ToolsTemplate';
+// import Templates from '../Templates';
 
 class Tools extends Component {
 
@@ -34,6 +34,7 @@ class Tools extends Component {
                     <li><button onClick={this.handleChange} id="background" className="tools__tabs">Background</button></li>
                     <li><button onClick={this.handleChange} id="text" className="tools__tabs">Text</button></li>
                     <li><button onClick={this.handleChange} id="social" className="tools__tabs">Social</button></li>
+                    <li><button onClick={this.handleChange} id="templates" className="tools__tabs">Templates</button></li>
                 </ul>
     
                 {
@@ -54,7 +55,7 @@ class Tools extends Component {
                 }
 
                 {
-                this.state.toolTab === ‘templates’ && (
+                this.state.toolTab === 'templates' && (
                        <Templates user={this.props.user} />
                    )
                 }
