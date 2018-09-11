@@ -18,6 +18,7 @@ class Templates extends Component {
     });
   };
 
+  
   sortTemplates = (templateObject) => {
     const templatesArray = Object.entries(templateObject).map((item) => {
       console.log(item);
@@ -37,6 +38,8 @@ class Templates extends Component {
         h2Color: item[1].text.h2.color,
         h2Align: item[1].text.h2.alignment
       });
+      
+
     });
     console.log("templates array", templatesArray);
     
@@ -47,29 +50,29 @@ class Templates extends Component {
     })
   }
 
-
+  
   render() {
-
-    const swatchBackground = {
-      backgroundColor :  'green',
-    }
-
-    const swatchH1 = {
-      backgroundColor : 'red',
-    }
     
-    const swatchH2 = {
-      backgroundColor : 'blue',
-    }
+
+    
 
    /*  const { template } = this.state */
       return (
         <div>
           {
             this.state.template.map( (templateStyle) => {
+              const swatchBackground = { backgroundColor: templateStyle.backgroundColor };
+
+              const swatchH1 = { backgroundColor: templateStyle.h1Color };
+
+              const swatchH2 = { backgroundColor: templateStyle.h2Color };
+
+              const titleColor = { color: templateStyle.backgroundColor };
               return <div className="template">
                   <h1 className="template__title">
-                    <span>{templateStyle.templateTitle}</span>
+                    <span style={titleColor}>
+                      {templateStyle.templateTitle}
+                    </span>
                   </h1>
 
                   <div className="styleGuide">
@@ -100,7 +103,6 @@ class Templates extends Component {
                         {templateStyle.h2Color}
                       </li>
                     </ul>
-
                   </div>
 
                   <button>
