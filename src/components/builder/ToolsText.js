@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
 
+
+const dbRef = firebase.database().ref();
+
 class ToolsText extends Component {
   constructor (){
     super();
@@ -77,6 +80,7 @@ class ToolsText extends Component {
         newState[header][property] = 60;
         break;
       default:
+        console.log('between 15 and 60')
         newState[header][property] = e.target.value;
     }
 
@@ -98,6 +102,15 @@ class ToolsText extends Component {
     //   this.setState(newState);
     // }
   }
+
+    componentDidMount() {
+      const userID = this.props.user;
+      const dbRef = firebase.database().ref(`${userID}/text`);
+      dbRef.on('value',(snapshot) => {
+        console.log(snapshot.val());
+        // const initialState = 
+      })
+    }
     render() {
         return (
         <div className="tools tools__container tools__container--text">
