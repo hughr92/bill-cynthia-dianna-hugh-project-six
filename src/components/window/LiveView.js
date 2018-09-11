@@ -71,16 +71,22 @@ class LiveView extends Component {
     render(){
         // STYLING
 
+        //BACKGROUND
+        const setBackground = this.state.userSelections.background.background ? this.state.userSelections.background.background : '#30b8b2'
+
         // BACKGROUND
-        const backgroundColor = this.state.userSelections.background.backgroundColor ? this.state.userSelections.background.backgroundColor : '#30b8b2';
-        
-        const backgroundPicture = this.state.userSelections.background.picture ? this.state.userSelections.background.picture : null;
-        
-        const setBackground = backgroundPicture ? backgroundPicture : backgroundColor
+        // const backgroundColor = this.state.userSelections.background.backgroundColor ? this.state.userSelections.background.backgroundColor : '#30b8b2';
+
+        // const backgroundPicture = this.state.userSelections.background.picture ? this.state.userSelections.background.picture : null;
+
+        // const setBackground = backgroundPicture ? `url("${backgroundPicture}")` : backgroundColor
 
         const backgroundStyle = {
-            background: `url("${setBackground}")`
+            background: setBackground,
+
         }
+        
+        
 
         // SOCIAL
         const socialColor = this.state.userSelections.text.h1.color ? this.state.userSelections.text.h1.color : 'white';
