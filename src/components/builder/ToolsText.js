@@ -246,7 +246,7 @@ class ToolsText extends Component {
               </div>
 
               <div className="tools__container__wrapper">
-                <input required onChange={this.handleChange} id="h2.size" value={this.state.h2.size} type="number" min="15" max="60" className="tools__container__input" />
+                <input required onChange={this.handleNumberChange} id="h2.size" value={this.state.h2.size} type="number" min="15" max="60" className="tools__container__input" />
                 <label htmlFor="h2FontSize" className="tools__container__label">
                     Font size
                   </label>
