@@ -2,6 +2,9 @@
 .homeContent {
     width: 50%;
     float: left;
+    &--left {
+        padding: 50px 0;
+    }
 }
 
 .homePage {
@@ -10,6 +13,26 @@
     }
     &--h2 {
         line-height: 3.4rem;
+        color: $accentColor;
+    }
+    &--getStarted {
+        & a {
+            display: inline-block;
+            border: none;
+            border-top: 2px solid #30b8b2;
+            border-left: 2px solid #30b8b2;
+            background: none;
+            font-family: poppins;
+            padding: 5px 10px;
+            margin-right: 10px;
+            color: #30b8b2;
+            &:hover {
+                border: none;
+                border-bottom: 2px solid #30b8b2;
+                border-right: 2px solid #30b8b2;
+            }
+
+        }
     }
 }
 

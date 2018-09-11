@@ -30,14 +30,14 @@ class Window extends Component {
                     
 
                     <ul>
-                        <li>
-                            <button onClick={this.handleChange} id="live" className="windowChanger">Live</button>
+                        <li className="windowChanger">
+                            <button onClick={this.handleChange} id="live" className="windowChanger--button">Live</button>
                         </li>
-                        <li>
-                            <button onClick={this.handleChange} id="html" className="windowChanger">HTML</button>
+                        <li className="windowChanger">
+                            <button onClick={this.handleChange} id="html" className="windowChanger--button">HTML</button>
                         </li>
-                        <li>
-                            <button onClick={this.handleChange} id="css" className="windowChanger">CSS</button>
+                        <li className="windowChanger">
+                            <button onClick={this.handleChange} id="css" className="windowChanger--button">CSS</button>
                         </li>
                     </ul>
                     
