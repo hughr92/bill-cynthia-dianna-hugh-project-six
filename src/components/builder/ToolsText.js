@@ -5,6 +5,7 @@ import ColorPickerH2 from './ColorPickerH2';
 
 
 const dbRef = firebase.database().ref();
+let timeout = '';
 
 class ToolsText extends Component {
   constructor (){
@@ -55,6 +56,60 @@ class ToolsText extends Component {
       return fontsArray.map((font,i) => {
         let dbFont = font;
         return (<option value={dbFont} key={i}>{font}</option>)
+      })
+  }
+
+  handleNumberChange = (e) => {
+    // only run code after user is done typing
+    // user done typing, 300ms after e
+    clearTimeout(timeout);
+    const userID = this.props.user;
+
+    const newState = JSON.parse(JSON.stringify(this.state));
+    const temp = e.target.id.split('.')
+    console.log(temp)
+    const header = temp[0];
+    const property = temp[1];
+
+    newState[header][property] = e.target.value;
+
+ 
+      timeout = setTimeout(() => this.validFontSize(header,property), 1000);
+    this.setState(
+      newState, () => {
+        const dbRef = firebase.database().ref(`${userID}/text`);
+        dbRef.on('value', snapshot => {
+          dbRef.update(this.state)
+        })
+
+      })
+    
+  }
+
+  validFontSize = (header,property) => {
+    const userID = this.props.user;
+    const newState = JSON.parse(JSON.stringify(this.state));
+    console.log(header,property);
+    switch (true) {
+      case this.state[header][property] < 15:
+        console.log('less than 15')
+        newState[header][property] = 15;
+        break;
+      case this.state[header][property] > 60:
+        console.log('more than 60')
+        newState[header][property] = 60;
+        break;
+      default:
+        console.log('between 15 and 60')
+        newState[header][property] = this.state[header][property]
+    }
+    this.setState(
+      newState, () => {
+        const dbRef = firebase.database().ref(`${userID}/text`);
+        dbRef.on('value', snapshot => {
+          dbRef.update(this.state)
+        })
+
       })
   }
   
@@ -148,7 +203,7 @@ class ToolsText extends Component {
                 </div>
 
                 <div className="tools__container__wrapper">
-                  <input onChange={this.handleChange} value={this.state.h1.size} id='h1.size' required type="number" max="60" min="15" className="tools__container__input"   />
+                  <input onChange={this.handleNumberChange} value={this.state.h1.size} id='h1.size' required type="number" max="60" min="15" className="tools__container__input"   />
                   <label htmlFor="h1FontSize" className="tools__container__label">
                       Font size
                     </label>
@@ -191,7 +246,7 @@ class ToolsText extends Component {
               </div>
 
               <div className="tools__container__wrapper">
-                <input required onChange={this.handleChange} id="h2.size" value={this.state.h2.size} type="number" min="15" max="60" className="tools__container__input" />
+                <input required onChange={this.handleNumberChange} id="h2.size" value={this.state.h2.size} type="number" min="15" max="60" className="tools__container__input" />
                 <label htmlFor="h2FontSize" className="tools__container__label">
                     Font size
                   </label>

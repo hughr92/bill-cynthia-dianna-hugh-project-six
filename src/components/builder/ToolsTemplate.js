@@ -22,9 +22,9 @@ class ToolsTemplate extends Component {
     return (
       <div className="tools">
         <div className="wrapper">
-          <h1>TEMPLATES PAGE</h1>
+          {/* <h1>TEMPLATES PAGE</h1> */}
 
-          <Templates />
+          <Templates user={this.props.user}/>
         </div>
       </div>
     );
