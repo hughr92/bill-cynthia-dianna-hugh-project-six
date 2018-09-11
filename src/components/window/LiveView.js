@@ -73,9 +73,13 @@ class LiveView extends Component {
 
         // BACKGROUND
         const backgroundColor = this.state.userSelections.background.backgroundColor ? this.state.userSelections.background.backgroundColor : '#30b8b2';
+        
+        const backgroundPicture = this.state.userSelections.background.picture ? this.state.userSelections.background.picture : null;
+        
+        const setBackground = backgroundPicture ? backgroundPicture : backgroundColor
 
         const backgroundStyle = {
-            background: backgroundColor
+            background: `url("${setBackground}")`
         }
 
         // SOCIAL

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
+import ColorPickerH1 from './ColorPickerH1';
+import ColorPickerH2 from './ColorPickerH2';
 
 
 const dbRef = firebase.database().ref();
@@ -102,7 +104,26 @@ class ToolsText extends Component {
     //   this.setState(newState);
     // }
   }
+  getColorh1 = (color) => {
+    const h1color = color.hex;
+    const dbRef = firebase.database().ref(this.props.user)
+    console.log(`toolstext`, h1color);
+    dbRef.child("text").child("h1color").update(color)
+    
+  }
+  getColorh2 = (color) => {
+    const h2color = color.hex;
+    const dbRef = firebase.database().ref(this.props.user)
+    console.log(`toolstext`, h2color);
+    dbRef.child("text").child("h2color").update(color)
 
+  }
+  handleChangeComplete = (color) => {
+    console.log(`handlechange`, color);
+  };
+  handleChangeComplete = (color) => {
+    console.log(`handlechange`, color);
+  };
     componentDidMount() {
       const userID = this.props.user;
       const dbRef = firebase.database().ref(`${userID}/text`);
@@ -114,7 +135,7 @@ class ToolsText extends Component {
     render() {
         return (
         <div className="tools tools__container tools__container--text">
-            <h1>ToolsText</h1>
+            <h3>ToolsText</h3>
             {/* <h2>{this.props.text.h2.color}</h2> */}
             <form class="clearfix">
               <div className="tools__container--text__h1">
@@ -155,6 +176,9 @@ class ToolsText extends Component {
                     <option value="right">right</option>
                   </select>
                 </div>
+                <div className="tools__container__colorPicker">
+                  <ColorPickerH1 color={this.state.h1.Color} onChangeComplete={this.handleChangeComplete} getColorh1={this.getColorh1}/>
+                </div>
               </div>
               
 
@@ -192,6 +216,9 @@ class ToolsText extends Component {
                   <option value="right">right</option>
                 </select>
               </div>
+                <div className="tools__container__colorPicker">
+                  <ColorPickerH2 color={this.state.h2.Color} onChangeComplete={this.handleChangeComplete} getColorh2={this.getColorh2} />
+                </div>
               </div>
             </form>
         </div>)

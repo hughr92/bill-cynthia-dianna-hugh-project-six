@@ -141,9 +141,11 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   margin-right: 10px;
   color: #30b8b2; }
   .windowChanger--button:focus {
-    background-color: purple;
-    outline: none;
-    border-color: red;
+    background-color: #30b8b2;
+    color: white;
+    outline: none; }
+  .windowChanger--button:hover {
+    background-color: #30b8b2;
     color: white; }
 
 html {
@@ -173,7 +175,7 @@ h2 {
   font-size: 3.2rem; }
 
 .wrapper {
-  max-width: 1280px;
+  max-width: 1000px;
   width: 90%;
   margin: 0 auto; }
 
@@ -271,13 +273,14 @@ a {
     color: gold; }
 
 .homeContent {
-  width: 50%;
+  width: 100%;
   float: left; }
   .homeContent--left {
     padding: 50px 0; }
 
 .homePage--h1 {
-  line-height: 6rem; }
+  line-height: 6rem;
+  margin-bottom: 10px; }
 
 .homePage--h2 {
   line-height: 3.4rem;
@@ -334,13 +337,20 @@ a {
   text-align: center;
   color: white; }
 
-footer {
+.footer {
   clear: both;
-  background: #30b8b2; }
-
-.footerContent__cell, .footerSocial {
-  border: 1px red solid;
-  float: left; }
+  padding: 20px;
+  background: #30b8b2;
+  text-align: center; }
+  .footer__copyright {
+    color: white; }
+    .footer__copyright a {
+      border-bottom: 2px solid transparent;
+      padding: 2px;
+      color: white;
+      transition: .6s; }
+      .footer__copyright a:hover {
+        color: yellow; }
 
 .backgroundHalf {
   width: 50%;
