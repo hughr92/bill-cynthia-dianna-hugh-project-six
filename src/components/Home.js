@@ -29,6 +29,12 @@ const userSelections =  {
             
 
         },
+        h1color: {
+            hex: ''
+        },
+        h2color: {
+            hex: ''
+        },
     },
     social: {
         github: "",
