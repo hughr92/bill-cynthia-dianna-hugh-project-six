@@ -1,0 +1,37 @@
+.view {
+    &__live {
+        position: relative;
+    }
+}
+
+.social {
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+    & ul,
+    & li {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+        float: left;
+    } 
+    & ul {
+        position: relative;
+    }
+
+}
+
+.liveView {
+    
+    &__header {
+        &__container {
+            padding: 0 40px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+        }
+    }
+}

@@ -51,8 +51,11 @@ class Tools extends Component {
                         <ToolsSocial user={this.props.user}/>
                 )
                 }
-                <Templates />
-                <ToolsTemplate />
+                {
+                this.state.toolTab === ‘templates’ && (
+                       <Templates user={this.props.user} />
+                   )
+                }
             </div>
 
         )

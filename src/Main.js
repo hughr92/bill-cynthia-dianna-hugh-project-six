@@ -18,8 +18,9 @@ class Main extends Component {
                 <main>   
                     <NavBar />                 
                     <Route exact path="/home/" component={Home} />
-                    <Route exact path="/home/builder" component={Builder} />
-                    <Route exact path="/home/templates" component={Templates} />
+                {/* <Route exact path="/home/builder" component={Builder} /> */}
+                    <Route exact path="/home/builder/:userUID" component={Builder} />
+                    {/* <Route exact path="/home/templates" component={Templates} /> */}
                     <Footer />
                 </main>
             

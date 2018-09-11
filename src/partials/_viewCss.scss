@@ -1,15 +1,14 @@
 .view {
     width: 100%;
     // height: 200px;
-    border: 1px solid black;
     text-align: left;
     padding: 40px;
     height: 400px;
     // display: flex;
     // flex-wrap: wrap;
     &__container {
-        width: calc(100% / 4);
-        float: left;
+        // width: calc(100% / 4);
+        // float: left;
     }
     &__title {
         width: 100%;
@@ -19,9 +18,13 @@
         }
     }
     &__css{
+        overflow-y: scroll;
         background-color: #262721;
         &--element{
             color: #ee2874;
+            & span {
+                color: white;
+            }
             &--start {
                 margin-left: 25px;
                 color: white;
@@ -36,6 +39,7 @@
         }
         &--property{
             color: #70cee7;
+            margin-left: 25px;
         }
         &--end{
             color: white;
