@@ -24,7 +24,7 @@ class ToolsTemplate extends Component {
         <div className="wrapper">
           {/* <h1>TEMPLATES PAGE</h1> */}
 
-          <Templates />
+          <Templates user={this.props.user}/>
         </div>
       </div>
     );
