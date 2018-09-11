@@ -2,10 +2,12 @@
 .homeContent {
     width: 100%;
     float: left;
+    text-align: center;
     &--left {
         padding: 50px 0;
     }
 }
+
 
 .homePage {
     &--h1 {
@@ -19,19 +21,7 @@
     &--getStarted {
         & a {
             display: inline-block;
-            border: none;
-            border-top: 2px solid #30b8b2;
-            border-left: 2px solid #30b8b2;
-            background: none;
-            font-family: poppins;
-            padding: 5px 10px;
-            margin-right: 10px;
-            color: #30b8b2;
-            &:hover {
-                border: none;
-                border-bottom: 2px solid #30b8b2;
-                border-right: 2px solid #30b8b2;
-            }
+            @extend %button;
 
         }
     }
@@ -57,24 +47,66 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: 4px 4px $accentColor;
 }
 
 .modalText {
     text-align: center;
+    padding-top: 20px;
     & h1 {
         line-height: 5rem;
         text-shadow: 3px 3px $accentColor;
     }
 }
 
+.modalButtonDiv {
+    width: 100%;
+    margin: 10px auto;
+}
 
 .modalButton {
-    background-color: $accentColor;
-    border: none;
-    border-radius: 15px;
     width: 80%;
     padding: 10px 20px;
-    margin: 10px 0;
-    text-align: center;
-    color: white;
+    clear:both;
+    margin: 10px 10%;
+    @extend %button
 }
+
+.walkThrough {
+    width: 100%;
+    height: 100vh;
+    &__block {
+        clear: both;
+        height: 250px;
+        &--text {
+            width: calc(100% / 2);
+            float: left;
+            height: 100%;
+            padding: 0 30px;
+            text-align: center;
+            background-color: $lightGrey;
+            & p {
+                color: #505050;
+                font-size: 2.5rem;
+                line-height: 4rem;
+            }
+        }
+        &--image {
+            width: calc(100% / 2);
+            float: left;
+            // background-color: $accentColor;
+            height: 100%;
+            text-align: center;
+            position: relative;
+            & h1 {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 10rem;
+                color: $accentColor;
+            }
+        }
+    }
+}
+

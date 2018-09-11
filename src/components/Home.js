@@ -110,49 +110,79 @@ class Home extends Component {
             {!this.state.user && (
                 <div className="loginOverlay">
                     <div className="loginModal">
-                    <div className="wrapper">
+
                         <div className="modalText">
                             <h1>The Splash Pad</h1>
-                            <p>Wanna get started?  Login to save your heros</p>
+                            <p>Wanna get started?  Login to save your heros or Use as a guest</p>
                         </div>
-                        <button className="modalButton" onClick={this.login}>Sign In</button>
-                        <button className="modalButton" onClick={this.anonUser}>Use as Guest</button>
-                        <button onClick={this.logout}>LogOut</button>
+                        <div className="modalButtonDiv">
+                            <button className="modalButton" onClick={this.login}>Sign In</button>
+                            <button className="modalButton" onClick={this.anonUser}>Use as Guest</button>
+                        </div>
                     </div>
                     </div>
-                </div>
             )}
             <div className="wrapper">
-                <div className="homeContent homeContent--left">
-                    <h1 className="homePage--h1">
-                    Welcome to the Splash Pad
-                    </h1>
-                    <h2 className="homePage--h2">
-                    Need a hero to make a splash?
-                    </h2>
-                    <p>Well, you've come to the right place.</p>
-                    <p>
-                    With all the projects, tests, and crying you're doing
-                    during bootcamp, we know you don't have time to work
-                    on your portfolio site.
-                    </p>
-                    <p>
-                    Use one of our templates or choose-your-own-font/color
-                    adventure, plop in some of your social media
-                    usernames, and boom, we will pump out some code for
-                    you to copy and paste right into your HTML/CSS pages.
-                    It's that easy.
-                    </p>
-                <p>
-                    Your site can look sexy AF even without a portfolio.
-                </p>
-                <p>Promise we won't hit you with a plagiarism suit.</p>
-                <div>
+                <div className="homeContent">
+                    <div className="homeContent--top">
+                        <h1 className="homePage--h1">
+                        Welcome to the Splash Pad
+                        </h1>
+                        <h2 className="homePage--h2">
+                        Need a hero to make a splash?
+                        </h2>
+                    </div>
+                    <div className="walkThrough">
+                        <div className="walkThrough__block">
+                            <div className="walkThrough__block--image">
+                                <h1><i class="far fa-smile-wink"></i></h1>
+                            </div>
+                            <div className="walkThrough__block--text">
+                                <p>Do you need a page to show your work? At Splash Pad, you</p>
+                            </div>  
+                        </div>
+                        <div className="walkThrough__block">
+                            <div className="walkThrough__block--text">
+                                <p>Or you can use one of our template styles.</p>
+                            </div>
+                            <div className="walkThrough__block--image">
+                                <h1><i class="far fa-object-group"></i></h1>
+                            </div>
+                        </div>
+                        <div className="walkThrough__block">
+                            <div className="walkThrough__block--image">
+                                <h1><i class="far fa-images"></i></h1>
+                            </div>
+                            <div className="walkThrough__block--text">
+                                <p>On our builder page, start off by choosing your background color or image.</p>
+                            </div>
+                        </div>
+                        <div className="walkThrough__block">
+                            <div className="walkThrough__block--text">
+                                <p>Put in your name and a tagline, and choose your font styles.</p>
+                            
+                            </div>
+                            <div className="walkThrough__block--image">
+                                <h1><i class="fas fa-align-left"></i></h1>
+                            </div>
+                        </div>
+                        <div className="walkThrough__block">
+                            <div className="walkThrough__block--image">
+                                <h1>
+                                    <i class="fab fa-internet-explorer"></i>
+                                </h1>
+                            </div>
+                            <div className="walkThrough__block--text">
+                            
+                                <p>Insert your points of contact. </p>
+                            </div>
+                        </div>
+                    </div>
                     {/* <Link to="/home/templates">Templates</Link> */}
                 </div>
                 <div className="homePage--getStarted">
                     <Link
-                    to= {`/home/builder/${this.state.userUID}`}>Get started</Link>
+                    to= {`/home/builder/${this.state.userUID}`}>Ready to Get Started</Link>
                     {/* <Link
                     to={{
                         pathname: `/home/builder`,
@@ -162,7 +192,7 @@ class Home extends Component {
                 </div>
                 <div className="homeContent homeContent--right" />
             </div>
-        </div>;
+        
     }
 }
 
