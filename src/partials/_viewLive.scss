@@ -1,3 +1,13 @@
+.windowChanger {
+    list-style: none;
+    display: inline-block;
+    &--button {
+        @extend %button
+       
+    }
+}
+
+
 .view {
     &__live {
         position: relative;

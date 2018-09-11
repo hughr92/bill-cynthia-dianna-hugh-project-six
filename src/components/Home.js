@@ -112,7 +112,7 @@ class Home extends Component {
                     <div className="loginModal">
                     <div className="wrapper">
                         <div className="modalText">
-                            <h1>The Landing Pad</h1>
+                            <h1>The Splash Pad</h1>
                             <p>Wanna get started?  Login to save your heros</p>
                         </div>
                         <button className="modalButton" onClick={this.login}>Sign In</button>
@@ -125,10 +125,10 @@ class Home extends Component {
             <div className="wrapper">
                 <div className="homeContent homeContent--left">
                     <h1 className="homePage--h1">
-                    Welcome to the Landing Pad
+                    Welcome to the Splash Pad
                     </h1>
                     <h2 className="homePage--h2">
-                    Need a hero to save you from crappy landing pages?
+                    Need a hero to make a splash?
                     </h2>
                     <p>Well, you've come to the right place.</p>
                     <p>
@@ -148,11 +148,11 @@ class Home extends Component {
                 </p>
                 <p>Promise we won't hit you with a plagiarism suit.</p>
                 <div>
-                    <Link to="/home/templates">Templates</Link>
+                    {/* <Link to="/home/templates">Templates</Link> */}
                 </div>
-                <div>
+                <div className="homePage--getStarted">
                     <Link
-                    to= {`/home/builder/${this.state.userUID}`}>Builder</Link>
+                    to= {`/home/builder/${this.state.userUID}`}>Get started</Link>
                     {/* <Link
                     to={{
                         pathname: `/home/builder`,

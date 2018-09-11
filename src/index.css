@@ -131,6 +131,21 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+.windowChanger--button {
+  border: none;
+  border-top: 2px solid #30b8b2;
+  border-left: 2px solid #30b8b2;
+  background: none;
+  font-family: poppins;
+  padding: 5px 10px;
+  margin-right: 10px;
+  color: #30b8b2; }
+  .windowChanger--button:focus {
+    background-color: purple;
+    outline: none;
+    border-color: red;
+    color: white; }
+
 html {
   font-size: 62.5%; }
 
@@ -258,12 +273,30 @@ a {
 .homeContent {
   width: 50%;
   float: left; }
+  .homeContent--left {
+    padding: 50px 0; }
 
 .homePage--h1 {
   line-height: 6rem; }
 
 .homePage--h2 {
-  line-height: 3.4rem; }
+  line-height: 3.4rem;
+  color: #30b8b2; }
+
+.homePage--getStarted a {
+  display: inline-block;
+  border: none;
+  border-top: 2px solid #30b8b2;
+  border-left: 2px solid #30b8b2;
+  background: none;
+  font-family: poppins;
+  padding: 5px 10px;
+  margin-right: 10px;
+  color: #30b8b2; }
+  .homePage--getStarted a:hover {
+    border: none;
+    border-bottom: 2px solid #30b8b2;
+    border-right: 2px solid #30b8b2; }
 
 .loginOverlay {
   position: absolute;
@@ -398,6 +431,10 @@ footer {
       margin-left: 25px; }
     .view__css--end {
       color: white; }
+
+.windowChanger {
+  list-style: none;
+  display: inline-block; }
 
 .view__live {
   position: relative; }
