@@ -131,7 +131,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-.tools__tabs, .homePage--getStarted a, .modalButton, .windowChanger--button {
+.tools__tabs, .navBarButton, .homePage--getStarted a, .startLink, .modalButton, .windowChanger--button {
   border: none;
   border-top: 2px solid #30b8b2;
   border-left: 2px solid #30b8b2;
@@ -143,11 +143,11 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   margin-right: 10px;
   color: #30b8b2;
   transition: all 200ms; }
-  .tools__tabs:focus, .homePage--getStarted a:focus, .modalButton:focus, .windowChanger--button:focus {
+  .tools__tabs:focus, .navBarButton:focus, .homePage--getStarted a:focus, .startLink:focus, .modalButton:focus, .windowChanger--button:focus {
     background-color: #30b8b2;
     color: white;
     outline: none; }
-  .tools__tabs:hover, .homePage--getStarted a:hover, .modalButton:hover, .windowChanger--button:hover {
+  .tools__tabs:hover, .navBarButton:hover, .homePage--getStarted a:hover, .startLink:hover, .modalButton:hover, .windowChanger--button:hover {
     background-color: #30b8b2;
     color: white;
     border-bottom: 2px solid #838383;
@@ -183,7 +183,7 @@ h2 {
 
 .wrapper {
   max-width: 1000px;
-  width: 90%;
+  width: 80%;
   margin: 0 auto; }
 
 a {
@@ -264,7 +264,8 @@ h1.template__title {
 
 .navBar {
   background: #30b8b2;
-  height: 50px; }
+  height: 50px;
+  z-index: 18; }
 
 .navBar h3 {
   float: left;
@@ -297,16 +298,31 @@ h1.template__title {
   .homeContent--left {
     padding: 50px 0; }
 
-.homePage--h1 {
-  line-height: 6rem;
-  margin-bottom: 10px; }
+.homePage {
+  text-align: center;
+  padding: 100px 0; }
+  .homePage--top {
+    height: 100vh;
+    background-image: url("../src/assets/gaelle-marcel-357627-unsplash.jpg");
+    background-size: cover; }
+  .homePage--howTo {
+    background-color: #30b8b2; }
+    .homePage--howTo h2 {
+      margin-bottom: 20px; }
+  .homePage--h1 {
+    line-height: 6rem;
+    margin-bottom: 10px; }
+  .homePage--h2 {
+    line-height: 3.4rem;
+    color: #30b8b2; }
+  .homePage--getStarted a {
+    display: inline-block; }
 
-.homePage--h2 {
-  line-height: 3.4rem;
-  color: #30b8b2; }
-
-.homePage--getStarted a {
-  display: inline-block; }
+.task {
+  color: white;
+  width: calc(100% / 4 - 20px);
+  margin: 0 10px;
+  float: left; }
 
 .loginOverlay {
   position: absolute;
@@ -322,7 +338,7 @@ h1.template__title {
   border-radius: 15px;
   display: block;
   width: 300px;
-  height: 400px;
+  padding: 20px 0;
   position: relative;
   left: 50%;
   top: 50%;
@@ -335,6 +351,9 @@ h1.template__title {
   .modalText h1 {
     line-height: 5rem;
     text-shadow: 3px 3px #30b8b2; }
+  .modalText p {
+    padding: 10px 15px 0 15px;
+    line-height: 2.5rem; }
 
 .modalButtonDiv {
   width: 100%;
@@ -345,37 +364,6 @@ h1.template__title {
   padding: 10px 20px;
   clear: both;
   margin: 10px 10%; }
-
-.walkThrough {
-  width: 100%;
-  height: 100vh; }
-  .walkThrough__block {
-    clear: both;
-    height: 250px; }
-    .walkThrough__block--text {
-      width: calc(100% / 2);
-      float: left;
-      height: 100%;
-      padding: 0 30px;
-      text-align: center;
-      background-color: #e0e2e2; }
-      .walkThrough__block--text p {
-        color: #505050;
-        font-size: 2.5rem;
-        line-height: 4rem; }
-    .walkThrough__block--image {
-      width: calc(100% / 2);
-      float: left;
-      height: 100%;
-      text-align: center;
-      position: relative; }
-      .walkThrough__block--image h1 {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 10rem;
-        color: #30b8b2; }
 
 .footer {
   clear: both;

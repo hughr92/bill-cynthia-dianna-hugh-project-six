@@ -9,8 +9,9 @@ import NavBar from './compiler/NavBar';
 import Footer from './compiler/Footer';
 
 class Main extends Component {
-
-    
+    grabUser = () => {
+        
+    }
     render() {
         return (
             

@@ -20,7 +20,7 @@ class ToolsTemplate extends Component {
 
   render() {
     return (
-      <div className="LandingPage">
+      <div className="tools">
         <div className="wrapper">
           <h1>TEMPLATES PAGE</h1>
 
