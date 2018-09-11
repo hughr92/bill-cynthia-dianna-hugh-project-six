@@ -171,7 +171,7 @@ class Templates extends Component {
                   </div>
 
                   <button id={i} onClick={this.handleChange}>
-                    <h3>Pick Template</h3>
+                  <h3 id={i}>Pick Template</h3>
                   </button>
                 </div>;
             })
