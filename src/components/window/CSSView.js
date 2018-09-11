@@ -72,14 +72,20 @@ class CSSView extends Component {
         // HEADER ONE
         const headerOneColor = this.state.userSelections.text.h1.color ? this.state.userSelections.text.h1.color : 'white';
         const headerOneAlign = this.state.userSelections.text.h1.alignment ? this.state.userSelections.text.h1.alignment : 'center';
-        const headerOneFont = this.state.userSelections.text.h1.fontFamily ? this.state.userSelections.text.h1.fontFamily : 'sans-serif';
+        const headerOneFontPre = this.state.userSelections.text.h1.fontFamily ? this.state.userSelections.text.h1.fontFamily : 'sans-serif';
+        const headerOneFont = headerOneFontPre.split(' ').join('-');
+
+
         const headerOneSize = this.state.userSelections.text.h1.size ? `${this.state.userSelections.text.h1.size}px` : '35px';
 
 
         // HEADER TWO
         const headerTwoColor = this.state.userSelections.text.h2.color ? this.state.userSelections.text.h2.color : 'white';
         const headerTwoAlign = this.state.userSelections.text.h2.alignment ? this.state.userSelections.text.h2.alignment : 'center';
-        const headerTwoFont = this.state.userSelections.text.h2.fontFamily ? this.state.userSelections.text.h2.fontFamily : 'serif';
+        const headerTwoFontPre = this.state.userSelections.text.h2.fontFamily ? this.state.userSelections.text.h2.fontFamily : 'serif';
+        const headerTwoFont = headerTwoFontPre.split(' ').join('-');
+
+
         const headerTwoSize = this.state.userSelections.text.h2.size ? `${this.state.userSelections.text.h2.size}px` : '15px';
 
 
@@ -121,7 +127,7 @@ class CSSView extends Component {
                     <p className="view__css--element">{`h1`}<span className="view__css--element--start">{`{`}</span></p>
                     <p className="view__css--property">{`color : ${headerOneColor};`}</p>
                     <p className="view__css--property">{`font-size : ${headerOneSize};`}</p>
-                    <p className="view__css--property">{`font-family : ${headerOneFont};`}</p>
+                    <p className="view__css--property">{`font-family : "${headerOneFont}";`}</p>
                     <p className="view__css--property">{`text-align : ${headerOneAlign};`}</p>
                     <p className="view__css--end">{`}`}</p>
                 </div>
@@ -130,7 +136,7 @@ class CSSView extends Component {
                     <p className="view__css--element">{`h2`}<span className="view__css--element--start">{`{`}</span></p>
                     <p className="view__css--property">{`color : ${headerTwoColor};`}</p>
                     <p className="view__css--property">{`font-size : ${headerTwoSize};`}</p>
-                    <p className="view__css--property">{`font-family : ${headerTwoFont};`}</p>
+                    <p className="view__css--property">{`font-family : "${headerTwoFont}";`}</p>
                     <p className="view__css--property">{`text-align : ${headerTwoAlign};`}</p>
                     <p className="view__css--end">{`}`}</p>
                 </div>
