@@ -3,6 +3,7 @@
 $darkGrey:#838383;
 $lightGrey:#e0e2e2;
 $accentColor:#30b8b2;
+$linkColor: yellow;
 
 %button {
     border: none;
@@ -14,9 +15,12 @@ $accentColor:#30b8b2;
     margin-right: 10px;
     color: #30b8b2;
     &:focus {
-        background-color: purple;
+        background-color: #30b8b2;
+        color: white;
         outline: none;
-        border-color: red;
+    }
+    &:hover {
+        background-color: #30b8b2;
         color: white;
     }
    

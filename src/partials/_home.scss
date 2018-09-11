@@ -1,6 +1,6 @@
 
 .homeContent {
-    width: 50%;
+    width: 100%;
     float: left;
     &--left {
         padding: 50px 0;
@@ -10,6 +10,7 @@
 .homePage {
     &--h1 {
         line-height: 6rem;
+        margin-bottom: 10px;
     }
     &--h2 {
         line-height: 3.4rem;
