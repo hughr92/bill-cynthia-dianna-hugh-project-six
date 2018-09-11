@@ -121,7 +121,14 @@ class Templates extends Component {
 
               const swatchH2 = { backgroundColor: templateStyle.h2Color };
 
-              const titleColor = { color: templateStyle.backgroundColor };
+              const titleColor = { 
+                color: templateStyle.backgroundColor,
+                
+               };
+
+               const h1FontTitle = { fontFamily: templateStyle.h1Font };
+               const h2FontTitle = { fontFamily: templateStyle.h2Font };
+
               return <div className="template">
                   <h1 className="template__title">
                     <span style={titleColor}>
@@ -131,7 +138,11 @@ class Templates extends Component {
 
                   <div className="styleGuide">
                     <h3 className="styleGuide__cell__heading">
-                      <span>{templateStyle.h2TextContent}</span>
+                      h1: <span style={h1FontTitle}>
+                        {templateStyle.h1Font}
+                      </span> | h2: <span style={h2FontTitle}>
+                        {templateStyle.h2Font}
+                      </span>
                     </h3>
                     <h4 className="styleGuide__cell__heading">
                       h1 Color:
