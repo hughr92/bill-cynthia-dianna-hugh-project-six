@@ -67,10 +67,14 @@ class ToolsText extends Component {
 
     newState[header][property] = e.target.value;
 
-    switch (e.target.value) {
+    switch (true) {
       case e.target.value < 15:
         console.log('less than 15')
         newState[header][property] = 15;
+        break;
+      case e.target.value > 60:
+        console.log('more than 60')
+        newState[header][property] = 60;
         break;
       default:
         newState[header][property] = e.target.value;
