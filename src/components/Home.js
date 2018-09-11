@@ -81,7 +81,6 @@ class Home extends Component {
         })
 
     }
-
     login = ()=> {
         auth.signInWithPopup(provider).then((res)=>{       
             console.log('login', res.user);
@@ -105,60 +104,65 @@ class Home extends Component {
             this.dbRef.off();
         })
     }
-    hello =() =>{
-        console.log(`hellothere`);
-    }
 
     render() {
         return <div className="homePage">
-            
-            <div>
-              <button onClick={this.login}>Sign In</button>
-              <button onClick={this.anonUser}>Use as Guest</button>
-              <button onClick={this.logout}>LogOut</button>
-            </div>
+            {!this.state.user && (
+                <div className="loginOverlay">
+                    <div className="loginModal">
+                    <div className="wrapper">
+                        <div className="modalText">
+                            <h1>The Splash Pad</h1>
+                            <p>Wanna get started?  Login to save your heros</p>
+                        </div>
+                        <button className="modalButton" onClick={this.login}>Sign In</button>
+                        <button className="modalButton" onClick={this.anonUser}>Use as Guest</button>
+                        <button onClick={this.logout}>LogOut</button>
+                    </div>
+                    </div>
+                </div>
+            )}
             <div className="wrapper">
-              <div className="homeContent homeContent--left">
-                <h1 className="homePage--h1">
-                  Welcome to the Landing Pad
-                </h1>
-                <h2 className="homePage--h2">
-                  Need a hero to save you from crappy landing pages?
-                </h2>
-                <p>Well, you've come to the right place.</p>
+                <div className="homeContent homeContent--left">
+                    <h1 className="homePage--h1">
+                    Welcome to the Splash Pad
+                    </h1>
+                    <h2 className="homePage--h2">
+                    Need a hero to make a splash?
+                    </h2>
+                    <p>Well, you've come to the right place.</p>
+                    <p>
+                    With all the projects, tests, and crying you're doing
+                    during bootcamp, we know you don't have time to work
+                    on your portfolio site.
+                    </p>
+                    <p>
+                    Use one of our templates or choose-your-own-font/color
+                    adventure, plop in some of your social media
+                    usernames, and boom, we will pump out some code for
+                    you to copy and paste right into your HTML/CSS pages.
+                    It's that easy.
+                    </p>
                 <p>
-                  With all the projects, tests, and crying you're doing
-                  during bootcamp, we know you don't have time to work
-                  on your portfolio site.
-                </p>
-                <p>
-                  Use one of our templates or choose-your-own-font/color
-                  adventure, plop in some of your social media
-                  usernames, and boom, we will pump out some code for
-                  you to copy and paste right into your HTML/CSS pages.
-                  It's that easy.
-                </p>
-                <p>
-                  Your site can look sexy AF even without a portfolio.
+                    Your site can look sexy AF even without a portfolio.
                 </p>
                 <p>Promise we won't hit you with a plagiarism suit.</p>
                 <div>
-                  <Link to="/home/templates">Templates</Link>
+                    {/* <Link to="/home/templates">Templates</Link> */}
                 </div>
-                <div>
-                  <Link
+                <div className="homePage--getStarted">
+                    <Link
+                    to= {`/home/builder/${this.state.userUID}`}>Get started</Link>
+                    {/* <Link
                     to={{
-                      pathname: `/home/builder`,
-                      query: this.state.userUID
-                    }}
-                  >
-                    Builder
-                  </Link>
+                        pathname: `/home/builder`,
+                        query: this.state.userUID
+                    }}>Builder</Link> */}
                 </div>
-              </div>
-              <div className="homeContent homeContent--right" />
+                </div>
+                <div className="homeContent homeContent--right" />
             </div>
-          </div>;
+        </div>;
     }
 }
 

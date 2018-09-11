@@ -2,6 +2,9 @@
 .homeContent {
     width: 50%;
     float: left;
+    &--left {
+        padding: 50px 0;
+    }
 }
 
 .homePage {
@@ -10,5 +13,67 @@
     }
     &--h2 {
         line-height: 3.4rem;
+        color: $accentColor;
     }
+    &--getStarted {
+        & a {
+            display: inline-block;
+            border: none;
+            border-top: 2px solid #30b8b2;
+            border-left: 2px solid #30b8b2;
+            background: none;
+            font-family: poppins;
+            padding: 5px 10px;
+            margin-right: 10px;
+            color: #30b8b2;
+            &:hover {
+                border: none;
+                border-bottom: 2px solid #30b8b2;
+                border-right: 2px solid #30b8b2;
+            }
+
+        }
+    }
+}
+
+.loginOverlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.loginModal {
+    background-color: white;
+    border-radius: 15px;
+    display: block;
+    width: 300px;
+    height: 400px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modalText {
+    text-align: center;
+    & h1 {
+        line-height: 5rem;
+        text-shadow: 3px 3px $accentColor;
+    }
+}
+
+
+.modalButton {
+    background-color: $accentColor;
+    border: none;
+    border-radius: 15px;
+    width: 80%;
+    padding: 10px 20px;
+    margin: 10px 0;
+    text-align: center;
+    color: white;
 }
