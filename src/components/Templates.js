@@ -6,6 +6,7 @@ class Templates extends Component {
     super();
     this.state = {
       template:[],
+
     };
   }
 
@@ -51,31 +52,59 @@ class Templates extends Component {
   }
 
   handleChange = (e) => {
-    console.log('target',e.target);
+    console.log('target',e.target.id);
     const userID = this.props.user;
     console.log("userID", userID);
     
     const backgroundDbRef = firebase.database().ref(`${userID}/background`);
     backgroundDbRef.on("value", snapshot => {
-      snapshot.ref.update({backgroundColor:this.state.template[e.target.id].backgroundColor})
-  
-  //   this.sortTemplates(snapshot.val());
-  //   });
-    // })
+      snapshot.ref.update({background:this.state.template[e.target.id].backgroundColor})
+    })
 
-    // const dbRef = firebase.database().ref(`${userID}/text`);
-    // dbRef.on("value", snapshot => {
-    //   snapshot.ref.update({
-    //     backgroundColor: this.state.template[e.target.id].h1Align
-    //   });
-      /* console.log("template", snapshot.val()); */
 
-      //   this.sortTemplates(snapshot.val());
-      //   });
+    const h1FontDbRef = firebase.database().ref(`${userID}/text/h1`);
+    h1FontDbRef.on("value", snapshot => {
+      
+      snapshot.ref.update({
+        fontFamily: this.state.template[e.target.id].h1Font
+      });
     });
 
+    const h2FontDbRef = firebase.database().ref(`${userID}/text/h2`);
+    h2FontDbRef.on("value", snapshot => {
+      snapshot.ref.update({
+        fontFamily: this.state.template[e.target.id].h2Font
+      });
+    });
 
-  }
+    const h1ColorDbRef = firebase.database().ref(`${userID}/text/h1color`);
+    h1ColorDbRef.on("value", snapshot => {
+      snapshot.ref.update({
+        hex: this.state.template[e.target.id].h1Color
+      });
+    });
+
+    const h2ColorDbRef = firebase.database().ref(`${userID}/text/h2color`);
+    h2ColorDbRef.on("value", snapshot => {
+      snapshot.ref.update({
+        hex: this.state.template[e.target.id].h2Color
+      });
+    });
+
+    /* console.log(this.state.template[e.target.id]);
+    console.log(snapshot); */
+    
+    /* snapshot.ref.update({ 
+
+      // hex: this.state.template[e.target.id].h1Color.hex
+    
+      }); */
+    /* console.log("template", snapshot.val()); */
+
+       /*  this.sortTemplates(snapshot.val()); */
+    /* }); */
+  };
+  
   render() {
     
 
