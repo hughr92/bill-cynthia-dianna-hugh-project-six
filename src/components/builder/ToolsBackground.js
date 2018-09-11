@@ -51,7 +51,7 @@ class ToolsBackground extends Component {
         
         this.setState({ progress: 100, isUploading: false });
         firebase.storage().ref('images').child(filename).getDownloadURL().then(url => this.setState({ 
-            background: url
+            background: `url("${url}")`
             }, ()=> {
                 const dbRef = firebase.database().ref(this.state.user);
 

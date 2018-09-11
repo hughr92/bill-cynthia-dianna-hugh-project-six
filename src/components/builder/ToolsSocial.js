@@ -15,15 +15,24 @@ class ToolsSocial extends Component {
         }
     }
     componentDidMount = () => {
-        const userID = this.props.user
-        this.setState({
-            user: userID
-        }, ()=> {
-            const dbRef = firebase.database().ref(this.state.user)
+        const userID = this.props.user;
+        const dbRef = firebase.database().ref(`${userID}/social`);
+        dbRef.on('value', (snapshot) => {
+            console.log(snapshot.val());
+            this.setState(snapshot.val())
+            })
+            this.render();
+        }   
 
-        }) 
 
-    }
+        // this.setState({
+        //     user: userID
+        // }, ()=> {
+            
+
+        // }) 
+
+    // }
     handleSubmit = (e) => {
         e.preventDefault();
     }
