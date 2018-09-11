@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import Templates from '../Templates'
 
 import ToolsBackground from './ToolsBackground';
 import ToolsText from './ToolsText';
 import ToolsSocial from './ToolsSocial';
+import ToolsTemplate from './ToolsTemplate';
 
 class Tools extends Component {
 
@@ -49,6 +51,8 @@ class Tools extends Component {
                         <ToolsSocial user={this.props.user}/>
                 )
                 }
+                <Templates />
+                <ToolsTemplate />
             </div>
 
         )
