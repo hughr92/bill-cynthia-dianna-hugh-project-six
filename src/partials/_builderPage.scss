@@ -7,19 +7,16 @@
 }
 
 .tools__tabs {
-    padding: 5px 10px;
-    border: none;
-    border-top: 2px solid $accentColor;
-    border-left: 2px solid $accentColor;
-    margin-right: 10px;
-    background: none;
-    color: $accentColor;
-    font-family: poppins;
+    @extend %button;
+    border-bottom: none;
+    &:hover {
+        border-bottom: none;
+    }
 }
 
 .tools {
-    border: none;
     border-bottom: 2px solid $accentColor;
+    border-top: 2px solid $lightGrey;
     border-left: 2px solid $accentColor;
     border-right: 2px solid $accentColor;
     margin-bottom: 15px;

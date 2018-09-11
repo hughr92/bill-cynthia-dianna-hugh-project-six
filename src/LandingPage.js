@@ -48,10 +48,10 @@ class LandingPage extends Component {
             <div className="landingPage">
                 <div className="wrapper">
                     <div className="float">
-                        <h1>the landing pad</h1>
-                        <h2>Landing Pages made easy</h2>
+                        <h1>Splash Pad</h1>
+                        <h2>Splash Pages Made Easy</h2>
                         <div className="landingPage--button">
-                            <Link to="/home" >Get Started</Link>
+                            <Link to="/home">Get Started</Link>
                         </div>
                     </div>
                 </div>
