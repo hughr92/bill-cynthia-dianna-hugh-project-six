@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import ToolsBackground from './ToolsBackground';
 import ToolsText from './ToolsText';
 import ToolsSocial from './ToolsSocial';
-import Templates from '../Templates';
+import ToolsTemplate from './ToolsTemplate';
 
 // const BUTTON_ARRAY = []
 
@@ -53,7 +53,7 @@ class Tools extends Component {
                 }
                 {
                 this.state.toolTab === 'templates' && (
-                        <Templates user={this.props.user} />
+                        <ToolsTemplate user={this.props.user} />
                     )
                 }
             </div>
