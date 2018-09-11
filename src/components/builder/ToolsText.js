@@ -62,7 +62,6 @@ class ToolsText extends Component {
       'Open Sans'];
       return fontsArray.map((font,i) => {
         let dbFont = font.split(' ').join('+');
-        console.log(dbFont)
         return (<option value={dbFont} key={i}>{font}</option>)
       })
   }
@@ -126,7 +125,7 @@ class ToolsText extends Component {
                   <label htmlFor="h1FontFamily" >
                       Font family
                   </label>
-                  <select>
+                  <select onChange={this.handleChange} id="h1.fontFamily" value={this.state.h1.fontFamily}>
                     {this.renderFonts()}
                   </select>
                 </div>
