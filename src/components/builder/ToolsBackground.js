@@ -8,7 +8,7 @@ class ToolsBackground extends Component {
         super(props);
         this.state = { 
             picture: "",
-            backgroundColor: '#fff',
+            background: '#fff',
             user: "",
             isUploading: false,
             progress: 0,
@@ -23,7 +23,7 @@ class ToolsBackground extends Component {
     }
     getColor = (color) => {
         this.setState ({
-            backgroundColor: color.hex
+            background: color.hex
         }, () => {
             const dbRef = firebase.database().ref(this.state.user)
             console.log(`get color`, dbRef);
@@ -36,7 +36,7 @@ class ToolsBackground extends Component {
         console.log(`handlechange`);
         
         this.setState({
-            backgroundColor: color.hex
+            background: color.hex
         });
     };
     // handleChangeUsername = (event) => this.setState({ username: event.target.value });
@@ -51,7 +51,7 @@ class ToolsBackground extends Component {
         
         this.setState({ progress: 100, isUploading: false });
         firebase.storage().ref('images').child(filename).getDownloadURL().then(url => this.setState({ 
-            picture: url
+            background: url
             }, ()=> {
                 const dbRef = firebase.database().ref(this.state.user);
 
