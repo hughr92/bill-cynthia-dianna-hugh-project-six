@@ -206,6 +206,13 @@ class CSSView extends Component {
                    
                     <p className="view__css--end">{`}`}</p>
                 </div>
+                <div className="view__container">
+                    
+                    <p className="view__css--element">{`i`}<span className="view__css--add">:hover</span><span className="view__css--element--start">{`{`}</span></p>
+                    <p className="view__css--property">{`color : ${headerTwoColor}`};</p>
+                   
+                    <p className="view__css--end">{`}`}</p>
+                </div>
             </div>
         )
     }
