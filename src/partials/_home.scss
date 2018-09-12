@@ -14,10 +14,22 @@
     padding: 100px 0;
     // height: 100vh;
     &--top {
-        height: 100vh;
-        background-image: url('../src/assets/gaelle-marcel-357627-unsplash.jpg');
-        background-size: cover;
-
+        /* height: 100vh; */
+        /* background-image: url('../src/assets/screen1.png');
+        background-size: 50%;
+        margin: 0 auto; */
+       /*  background-repeat: no-repeat;
+        background-position: center;
+ */
+    }
+    &--background {
+        height: 60vh;
+        background-image: url('../src/assets/screen2.png');
+        background-size: 70%;
+        margin: 0 auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        
     }
 
     &--howTo {
@@ -27,6 +39,7 @@
         }
     }
     &--h1 {
+        text-shadow: 2px 2px 5px #000;
         line-height: 6rem;
         margin-bottom: 10px;
     }

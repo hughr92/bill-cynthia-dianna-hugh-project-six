@@ -331,14 +331,26 @@ h1.template__title {
   text-align: center;
   padding: 100px 0; }
   .homePage--top {
-    height: 100vh;
-    background-image: url("../src/assets/gaelle-marcel-357627-unsplash.jpg");
-    background-size: cover; }
+    /* height: 100vh; */
+    /* background-image: url('../src/assets/screen1.png');
+        background-size: 50%;
+        margin: 0 auto; */
+    /*  background-repeat: no-repeat;
+        background-position: center;
+ */ }
+  .homePage--background {
+    height: 60vh;
+    background-image: url("../src/assets/screen2.png");
+    background-size: 70%;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: center; }
   .homePage--howTo {
     background-color: #30b8b2; }
     .homePage--howTo h2 {
       margin-bottom: 20px; }
   .homePage--h1 {
+    text-shadow: 2px 2px 5px #000;
     line-height: 6rem;
     margin-bottom: 10px; }
   .homePage--h2 {
