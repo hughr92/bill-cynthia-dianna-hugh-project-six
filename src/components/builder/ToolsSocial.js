@@ -18,13 +18,9 @@ class ToolsSocial extends Component {
         const userID = this.props.user;
         const dbRef = firebase.database().ref(`${userID}/social`);
         dbRef.on('value', (snapshot) => {
-            console.log(snapshot.val());
             this.setState(snapshot.val())
             })
-            this.render();
         }   
-
-
         // this.setState({
         //     user: userID
         // }, ()=> {
