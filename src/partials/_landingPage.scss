@@ -3,34 +3,24 @@
     background-size: cover;
     height: 100vh;
     &--button {
-        background: $accentColor;
-        padding: 10px 20px;
-        margin-top: 20px;
-        display: inline-block;
-        border-radius: 15px;
-        font-family: "Poppins";
-        transition: all 200ms;
-        &:hover {
-            background: white;
-            color: $accentColor;
-        }
+        margin-top: 15px;
         & a {
-            color: white;
-            &:hover {
-                color: $accentColor;
-            }
-        }
+            @extend %button;
+            background: white;
+        }   
     }
 }
 
 .landingPage h1 {
     color: $accentColor;
     text-shadow: 4px 4px $lightGrey;
+    font-size: 7rem;
+    line-height: 6rem;
 }
 
 .landingPage h2 {
     color: $lightGrey;
-    text-shadow: 2px 2px 2px $accentColor;
+    text-shadow: 2px 2px 2px $darkGrey;
 }
 
 .landingPage .wrapper {
@@ -38,9 +28,21 @@
     vertical-align: middle;
 }
 
-.float {
-    width: 50%;
+.landingPage--float {
+    width: 100%;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+}
+
+@media(max-width:650px) {
+    .landingPage h1 {
+        font-size: 5rem;
+    }
+    .landingPage h2 {
+        font-size: 2.4rem;
+    }
+    .landingPage--float {
+        text-align: center;
+    }
 }

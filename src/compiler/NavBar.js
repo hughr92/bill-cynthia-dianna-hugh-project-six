@@ -2,13 +2,43 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, NavLink, Route } from 'react-router-dom'
 import firebase from '../firebase';
 
+const provider = new firebase.auth.GoogleAuthProvider();
+const auth = firebase.auth();
+
 class NavBar extends Component {
     constructor() {
         super();
         this.state = {
-            user: null
+            user: null,
+            // userUID: user.uid
         }
     }
+    // componentDidMount() {
+    //     auth.onAuthStateChanged((user) => {
+    //         if (user) {
+    //             console.log(`componentdidmount`, user);
+
+    //             this.setState({
+    //                 user: user,
+    //                 userUID: user.uid
+    //             }, () => {
+    //                 this.dbRef = firebase.database().ref(this.state.user.uid)
+    //                 console.log(`uid`, this.state.user.uid);
+    //             })
+    //         }
+    //     })
+
+    // }
+    // login = () => {
+    //     auth.signInWithPopup(provider).then((res) => {
+    //         console.log('login', res.user);
+
+    //         this.setState({
+    //             user: res.user,
+    //             userUID: res.user.uid
+    //         })
+    //     })
+    // }
     logout = () => {
         firebase.auth().signOut();
         this.props.history.push(`/home`);

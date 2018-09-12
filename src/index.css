@@ -131,7 +131,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-.tools__tabs, .navBarButton, .homePage--getStarted a, .startLink, .modalButton, .windowChanger--button {
+.landingPage--button a, .tools__tabs, .navBarButton, .homePage--getStarted a, .startLink, .modalButton, .windowChanger--button {
   border: none;
   border-top: 2px solid #30b8b2;
   border-left: 2px solid #30b8b2;
@@ -143,11 +143,11 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   margin-right: 10px;
   color: #30b8b2;
   transition: all 200ms; }
-  .tools__tabs:focus, .navBarButton:focus, .homePage--getStarted a:focus, .startLink:focus, .modalButton:focus, .windowChanger--button:focus {
+  .landingPage--button a:focus, .tools__tabs:focus, .navBarButton:focus, .homePage--getStarted a:focus, .startLink:focus, .modalButton:focus, .windowChanger--button:focus {
     background-color: #30b8b2;
     color: white;
     outline: none; }
-  .tools__tabs:hover, .navBarButton:hover, .homePage--getStarted a:hover, .startLink:hover, .modalButton:hover, .windowChanger--button:hover {
+  .landingPage--button a:hover, .tools__tabs:hover, .navBarButton:hover, .homePage--getStarted a:hover, .startLink:hover, .modalButton:hover, .windowChanger--button:hover {
     background-color: #30b8b2;
     color: white;
     border-bottom: 2px solid #838383;
@@ -194,38 +194,37 @@ a {
   background-size: cover;
   height: 100vh; }
   .landingPage--button {
-    background: #30b8b2;
-    padding: 10px 20px;
-    margin-top: 20px;
-    display: inline-block;
-    border-radius: 15px;
-    font-family: "Poppins";
-    transition: all 200ms; }
-    .landingPage--button:hover {
-      background: white;
-      color: #30b8b2; }
+    margin-top: 15px; }
     .landingPage--button a {
-      color: white; }
-      .landingPage--button a:hover {
-        color: #30b8b2; }
+      background: white; }
 
 .landingPage h1 {
   color: #30b8b2;
-  text-shadow: 4px 4px #e0e2e2; }
+  text-shadow: 4px 4px #e0e2e2;
+  font-size: 7rem;
+  line-height: 6rem; }
 
 .landingPage h2 {
   color: #e0e2e2;
-  text-shadow: 2px 2px 2px #30b8b2; }
+  text-shadow: 2px 2px 2px #838383; }
 
 .landingPage .wrapper {
   height: 100vh;
   vertical-align: middle; }
 
-.float {
-  width: 50%;
+.landingPage--float {
+  width: 100%;
   position: relative;
   top: 50%;
   transform: translateY(-50%); }
+
+@media (max-width: 650px) {
+  .landingPage h1 {
+    font-size: 5rem; }
+  .landingPage h2 {
+    font-size: 2.4rem; }
+  .landingPage--float {
+    text-align: center; } }
 
 .template {
   border-bottom: 1px solid lightgray; }
@@ -264,6 +263,9 @@ h1.template__title {
 @media (max-width: 830px) {
   .template {
     width: 100%; } }
+
+.builderPage {
+  margin-top: 50px; }
 
 .tabs {
   margin-top: 15px; }
@@ -415,16 +417,17 @@ h1.template__title {
 
 .socialForm {
   padding-top: 10px; }
-  .socialForm label {
-    float: left; }
-  .socialForm--input {
-    float: left;
-    width: 70%;
-    padding: 5px;
-    clear: both; }
   .socialForm--half {
-    width: 50%;
-    float: left; }
+    width: 50%; }
+
+.socialForm--input {
+  width: 80%;
+  clear: left;
+  margin-bottom: 10px; }
+
+.socialForm--half label {
+  width: 300px;
+  color: #30b8b2; }
 
 .view {
   color: white;

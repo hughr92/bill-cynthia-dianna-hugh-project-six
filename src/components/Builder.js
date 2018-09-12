@@ -9,9 +9,8 @@ class Builder extends Component {
         console.log(`user`, this.props.location.query);
         // {!this.props.location.query && ()}
         return (
-            <div>
+            <div className="builderPage">
                 <div className="wrapper">
-                    <h1>This is the builder</h1>
                     <Window user={this.props.match.params.userUID}/>
                     <Tools user={this.props.match.params.userUID}/>
                 </div>
