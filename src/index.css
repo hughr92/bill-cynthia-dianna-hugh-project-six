@@ -196,7 +196,11 @@ a {
   .landingPage--button {
     margin-top: 15px; }
     .landingPage--button a {
-      background: white; }
+      background: #30b8b2;
+      color: white; }
+      .landingPage--button a:hover {
+        background: white;
+        color: #30b8b2; }
 
 .landingPage h1 {
   color: #30b8b2;
@@ -296,20 +300,34 @@ h1.template__title {
 .navBar {
   background: #30b8b2;
   height: 50px;
-  z-index: 18; }
-
-.navBar h3 {
-  float: left;
+  z-index: 3;
   position: relative;
+  width: 100%; }
+
+.navBar .wrapper {
+  position: relative;
+  margin: 0 auto; }
+
+.navBar nav {
+  left: 50%; }
+
+.navBar nav, .logo {
+  width: 50%;
+  float: left;
+  position: absolute;
   top: 50%;
   transform: translateY(50%); }
+
+.logo {
+  float: left;
+  color: white;
+  float: right; }
+  .logo h3 {
+    line-height: 2.4rem; }
 
 .navBar nav ul {
   list-style: none;
-  float: right;
-  position: relative;
-  top: 50%;
-  transform: translateY(50%); }
+  float: right; }
 
 .navBar nav ul li {
   display: inline-block;
@@ -321,6 +339,15 @@ h1.template__title {
   transition: all 200ms; }
   .navBar nav ul li a:hover {
     color: gold; }
+
+@media (max-width: 420px) {
+  .navBar nav ul li {
+    padding-right: 0;
+    padding-left: 10px; }
+  .navBar .wrapper {
+    width: 90%; }
+  .navBar nav ul li {
+    font-size: 1.4rem; } }
 
 .homeContent {
   width: 100%;

@@ -48,9 +48,9 @@ class NavBar extends Component {
         return (
             // ternary statement - if not logged in show "login", else show logout
             <div className="navBar">
-                <div className="wrapper">
+                <div className="wrapper clearfix">
                     <div className="logo">
-                        <img src="../assets/logo-bw.png" alt=""/>
+                        <h3>Splash Pad</h3>
                     </div>
                     <nav>
                         <ul>
@@ -59,8 +59,6 @@ class NavBar extends Component {
                             <li>
                                 <Link onClick={this.logout}to="/home">Logout</Link>
                             </li>
-                            
-
                         </ul>
                     </nav>
                 </div>
