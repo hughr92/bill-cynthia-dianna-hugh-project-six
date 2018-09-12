@@ -411,7 +411,54 @@
                     "alignment": "center"
                 }
             }
+        },
+
+        "intenseSeven": {
+            "background": {
+                "image": false,
+                "color": "#00FF54"
+            },
+            "text": {
+                "h2": {
+                    "textContent": "h1 Dosis, h2 Dosis",
+                    "size": null,
+                    "fontFamily": "Dosis",
+                    "color": "#6945FF",
+                    "alignment": "center"
+                },
+                "h1": {
+                    "textContent": "",
+                    "size": null,
+                    "fontFamily": "Dosis",
+                    "color": "#F7FF00",
+                    "alignment": "center"
+                }
+            }
+        },
+
+        "intenseEight": {
+            "background": {
+                "image": false,
+                "color": "#B969FF"
+            },
+            "text": {
+                "h2": {
+                    "textContent": "h1 Dosis, h2 Dosis",
+                    "size": null,
+                    "fontFamily": "Dosis",
+                    "color": "#DE0055",
+                    "alignment": "center"
+                },
+                "h1": {
+                    "textContent": "",
+                    "size": null,
+                    "fontFamily": "Dosis",
+                    "color": "#00FFE4",
+                    "alignment": "center"
+                }
+            }
         }
+
     }
 }
 

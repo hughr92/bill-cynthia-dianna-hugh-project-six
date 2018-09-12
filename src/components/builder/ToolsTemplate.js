@@ -21,11 +21,11 @@ class ToolsTemplate extends Component {
   render() {
     return (
       <div className="tools">
-        <div className="wrapper">
+        {/* <div className="wrapper"> */}
           {/* <h1>TEMPLATES PAGE</h1> */}
 
           <Templates user={this.props.user}/>
-        </div>
+        {/* </div> */}
       </div>
     );
   }
