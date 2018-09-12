@@ -32,7 +32,7 @@ class ToolsText extends Component {
     }
   }
  
-  renderFonts = () => {
+  renderFonts = (property) => {
     const fontsArray = ['Karla',
       'Lora',
       'Frank Ruhl Libre',
@@ -52,12 +52,13 @@ class ToolsText extends Component {
       'PT Sans',
       'Poppins',
       'Fira Sans',
-      'Open Sans'];
+      'Open Sans',
+      'Roboto'];
       return fontsArray.map((font,i) => {
         let dbFont = font;
-        return (<option value={dbFont} key={i}>{font}</option>)
+        return (<option selected={this.state[property].fontFamily === font ? true : false} value={dbFont} key={i}>{font}</option> )
       })
-  }
+} 
 
   handleNumberChange = (e) => {
     // only run code after user is done typing
@@ -208,7 +209,7 @@ class ToolsText extends Component {
                       Font family
                   </label>
                   <select onChange={this.handleChange} id="h1.fontFamily" value={this.state.h1.fontFamily}>
-                    {this.renderFonts()}
+                    {this.renderFonts('h1')}
                   </select>
                 </div>
 
@@ -217,9 +218,9 @@ class ToolsText extends Component {
                       Text alignment
                   </label>
                   <select onChange={this.handleChange} id="h1.alignment">
-                    <option value="left">left</option>
-                    <option value="center">center</option>
-                    <option value="right">right</option>
+                    <option selected={this.state.h1.alignment === "left" ? true : false} value="left">left</option>
+                    <option selected={this.state.h1.alignment === "center" ? true : false} value="center">center</option>
+                    <option selected={this.state.h1.alignment === "right" ? true : false} value="right">right</option>
                   </select>
                 </div>
                 <div className="tools__container__colorPicker">
@@ -248,7 +249,7 @@ class ToolsText extends Component {
                     Font family
                 </label>
                 <select onChange={this.handleChange} id="h2.fontFamily">
-                  {this.renderFonts()}
+                  {this.renderFonts('h2')}
                 </select>
               </div>
 
@@ -257,9 +258,9 @@ class ToolsText extends Component {
                     Text alignment
                 </label>
                 <select onChange={this.handleChange} id="h2.alignment">
-                  <option value="left">left</option>
-                  <option value="center">center</option>
-                  <option value="right">right</option>
+                    <option selected={this.state.h2.alignment === "left" ? true : false} value="left">left</option>
+                    <option selected={this.state.h2.alignment === "center" ? true : false} value="center">center</option>
+                    <option selected={this.state.h2.alignment === "right" ? true : false} value="right">right</option>
                 </select>
               </div>
                 <div className="tools__container__colorPicker">
