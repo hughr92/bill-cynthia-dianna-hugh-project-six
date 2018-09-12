@@ -128,6 +128,8 @@ class Home extends Component {
             )}
             <section className="homePage homePage--top">
                 <div className="wrapper clearfix">
+                    <div className="homePage--background">
+                    </div>
                     <h1 className="homePage--h1">
                         Welcome to the Splash Pad
                     </h1>
