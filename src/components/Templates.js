@@ -112,7 +112,7 @@ class Templates extends Component {
 
    /*  const { template } = this.state */
       return (
-        <div>
+        <div className="templateContainer">
           {
             this.state.template.map( (templateStyle,i) => {
               const swatchBackground = { backgroundColor: templateStyle.backgroundColor };
