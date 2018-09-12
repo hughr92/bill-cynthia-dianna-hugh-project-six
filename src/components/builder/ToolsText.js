@@ -120,25 +120,11 @@ class ToolsText extends Component {
     const userID = this.props.user;
     
     const newState = JSON.parse(JSON.stringify(this.state));
-    const temp=e.target.id.split('.')
+    const temp=e.target.id.split('.');
     const header=temp[0];
     const property=temp[1];
 
     newState[header][property] = e.target.value;
-
-    switch (true) {
-      case e.target.value < 15:
-        console.log('less than 15')
-        newState[header][property] = 15;
-        break;
-      case e.target.value > 60:
-        console.log('more than 60')
-        newState[header][property] = 60;
-        break;
-      default:
-        console.log('between 15 and 60')
-        newState[header][property] = e.target.value;
-    }
 
     this.setState(
       newState,() => {
@@ -180,16 +166,22 @@ class ToolsText extends Component {
   };
     componentDidMount() {
       const userID = this.props.user;
-      const dbRef = firebase.database().ref(`${userID}/text`);
-      dbRef.on('value',(snapshot) => {
-        console.log(snapshot.val());
+      const dbH1Ref = firebase.database().ref(`${userID}/text`);
+      dbH1Ref.on('value',(snapshot) => {
+        this.setState(snapshot.val());
+      //  const dbH1 = {h1:snapshot.val()};
+        
+        // console.log(snapshot.val());
+        
         // const initialState = 
       })
+      // console.log(dbH1);
+
     }
     render() {
         return (
         <div className="tools tools__container tools__container--text">
-            <h3>ToolsText</h3>
+            <h3>Style your text</h3>
             {/* <h2>{this.props.text.h2.color}</h2> */}
             <form class="clearfix">
               <div className="tools__container--text__h1">
