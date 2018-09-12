@@ -1,17 +1,17 @@
 .footer {
     clear: both;
-    padding: 20px;
-    background: $accentColor;
+    padding: 10px;
+    background: $darkGrey;
     text-align: center;
     &__copyright {
-        color: white;
+        color: $lightGrey;
         & a {
             border-bottom: 2px solid transparent;
             padding: 2px;
-            color: white;
-            transition: .6s;
+            color: $lightGrey;
+            transition: 200ms;
             &:hover {
-                color: $linkColor;
+                color: $accentColor;
             }
         }
     }

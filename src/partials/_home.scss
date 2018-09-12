@@ -78,6 +78,8 @@
     float: left;
 }
 
+// Modal Pop Up
+
 .loginOverlay {
     position: absolute;
     top: 0;
@@ -92,8 +94,8 @@
     background-color: white;
     border-radius: 15px;
     display: block;
-    width: 300px;
-    padding: 20px 0;
+    width: 400px;
+    padding: 30px 20px;
     position: relative;
     left: 50%;
     top: 50%;
@@ -105,12 +107,35 @@
     text-align: center;
     padding-top: 20px;
     & h1 {
-        line-height: 5rem;
+        line-height: 6rem;
         text-shadow: 3px 3px $accentColor;
+        color: #201f1f;
+    }
+    & h3 {
+        line-height: 1rem;
+        margin: 20px 0;
+        color: $accentColor;
     }
     & p {
-        padding: 10px 15px 0 15px;
-        line-height: 2.5rem;
+        padding: 0 15px;
+        line-height: 1rem;
+        color: $darkGrey;
+    }
+
+}
+
+@media(max-width:650px) {
+    .loginModal {
+        width: 350px;
+    }
+    .modalText h1 {
+        font-size: 5rem;
+    }
+    .modalText h3 {
+        font-size: 1.6rem;
+    }
+    .task {
+        width: 100%;
     }
 }
 
