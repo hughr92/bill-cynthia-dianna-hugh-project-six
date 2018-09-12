@@ -44,7 +44,7 @@ class Templates extends Component {
     });
     console.log("templates array", templatesArray);
     
-    const newTemplatesArray = templatesArray.slice(0,18)
+    const newTemplatesArray = templatesArray.slice(0,20)
 
     this.setState ({
       template: newTemplatesArray
