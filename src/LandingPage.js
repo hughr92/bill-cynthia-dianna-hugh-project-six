@@ -47,11 +47,11 @@ class LandingPage extends Component {
         return (
             <div className="landingPage">
                 <div className="wrapper">
-                    <div className="float">
+                    <div className="landingPage--float">
                         <h1>Splash Pad</h1>
                         <h2>Splash Pages Made Easy</h2>
                         <div className="landingPage--button">
-                            <Link to="/home">Get Started</Link>
+                            <Link to="/home">Start Splashin'</Link>
                         </div>
                     </div>
                 </div>

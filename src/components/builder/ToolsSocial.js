@@ -72,9 +72,6 @@ class ToolsSocial extends Component {
                         <label for="socialLinkedin">Linkedin</label>
                         <input className="socialForm--input" onChange={this.handleChange} id="linkedin" type="text" placeholder="Enter Linkedin username" id="linkedin" value={this.state.linkedin} maxLength="20" />
                     </div>
-
-
-                        <input type="submit" value="Save it!" />
                 
                     </form>
                 </div>

@@ -1,20 +1,17 @@
 .socialForm {
     padding-top: 10px;
-    & label {
-        float: left;
-    }
-    &--input {
-        float: left;
-        width: 70%;
-        padding: 5px;
-        clear: both;
-    }
     &--half {
         width: 50%;
-        float: left;
     }
 }
 
-// .socialEmail {
-    
-// }
+.socialForm--input {
+    width: 80%;
+    clear: left;
+    margin-bottom: 10px;
+}
+
+.socialForm--half label {
+    width: 300px;
+    color: $accentColor;
+}
