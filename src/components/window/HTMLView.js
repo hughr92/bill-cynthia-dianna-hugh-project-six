@@ -104,6 +104,12 @@ class HTMLView extends Component {
                         <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>link</span> <span className="view__html__head--property">href</span>=<span className="view__html__head--attribute">"https://fonts.googleapis.com/css?family={headerOneFont}|{headerTwoFont}"</span> <span className="view__html__head--property">rel</span>=<span className="view__html__head--attribute">"stylesheet"<span className="view__html__end">{`>`}</span></span>
                     </p>
 
+                    {/* font awesome */}
+
+                    <p className="indent-1">
+                        <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>link</span> <span className="view__html__head--property">href</span>=<span className="view__html__head--attribute">"https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"</span> <span className="view__html__head--property">crossorigin</span>=<span className="view__html__head--attribute">"anonymous"</span> <span className="view__html__head--property">rel</span>=<span className="view__html__head--attribute">"stylesheet"<span className="view__html__end">{`>`}</span></span>
+                    </p>
+
 
                     {/* styles */}
 
@@ -163,7 +169,7 @@ class HTMLView extends Component {
                 <p className="indent-4">
                     <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>a<span className="view__html__head--property"> href</span> <span className="view__html--equals">=</span> <span className="view__html__head--attribute">{`"https://ca.linkedin.com/in/${`${this.state.userSelections.social.linkedin}`}"`}</span></span><span className="view__html__end">{`>`}</span>
 
-                    <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>i<span className="view__html__head--property"> class</span> <span className="view__html--equals">=</span> <span className="view__html__head--attribute">{`"fab fa-linked-in"`}</span></span><span className="view__html__end">{`>`}</span>
+                    <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>i<span className="view__html__head--property"> class</span> <span className="view__html--equals">=</span> <span className="view__html__head--attribute">{`"fab fa-linkedin-in"`}</span></span><span className="view__html__end">{`>`}</span>
 
                     <span className="view__html__head--element"><span className="view__html__start">{`</`}</span>i</span><span className="view__html__end">{`>`}</span>
                     
@@ -209,7 +215,7 @@ class HTMLView extends Component {
                 <p className="indent-4">
                     <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>a<span className="view__html__head--property"> href</span> <span className="view__html--equals">=</span> <span className="view__html__head--attribute">{`"mailto:${`${this.state.userSelections.social.email}`}"`}</span></span><span className="view__html__end">{`>`}</span>
 
-                    <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>i<span className="view__html__head--property"> class</span> <span className="view__html--equals">=</span> <span className="view__html__head--attribute">{`"fab fa-envelope"`}</span></span><span className="view__html__end">{`>`}</span>
+                    <span className="view__html__head--element"><span className="view__html__start">{`<`}</span>i<span className="view__html__head--property"> class</span> <span className="view__html--equals">=</span> <span className="view__html__head--attribute">{`"far fa-envelope"`}</span></span><span className="view__html__end">{`>`}</span>
 
                     <span className="view__html__head--element"><span className="view__html__start">{`</`}</span>i</span><span className="view__html__end">{`>`}</span>
 
