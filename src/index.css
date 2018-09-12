@@ -131,7 +131,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-.landingPage--button a, .tools__tabs, .navBarButton, .homePage--getStarted a, .startLink, .modalButton, .windowChanger--button {
+.landingPage--button a, .tools__tabs, .navBarButton, .startLink, .modalButton, .windowChanger--button {
   border: none;
   border-top: 2px solid #30b8b2;
   border-left: 2px solid #30b8b2;
@@ -143,11 +143,11 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   margin-right: 10px;
   color: #30b8b2;
   transition: all 200ms; }
-  .landingPage--button a:focus, .tools__tabs:focus, .navBarButton:focus, .homePage--getStarted a:focus, .startLink:focus, .modalButton:focus, .windowChanger--button:focus {
+  .landingPage--button a:focus, .tools__tabs:focus, .navBarButton:focus, .startLink:focus, .modalButton:focus, .windowChanger--button:focus {
     background-color: #30b8b2;
     color: white;
     outline: none; }
-  .landingPage--button a:hover, .tools__tabs:hover, .navBarButton:hover, .homePage--getStarted a:hover, .startLink:hover, .modalButton:hover, .windowChanger--button:hover {
+  .landingPage--button a:hover, .tools__tabs:hover, .navBarButton:hover, .startLink:hover, .modalButton:hover, .windowChanger--button:hover {
     background-color: #30b8b2;
     color: white;
     border-bottom: 2px solid #838383;
@@ -340,6 +340,10 @@ h1.template__title {
     /*  background-repeat: no-repeat;
         background-position: center;
  */ }
+  .homePage--about {
+    background-color: #30b8b2; }
+    .homePage--about p {
+      color: white; }
   .homePage--background {
     height: 60vh;
     background-image: url("../src/assets/screen2.png");
@@ -347,10 +351,8 @@ h1.template__title {
     margin: 0 auto;
     background-repeat: no-repeat;
     background-position: center; }
-  .homePage--howTo {
-    background-color: #30b8b2; }
-    .homePage--howTo h2 {
-      margin-bottom: 20px; }
+  .homePage--howTo h2 {
+    margin-bottom: 20px; }
   .homePage--h1 {
     text-shadow: 2px 2px 5px #000;
     line-height: 6rem;
@@ -359,10 +361,16 @@ h1.template__title {
     line-height: 3.4rem;
     color: #30b8b2; }
   .homePage--getStarted a {
-    display: inline-block; }
+    display: inline-block;
+    background: white; }
+  .homePage--start {
+    background-color: #30b8b2; }
+
+.startLink {
+  background: white; }
 
 .task {
-  color: white;
+  color: #30b8b2;
   width: calc(100% / 4 - 20px);
   margin: 0 10px;
   float: left; }
