@@ -270,6 +270,13 @@ h1.template__title {
   margin-bottom: 15px;
   padding: 15px; }
 
+@media (max-width: 520px) {
+  .tools__tabs {
+    margin-right: 0px;
+    width: 100%; }
+  .tabs li {
+    width: 100%; } }
+
 .navBar {
   background: #30b8b2;
   height: 50px;
@@ -386,7 +393,7 @@ h1.template__title {
       color: white;
       transition: .6s; }
       .footer__copyright a:hover {
-        color: yellow; }
+        color: #ffe037; }
 
 .backgroundHalf {
   width: 50%;
@@ -494,9 +501,11 @@ h1.template__title {
   width: 100%;
   height: 100%; }
 
-.view__live {
-  position: relative;
-  background-size: 100% 100%; }
+.view {
+  overflow-x: scroll; }
+  .view__live {
+    position: relative;
+    background-size: 100% 100%; }
 
 .social {
   position: absolute;
