@@ -283,8 +283,8 @@ h1.template__title {
   border-top: 2px solid #e0e2e2;
   border-left: 2px solid #30b8b2;
   border-right: 2px solid #30b8b2;
-  margin-bottom: 15px;
-  padding: 15px; }
+  padding: 15px;
+  margin-bottom: 50px; }
 
 @media (max-width: 520px) {
   .tools__tabs {
@@ -459,19 +459,79 @@ h1.template__title {
   width: 50%;
   float: left; }
 
+@media (max-width: 800px) {
+  .backgroundHalf {
+    width: 100%;
+    float: left;
+    margin: 25px auto; } }
+
 .socialForm {
   padding-top: 10px; }
   .socialForm--half {
     width: 50%; }
+  .socialForm__inputContainer {
+    width: 100%;
+    margin: 10px 0;
+    position: relative;
+    height: 25px; }
+
+.socialForm--half {
+  float: left; }
+
+.socialForm__inputContainer {
+  position: relative;
+  margin: 20px 0 40px; }
+
+.socialForm__inputContainer label {
+  color: #838383;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  transition: 0.5s; }
 
 .socialForm--input {
   width: 80%;
-  clear: left;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  position: absolute;
+  padding: 10px 10px;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #838383; }
+  .socialForm--input:focus + label {
+    top: -10px;
+    font-weight: 600;
+    color: #30b8b2;
+    font-size: 12px; }
+  .socialForm--input:valid + label {
+    top: -10px;
+    font-weight: 600;
+    color: #30b8b2;
+    font-size: 12px; }
+  .socialForm--input:valid {
+    background-color: white;
+    border-bottom: 2px solid #30b8b2; }
+  .socialForm--input--email:invalid + label {
+    top: -10px;
+    font-weight: 600;
+    color: #838383;
+    font-size: 12px; }
 
-.socialForm--half label {
-  width: 300px;
-  color: #30b8b2; }
+@media (max-width: 800px) {
+  .socialForm__inputContainer {
+    position: relative;
+    margin: none; }
+  .socialForm {
+    padding-top: 10px; }
+    .socialForm--half {
+      width: 100%; }
+    .socialForm__inputContainer {
+      width: 100%;
+      margin: 20px 0 40px;
+      position: relative;
+      height: 25px; }
+    .socialForm .socialForm--input {
+      width: 100%; } }
 
 .view {
   color: white;
@@ -624,3 +684,9 @@ h1.template__title {
     font-size: 12px; }
   .tools__container__input:valid {
     border-bottom: 2px solid #30b8b2; }
+
+@media (max-width: 800px) {
+  .tools__container--text__h1, .tools__container--text__h2 {
+    float: left;
+    width: 100%;
+    margin: 30px 0; } }

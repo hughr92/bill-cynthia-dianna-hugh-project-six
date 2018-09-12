@@ -40,3 +40,14 @@
     }
 }
 
+@media(max-width:800px){
+    .tools__container{
+        &--text__h1, 
+        &--text__h2 {
+        float: left;
+        width: 100%;
+        margin: 30px 0;
+        }
+    }
+}
+
