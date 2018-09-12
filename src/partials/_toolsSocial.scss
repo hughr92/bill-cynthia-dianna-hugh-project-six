@@ -3,15 +3,94 @@
     &--half {
         width: 50%;
     }
+    &__inputContainer {
+        width: 100%;
+        margin: 10px 0;
+        position: relative;
+        // border: 1px solid red;
+        height: 25px;
+        
+    }
+} 
+
+.socialForm--half {
+    float: left;
+}
+
+.socialForm__inputContainer {
+    position: relative;
+    margin: 20px 0 40px;
+}
+
+.socialForm__inputContainer label {
+
+    color: $darkGrey;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transition: 0.5s;
 }
 
 .socialForm--input {
     width: 80%;
-    clear: left;
+    // clear: left;
     margin-bottom: 10px;
+    position: absolute;
+    padding: 10px 10px;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid $darkGrey;
+    &:focus + label {
+        top: -10px;
+        font-weight: 600;
+        color: $accentColor;
+        font-size: 12px;
+    }
+    &:valid +  label {
+        top: -10px;
+        font-weight: 600;
+        color: $accentColor;
+        font-size: 12px;
+    }
+    &:valid {
+        background-color: white;
+        border-bottom: 2px solid $accentColor;
+    }
+    &--email {
+        &:invalid + label {
+            top: -10px;
+            font-weight: 600;
+            color: $darkGrey;
+            font-size: 12px;
+        }
+    }
+    
+
 }
 
-.socialForm--half label {
-    width: 300px;
-    color: $accentColor;
+
+@media (max-width:800px){
+    .socialForm__inputContainer {
+        position: relative;
+        margin: none;
+    }
+    .socialForm {
+    padding-top: 10px;
+    &--half {
+        width: 100%;
+    }
+    &__inputContainer {
+        width: 100%;
+        margin: 20px 0 40px;;
+        position: relative;
+        // border: 1px solid red;
+        height: 25px;
+        
+    }
+    .socialForm--input {
+    width: 100%;
+    }
+} 
 }
+
