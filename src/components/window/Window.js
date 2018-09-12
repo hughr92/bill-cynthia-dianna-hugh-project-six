@@ -25,10 +25,6 @@ class Window extends Component {
         return (
             <Router>
                 <div>
-                    
-                    
-                    
-
                     <ul>
                         <li className="windowChanger">
                             <button onClick={this.handleChange} id="live" className="windowChanger--button">Live</button>

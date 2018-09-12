@@ -11,7 +11,6 @@ class Builder extends Component {
         return (
             <div>
                 <div className="wrapper">
-                    <h1>This is the builder</h1>
                     <Window user={this.props.match.params.userUID}/>
                     <Tools user={this.props.match.params.userUID}/>
                 </div>
