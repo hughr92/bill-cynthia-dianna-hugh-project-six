@@ -18,6 +18,7 @@
 
 
 .view {
+    overflow-x: scroll;
     &__live {
         position: relative;
         background-size: 100% 100%;
@@ -55,3 +56,4 @@
         }
     }
 }
+
