@@ -196,7 +196,11 @@ a {
   .landingPage--button {
     margin-top: 15px; }
     .landingPage--button a {
-      background: white; }
+      background: #30b8b2;
+      color: white; }
+      .landingPage--button a:hover {
+        background: white;
+        color: #30b8b2; }
 
 .landingPage h1 {
   color: #30b8b2;
@@ -296,20 +300,34 @@ h1.template__title {
 .navBar {
   background: #30b8b2;
   height: 50px;
-  z-index: 18; }
-
-.navBar h3 {
-  float: left;
+  z-index: 3;
   position: relative;
+  width: 100%; }
+
+.navBar .wrapper {
+  position: relative;
+  margin: 0 auto; }
+
+.navBar nav {
+  left: 50%; }
+
+.navBar nav, .logo {
+  width: 50%;
+  float: left;
+  position: absolute;
   top: 50%;
   transform: translateY(50%); }
+
+.logo {
+  float: left;
+  color: white;
+  float: right; }
+  .logo h3 {
+    line-height: 2.4rem; }
 
 .navBar nav ul {
   list-style: none;
-  float: right;
-  position: relative;
-  top: 50%;
-  transform: translateY(50%); }
+  float: right; }
 
 .navBar nav ul li {
   display: inline-block;
@@ -321,6 +339,15 @@ h1.template__title {
   transition: all 200ms; }
   .navBar nav ul li a:hover {
     color: gold; }
+
+@media (max-width: 420px) {
+  .navBar nav ul li {
+    padding-right: 0;
+    padding-left: 10px; }
+  .navBar .wrapper {
+    width: 90%; }
+  .navBar nav ul li {
+    font-size: 1.4rem; } }
 
 .homeContent {
   width: 100%;
@@ -412,8 +439,8 @@ h1.template__title {
   background-color: white;
   border-radius: 15px;
   display: block;
-  width: 300px;
-  padding: 20px 0;
+  width: 400px;
+  padding: 30px 20px;
   position: relative;
   left: 50%;
   top: 50%;
@@ -424,11 +451,27 @@ h1.template__title {
   text-align: center;
   padding-top: 20px; }
   .modalText h1 {
-    line-height: 5rem;
-    text-shadow: 3px 3px #30b8b2; }
+    line-height: 6rem;
+    text-shadow: 3px 3px #30b8b2;
+    color: #201f1f; }
+  .modalText h3 {
+    line-height: 1rem;
+    margin: 20px 0;
+    color: #30b8b2; }
   .modalText p {
-    padding: 10px 15px 0 15px;
-    line-height: 2.5rem; }
+    padding: 0 15px;
+    line-height: 1rem;
+    color: #838383; }
+
+@media (max-width: 650px) {
+  .loginModal {
+    width: 350px; }
+  .modalText h1 {
+    font-size: 5rem; }
+  .modalText h3 {
+    font-size: 1.6rem; }
+  .task {
+    width: 100%; } }
 
 .modalButtonDiv {
   width: 100%;
@@ -442,18 +485,18 @@ h1.template__title {
 
 .footer {
   clear: both;
-  padding: 20px;
-  background: #30b8b2;
+  padding: 10px;
+  background: #838383;
   text-align: center; }
   .footer__copyright {
-    color: white; }
+    color: #e0e2e2; }
     .footer__copyright a {
       border-bottom: 2px solid transparent;
       padding: 2px;
-      color: white;
-      transition: .6s; }
+      color: #e0e2e2;
+      transition: 200ms; }
       .footer__copyright a:hover {
-        color: #ffe037; }
+        color: #30b8b2; }
 
 .backgroundHalf {
   width: 50%;

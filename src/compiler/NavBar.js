@@ -13,32 +13,32 @@ class NavBar extends Component {
             // userUID: user.uid
         }
     }
-    // componentDidMount() {
-    //     auth.onAuthStateChanged((user) => {
-    //         if (user) {
-    //             console.log(`componentdidmount`, user);
+    componentDidMount() {
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                console.log(`componentdidmount`, user);
 
-    //             this.setState({
-    //                 user: user,
-    //                 userUID: user.uid
-    //             }, () => {
-    //                 this.dbRef = firebase.database().ref(this.state.user.uid)
-    //                 console.log(`uid`, this.state.user.uid);
-    //             })
-    //         }
-    //     })
+                this.setState({
+                    user: user,
+                    userUID: user.uid
+                }, () => {
+                    this.dbRef = firebase.database().ref(this.state.user.uid)
+                    console.log(`uid`, this.state.user.uid);
+                })
+            }
+        })
 
-    // }
-    // login = () => {
-    //     auth.signInWithPopup(provider).then((res) => {
-    //         console.log('login', res.user);
+    }
+    login = () => {
+        auth.signInWithPopup(provider).then((res) => {
+            console.log('login', res.user);
 
-    //         this.setState({
-    //             user: res.user,
-    //             userUID: res.user.uid
-    //         })
-    //     })
-    // }
+            this.setState({
+                user: res.user,
+                userUID: res.user.uid
+            })
+        })
+    }
     logout = () => {
         firebase.auth().signOut();
         this.props.history.push(`/home`);
@@ -48,18 +48,17 @@ class NavBar extends Component {
         return (
             // ternary statement - if not logged in show "login", else show logout
             <div className="navBar">
-                <div className="wrapper">
+                <div className="wrapper clearfix">
                     <div className="logo">
-                        <img src="../assets/logo-bw.png" alt=""/>
+                        <h3>Splash Pad</h3>
                     </div>
                     <nav>
                         <ul>
                             <li><NavLink to="/home">Home</NavLink></li>
+                        
                             <li>
                                 <Link onClick={this.logout}to="/home">Logout</Link>
                             </li>
-                            
-
                         </ul>
                     </nav>
                 </div>

@@ -6,7 +6,12 @@
         margin-top: 15px;
         & a {
             @extend %button;
-            background: white;
+            background: $accentColor;
+            color: white;
+            &:hover {
+                background: white;
+                color: $accentColor;
+            }
         }   
     }
 }

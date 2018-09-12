@@ -117,7 +117,9 @@ class Home extends Component {
                     <div className="loginModal">
                         <div className="modalText">
                             <h1>The Splash Pad</h1>
-                            <p>Wanna get started?  Login to save your heros or Use as a guest</p>
+                            <h3>Login to save your splashes</h3>
+                            <p>or</p>
+                            <h3>Browse as a Guest</h3>
                         </div>
                         <div className="modalButtonDiv">
                             <button className="modalButton" onClick={this.login}>Sign In</button>
